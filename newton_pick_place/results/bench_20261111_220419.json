@@ -1,0 +1,5419 @@
+{
+  "device": "cuda:0",
+  "episodes": 10,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "multiccd": false,
+        "filter_static_base": false,
+        "rigid_gap": 0.02
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 12.55,
+      "ms_per_frame_std": 0.82,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.86,
+      "envstep_ms_per_frame": 8.96,
+      "wall_time_s": 293.4,
+      "physics": {
+        "max_object_penetration_mm": 2.829,
+        "max_penetration_mm": {
+          "bowl|finger": 0.26,
+          "bowl|table_top": 0.373,
+          "bowl|tray": 0.867,
+          "cup|finger": 0.522,
+          "cup|robot": 2.829,
+          "cup|table_top": 1.883,
+          "cup|tray": 2.161,
+          "robot|table_stand": 0.032
+        },
+        "solver_niter_mean": 2.82,
+        "solver_niter_max": 12,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 32,
+        "njmax_headroom_x": 48.0,
+        "contact_candidates_peak": 33,
+        "contacts_active_peak": 6,
+        "contacts_active_mean": 3.85,
+        "static_static_contacts_peak": 1,
+        "naconmax_headroom_x": 23.3,
+        "object_speed_peak_mps": 0.373,
+        "carry_slip_mm_max": 8.283,
+        "carry_slip_mm_mean": 6.674,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 0.01348,
+        "final_ang_speed_max_radps": 0.5562,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          4.2,
+          7.9,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.95,
+          "agent_ms": 2.11,
+          "envstep_ms": 8.89,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.26,
+              "bowl|table_top": 0.37,
+              "bowl|tray": 0.763,
+              "cup|finger": 0.423,
+              "cup|robot": 2.773,
+              "cup|table_top": 1.833,
+              "cup|tray": 2.133,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.773,
+            "solver_niter_mean": 3.01,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 7.992,
+              "cup": 5.184
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00947,
+              "cup": 0.01175
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5562,
+              "cup": 0.4512
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              4.1,
+              6.0,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.1,
+          "agent_ms": 1.64,
+          "envstep_ms": 8.95,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.228,
+              "bowl|table_top": 0.369,
+              "bowl|tray": 0.784,
+              "cup|finger": 0.509,
+              "cup|robot": 2.785,
+              "cup|table_top": 1.711,
+              "cup|tray": 2.157,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.785,
+            "solver_niter_mean": 3.5,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.87,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.284,
+              "cup": 0.292
+            },
+            "carry_slip_mm": {
+              "bowl": 8.23,
+              "cup": 5.113
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00941,
+              "cup": 0.008
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5554,
+              "cup": 0.268
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              3.8,
+              5.9,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 10.58,
+          "agent_ms": 1.17,
+          "envstep_ms": 8.28,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.244,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.673,
+              "cup|finger": 0.519,
+              "cup|robot": 2.775,
+              "cup|table_top": 1.883,
+              "cup|tray": 2.153,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.775,
+            "solver_niter_mean": 2.4,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.373
+            },
+            "carry_slip_mm": {
+              "bowl": 7.718,
+              "cup": 5.122
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00911,
+              "cup": 0.00827
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.55,
+              "cup": 0.2915
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              3.4,
+              5.9,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 11.99,
+          "agent_ms": 1.76,
+          "envstep_ms": 8.59,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.219,
+              "bowl|table_top": 0.373,
+              "bowl|tray": 0.669,
+              "cup|finger": 0.421,
+              "cup|robot": 2.766,
+              "cup|table_top": 1.722,
+              "cup|tray": 2.113,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.766,
+            "solver_niter_mean": 2.46,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.83,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.344
+            },
+            "carry_slip_mm": {
+              "bowl": 7.836,
+              "cup": 5.138
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00791,
+              "cup": 0.01348
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4852,
+              "cup": 0.501
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              4.1,
+              6.0,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.92,
+          "agent_ms": 2.13,
+          "envstep_ms": 9.01,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.166,
+              "bowl|table_top": 0.33,
+              "bowl|tray": 0.634,
+              "cup|finger": 0.431,
+              "cup|robot": 2.74,
+              "cup|table_top": 1.65,
+              "cup|tray": 2.113,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.74,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 12,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 32,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.84,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 24.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 7.999,
+              "cup": 5.048
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00687,
+              "cup": 0.00875
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4516,
+              "cup": 0.2768
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              4.0,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.87,
+          "agent_ms": 2.04,
+          "envstep_ms": 9.05,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.175,
+              "bowl|table_top": 0.345,
+              "bowl|tray": 0.658,
+              "cup|finger": 0.449,
+              "cup|robot": 2.641,
+              "cup|table_top": 1.654,
+              "cup|tray": 1.979,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.641,
+            "solver_niter_mean": 2.57,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.84,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.288
+            },
+            "carry_slip_mm": {
+              "bowl": 8.076,
+              "cup": 5.694
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00911,
+              "cup": 0.00873
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5501,
+              "cup": 0.3339
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              4.2,
+              7.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.14,
+          "agent_ms": 1.87,
+          "envstep_ms": 8.63,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.222,
+              "bowl|table_top": 0.352,
+              "bowl|tray": 0.867,
+              "cup|finger": 0.506,
+              "cup|robot": 2.829,
+              "cup|table_top": 1.873,
+              "cup|tray": 2.161,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.829,
+            "solver_niter_mean": 2.62,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.83,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 7.905,
+              "cup": 5.648
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00753,
+              "cup": 0.00965
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4707,
+              "cup": 0.3183
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              4.0,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.12,
+          "agent_ms": 1.73,
+          "envstep_ms": 9.44,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.174,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.662,
+              "cup|finger": 0.429,
+              "cup|robot": 2.707,
+              "cup|table_top": 1.638,
+              "cup|tray": 2.096,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.707,
+            "solver_niter_mean": 3.65,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 32,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.83,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 24.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.263,
+              "cup": 0.287
+            },
+            "carry_slip_mm": {
+              "bowl": 8.146,
+              "cup": 5.613
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0094,
+              "cup": 0.01245
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5562,
+              "cup": 0.4636
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              4.1,
+              5.9,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.51,
+          "agent_ms": 2.02,
+          "envstep_ms": 9.53,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.179,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.653,
+              "cup|finger": 0.522,
+              "cup|robot": 2.815,
+              "cup|table_top": 1.7,
+              "cup|tray": 2.143,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.815,
+            "solver_niter_mean": 2.5,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.302,
+              "cup": 0.28
+            },
+            "carry_slip_mm": {
+              "bowl": 8.283,
+              "cup": 5.841
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0084,
+              "cup": 0.00902
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5076,
+              "cup": 0.335
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              3.4,
+              5.9,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.32,
+          "agent_ms": 2.16,
+          "envstep_ms": 9.27,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.192,
+              "bowl|table_top": 0.329,
+              "bowl|tray": 0.683,
+              "cup|finger": 0.449,
+              "cup|robot": 2.783,
+              "cup|table_top": 1.642,
+              "cup|tray": 2.156,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.783,
+            "solver_niter_mean": 2.69,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.314
+            },
+            "carry_slip_mm": {
+              "bowl": 7.91,
+              "cup": 4.979
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00793,
+              "cup": 0.01103
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4867,
+              "cup": 0.4093
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              3.3,
+              5.9,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "filter_static_base": false,
+        "rigid_gap": 0.1
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 12.96,
+      "ms_per_frame_std": 0.71,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.65,
+      "envstep_ms_per_frame": 9.77,
+      "wall_time_s": 306.2,
+      "physics": {
+        "max_object_penetration_mm": 2.819,
+        "max_penetration_mm": {
+          "bowl|finger": 0.273,
+          "bowl|table_top": 0.373,
+          "bowl|tray": 0.977,
+          "cup|finger": 0.569,
+          "cup|robot": 2.819,
+          "cup|table_top": 1.878,
+          "cup|tray": 2.169,
+          "robot|table_stand": 0.032
+        },
+        "solver_niter_mean": 2.82,
+        "solver_niter_max": 11,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 32,
+        "njmax_headroom_x": 48.0,
+        "contact_candidates_peak": 111,
+        "contacts_active_peak": 6,
+        "contacts_active_mean": 3.86,
+        "static_static_contacts_peak": 1,
+        "naconmax_headroom_x": 6.9,
+        "object_speed_peak_mps": 0.372,
+        "carry_slip_mm_max": 8.276,
+        "carry_slip_mm_mean": 6.759,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 0.01639,
+        "final_ang_speed_max_radps": 0.5859,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          4.1,
+          6.6,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.05,
+          "agent_ms": 2.2,
+          "envstep_ms": 10.02,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.273,
+              "bowl|table_top": 0.37,
+              "bowl|tray": 0.778,
+              "cup|finger": 0.468,
+              "cup|robot": 2.757,
+              "cup|table_top": 1.878,
+              "cup|tray": 2.106,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.757,
+            "solver_niter_mean": 3.4,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.88,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 8.058,
+              "cup": 5.278
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00941,
+              "cup": 0.00869
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5554,
+              "cup": 0.3364
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              3.4,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.57,
+          "agent_ms": 1.55,
+          "envstep_ms": 9.51,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.189,
+              "bowl|table_top": 0.369,
+              "bowl|tray": 0.76,
+              "cup|finger": 0.486,
+              "cup|robot": 2.785,
+              "cup|table_top": 1.701,
+              "cup|tray": 2.155,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.785,
+            "solver_niter_mean": 2.55,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.88,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 8.276,
+              "cup": 5.101
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00911,
+              "cup": 0.01639
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5501,
+              "cup": 0.5859
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              3.8,
+              5.9,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.77,
+          "agent_ms": 1.74,
+          "envstep_ms": 9.5,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.244,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.746,
+              "cup|finger": 0.478,
+              "cup|robot": 2.789,
+              "cup|table_top": 1.863,
+              "cup|tray": 2.168,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.789,
+            "solver_niter_mean": 2.46,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.87,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.372
+            },
+            "carry_slip_mm": {
+              "bowl": 7.739,
+              "cup": 5.133
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00685,
+              "cup": 0.00952
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4526,
+              "cup": 0.3551
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              2.4,
+              5.9,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.25,
+          "agent_ms": 1.58,
+          "envstep_ms": 9.24,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.254,
+              "bowl|table_top": 0.373,
+              "bowl|tray": 0.701,
+              "cup|finger": 0.42,
+              "cup|robot": 2.788,
+              "cup|table_top": 1.719,
+              "cup|tray": 2.11,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.788,
+            "solver_niter_mean": 2.43,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.344
+            },
+            "carry_slip_mm": {
+              "bowl": 8.041,
+              "cup": 5.132
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00563,
+              "cup": 0.01058
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.3534,
+              "cup": 0.3885
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              3.1,
+              6.6,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.48,
+          "agent_ms": 1.58,
+          "envstep_ms": 9.46,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.166,
+              "bowl|table_top": 0.33,
+              "bowl|tray": 0.717,
+              "cup|finger": 0.479,
+              "cup|robot": 2.813,
+              "cup|table_top": 1.624,
+              "cup|tray": 2.152,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.813,
+            "solver_niter_mean": 3.14,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.279
+            },
+            "carry_slip_mm": {
+              "bowl": 7.947,
+              "cup": 6.084
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00947,
+              "cup": 0.00922
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5562,
+              "cup": 0.3325
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              4.0,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.78,
+          "agent_ms": 1.75,
+          "envstep_ms": 10.21,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.224,
+              "bowl|table_top": 0.345,
+              "bowl|tray": 0.768,
+              "cup|finger": 0.569,
+              "cup|robot": 2.807,
+              "cup|table_top": 1.682,
+              "cup|tray": 2.169,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.807,
+            "solver_niter_mean": 2.66,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.303
+            },
+            "carry_slip_mm": {
+              "bowl": 7.983,
+              "cup": 5.506
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0075,
+              "cup": 0.00978
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4698,
+              "cup": 0.3161
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              3.9,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.2,
+          "agent_ms": 1.9,
+          "envstep_ms": 10.49,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.222,
+              "bowl|table_top": 0.352,
+              "bowl|tray": 0.757,
+              "cup|finger": 0.506,
+              "cup|robot": 2.819,
+              "cup|table_top": 1.873,
+              "cup|tray": 2.159,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.819,
+            "solver_niter_mean": 3.04,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.83,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 7.942,
+              "cup": 5.649
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00938,
+              "cup": 0.00924
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5555,
+              "cup": 0.3204
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              4.1,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.53,
+          "agent_ms": 1.38,
+          "envstep_ms": 9.68,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.176,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.733,
+              "cup|finger": 0.415,
+              "cup|robot": 2.755,
+              "cup|table_top": 1.634,
+              "cup|tray": 2.136,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.755,
+            "solver_niter_mean": 3.27,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.262,
+              "cup": 0.287
+            },
+            "carry_slip_mm": {
+              "bowl": 8.069,
+              "cup": 5.508
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00698,
+              "cup": 0.00874
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4671,
+              "cup": 0.3177
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              3.4,
+              5.9,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.38,
+          "agent_ms": 1.41,
+          "envstep_ms": 9.71,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.185,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.628,
+              "cup|finger": 0.42,
+              "cup|robot": 2.8,
+              "cup|table_top": 1.687,
+              "cup|tray": 2.145,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.8,
+            "solver_niter_mean": 2.59,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.86,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.302,
+              "cup": 0.288
+            },
+            "carry_slip_mm": {
+              "bowl": 8.249,
+              "cup": 5.716
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00698,
+              "cup": 0.0103
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4671,
+              "cup": 0.3719
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              2.4,
+              5.9,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.57,
+          "agent_ms": 1.39,
+          "envstep_ms": 9.87,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.172,
+              "bowl|table_top": 0.329,
+              "bowl|tray": 0.977,
+              "cup|finger": 0.452,
+              "cup|robot": 2.706,
+              "cup|table_top": 1.636,
+              "cup|tray": 2.097,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 2.706,
+            "solver_niter_mean": 2.66,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 32,
+            "njmax": 1536,
+            "njmax_headroom_x": 48.0,
+            "contact_candidates_peak": 111,
+            "contacts_active_peak": 6,
+            "contacts_active_mean": 3.83,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.321
+            },
+            "carry_slip_mm": {
+              "bowl": 8.004,
+              "cup": 5.763
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0091,
+              "cup": 0.01031
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5489,
+              "cup": 0.3459
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              4.0,
+              5.9,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "filter_static_base": true,
+        "rigid_gap": 0.02
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 11.74,
+      "ms_per_frame_std": 0.88,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.88,
+      "envstep_ms_per_frame": 8.11,
+      "wall_time_s": 294.9,
+      "physics": {
+        "max_object_penetration_mm": 2.863,
+        "max_penetration_mm": {
+          "bowl|finger": 0.239,
+          "bowl|table_top": 0.373,
+          "bowl|tray": 0.877,
+          "cup|finger": 0.503,
+          "cup|robot": 2.863,
+          "cup|table_top": 1.907,
+          "cup|tray": 2.168
+        },
+        "solver_niter_mean": 2.83,
+        "solver_niter_max": 8,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 28,
+        "njmax_headroom_x": 54.9,
+        "contact_candidates_peak": 30,
+        "contacts_active_peak": 5,
+        "contacts_active_mean": 2.85,
+        "static_static_contacts_peak": 0,
+        "naconmax_headroom_x": 25.6,
+        "object_speed_peak_mps": 0.372,
+        "carry_slip_mm_max": 8.283,
+        "carry_slip_mm_mean": 6.708,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 0.01492,
+        "final_ang_speed_max_radps": 0.5555,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          4.1,
+          7.8,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 9.83,
+          "agent_ms": 1.26,
+          "envstep_ms": 7.37,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.191,
+              "bowl|table_top": 0.37,
+              "bowl|tray": 0.72,
+              "cup|finger": 0.45,
+              "cup|robot": 2.793,
+              "cup|table_top": 1.868,
+              "cup|tray": 2.145
+            },
+            "max_object_penetration_mm": 2.793,
+            "solver_niter_mean": 2.9,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.81,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 8.068,
+              "cup": 5.268
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00941,
+              "cup": 0.01115
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5555,
+              "cup": 0.4115
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              4.0,
+              6.4,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.39,
+          "agent_ms": 2.03,
+          "envstep_ms": 8.42,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.189,
+              "bowl|table_top": 0.369,
+              "bowl|tray": 0.705,
+              "cup|finger": 0.419,
+              "cup|robot": 2.8,
+              "cup|table_top": 1.674,
+              "cup|tray": 2.168
+            },
+            "max_object_penetration_mm": 2.8,
+            "solver_niter_mean": 2.74,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.284,
+              "cup": 0.295
+            },
+            "carry_slip_mm": {
+              "bowl": 8.139,
+              "cup": 5.065
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00911,
+              "cup": 0.01492
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5502,
+              "cup": 0.5463
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              3.8,
+              5.9,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 11.93,
+          "agent_ms": 2.0,
+          "envstep_ms": 8.05,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.199,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.717,
+              "cup|finger": 0.445,
+              "cup|robot": 2.749,
+              "cup|table_top": 1.825,
+              "cup|tray": 2.063
+            },
+            "max_object_penetration_mm": 2.749,
+            "solver_niter_mean": 2.65,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.84,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.372
+            },
+            "carry_slip_mm": {
+              "bowl": 7.766,
+              "cup": 5.207
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00575,
+              "cup": 0.01114
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.3469,
+              "cup": 0.4067
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              4.1,
+              5.9,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 11.47,
+          "agent_ms": 1.94,
+          "envstep_ms": 7.86,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.219,
+              "bowl|table_top": 0.373,
+              "bowl|tray": 0.877,
+              "cup|finger": 0.503,
+              "cup|robot": 2.863,
+              "cup|table_top": 1.674,
+              "cup|tray": 2.071
+            },
+            "max_object_penetration_mm": 2.863,
+            "solver_niter_mean": 2.97,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.86,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.342
+            },
+            "carry_slip_mm": {
+              "bowl": 8.047,
+              "cup": 5.145
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00839,
+              "cup": 0.01218
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5073,
+              "cup": 0.4559
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              3.3,
+              5.9,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 11.93,
+          "agent_ms": 2.0,
+          "envstep_ms": 8.18,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.164,
+              "bowl|table_top": 0.33,
+              "bowl|tray": 0.678,
+              "cup|finger": 0.437,
+              "cup|robot": 2.761,
+              "cup|table_top": 1.653,
+              "cup|tray": 2.119
+            },
+            "max_object_penetration_mm": 2.761,
+            "solver_niter_mean": 2.95,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 29,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.88,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 26.5,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.289
+            },
+            "carry_slip_mm": {
+              "bowl": 8.102,
+              "cup": 5.086
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00703,
+              "cup": 0.01076
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4706,
+              "cup": 0.3981
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              3.1,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.38,
+          "agent_ms": 2.1,
+          "envstep_ms": 8.44,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.239,
+              "bowl|table_top": 0.345,
+              "bowl|tray": 0.726,
+              "cup|finger": 0.486,
+              "cup|robot": 2.61,
+              "cup|table_top": 1.678,
+              "cup|tray": 1.973
+            },
+            "max_object_penetration_mm": 2.61,
+            "solver_niter_mean": 3.26,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.84,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.288
+            },
+            "carry_slip_mm": {
+              "bowl": 7.98,
+              "cup": 5.699
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00941,
+              "cup": 0.0094
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5555,
+              "cup": 0.2893
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              3.8,
+              7.8,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.11,
+          "agent_ms": 2.06,
+          "envstep_ms": 8.22,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.223,
+              "bowl|table_top": 0.352,
+              "bowl|tray": 0.673,
+              "cup|finger": 0.462,
+              "cup|robot": 2.8,
+              "cup|table_top": 1.907,
+              "cup|tray": 2.133
+            },
+            "max_object_penetration_mm": 2.8,
+            "solver_niter_mean": 3.02,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.86,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 8.069,
+              "cup": 5.247
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00941,
+              "cup": 0.00945
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5555,
+              "cup": 0.3395
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              3.4,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.95,
+          "agent_ms": 2.0,
+          "envstep_ms": 8.82,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.173,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.719,
+              "cup|finger": 0.429,
+              "cup|robot": 2.774,
+              "cup|table_top": 1.633,
+              "cup|tray": 2.151
+            },
+            "max_object_penetration_mm": 2.774,
+            "solver_niter_mean": 2.66,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 29,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.86,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 26.5,
+            "object_speed_peak_mps": {
+              "bowl": 0.263,
+              "cup": 0.292
+            },
+            "carry_slip_mm": {
+              "bowl": 8.104,
+              "cup": 5.52
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00798,
+              "cup": 0.01057
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4956,
+              "cup": 0.3874
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              3.9,
+              5.9,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 11.91,
+          "agent_ms": 1.83,
+          "envstep_ms": 8.3,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.184,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.668,
+              "cup|finger": 0.42,
+              "cup|robot": 2.75,
+              "cup|table_top": 1.689,
+              "cup|tray": 2.138
+            },
+            "max_object_penetration_mm": 2.75,
+            "solver_niter_mean": 2.65,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 30,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 25.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.302,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 8.283,
+              "cup": 5.608
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00798,
+              "cup": 0.00868
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4959,
+              "cup": 0.2766
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              4.0,
+              5.9,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 10.53,
+          "agent_ms": 1.6,
+          "envstep_ms": 7.47,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.17,
+              "bowl|table_top": 0.329,
+              "bowl|tray": 0.688,
+              "cup|finger": 0.453,
+              "cup|robot": 2.743,
+              "cup|table_top": 1.634,
+              "cup|tray": 2.133
+            },
+            "max_object_penetration_mm": 2.743,
+            "solver_niter_mean": 2.54,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.84,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.33
+            },
+            "carry_slip_mm": {
+              "bowl": 7.984,
+              "cup": 5.763
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00911,
+              "cup": 0.00889
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5501,
+              "cup": 0.3024
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              3.3,
+              5.9,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "filter_static_base": true,
+        "rigid_gap": 0.1
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 13.14,
+      "ms_per_frame_std": 0.39,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.97,
+      "envstep_ms_per_frame": 9.41,
+      "wall_time_s": 324.0,
+      "physics": {
+        "max_object_penetration_mm": 2.842,
+        "max_penetration_mm": {
+          "bowl|finger": 0.229,
+          "bowl|table_top": 0.373,
+          "bowl|tray": 0.911,
+          "cup|finger": 0.536,
+          "cup|robot": 2.842,
+          "cup|table_top": 1.906,
+          "cup|tray": 2.17
+        },
+        "solver_niter_mean": 2.83,
+        "solver_niter_max": 9,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 28,
+        "njmax_headroom_x": 54.9,
+        "contact_candidates_peak": 108,
+        "contacts_active_peak": 5,
+        "contacts_active_mean": 2.85,
+        "static_static_contacts_peak": 0,
+        "naconmax_headroom_x": 7.1,
+        "object_speed_peak_mps": 0.372,
+        "carry_slip_mm_max": 8.318,
+        "carry_slip_mm_mean": 6.618,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 0.0124,
+        "final_ang_speed_max_radps": 0.5562,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          4.2,
+          5.9,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.39,
+          "agent_ms": 1.82,
+          "envstep_ms": 8.95,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.229,
+              "bowl|table_top": 0.37,
+              "bowl|tray": 0.911,
+              "cup|finger": 0.536,
+              "cup|robot": 2.773,
+              "cup|table_top": 1.889,
+              "cup|tray": 2.128
+            },
+            "max_object_penetration_mm": 2.773,
+            "solver_niter_mean": 2.58,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 7.915,
+              "cup": 5.184
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00829,
+              "cup": 0.00978
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5075,
+              "cup": 0.3543
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              4.0,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.69,
+          "agent_ms": 2.02,
+          "envstep_ms": 9.81,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.189,
+              "bowl|table_top": 0.369,
+              "bowl|tray": 0.692,
+              "cup|finger": 0.429,
+              "cup|robot": 2.745,
+              "cup|table_top": 1.666,
+              "cup|tray": 2.047
+            },
+            "max_object_penetration_mm": 2.745,
+            "solver_niter_mean": 3.06,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 8.153,
+              "cup": 5.152
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00938,
+              "cup": 0.00909
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5555,
+              "cup": 0.3231
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              4.2,
+              5.9,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.23,
+          "agent_ms": 1.93,
+          "envstep_ms": 9.5,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.199,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.864,
+              "cup|finger": 0.454,
+              "cup|robot": 2.809,
+              "cup|table_top": 1.842,
+              "cup|tray": 2.089
+            },
+            "max_object_penetration_mm": 2.809,
+            "solver_niter_mean": 3.04,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.372
+            },
+            "carry_slip_mm": {
+              "bowl": 7.819,
+              "cup": 5.226
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0094,
+              "cup": 0.00957
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5562,
+              "cup": 0.2901
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              3.3,
+              5.9,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.4,
+          "agent_ms": 1.87,
+          "envstep_ms": 9.7,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.218,
+              "bowl|table_top": 0.373,
+              "bowl|tray": 0.811,
+              "cup|finger": 0.467,
+              "cup|robot": 2.782,
+              "cup|table_top": 1.69,
+              "cup|tray": 2.134
+            },
+            "max_object_penetration_mm": 2.782,
+            "solver_niter_mean": 2.47,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.83,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.341
+            },
+            "carry_slip_mm": {
+              "bowl": 7.998,
+              "cup": 5.315
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00691,
+              "cup": 0.01236
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4523,
+              "cup": 0.4552
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              2.5,
+              5.9,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.15,
+          "agent_ms": 2.09,
+          "envstep_ms": 9.33,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.222,
+              "bowl|table_top": 0.33,
+              "bowl|tray": 0.854,
+              "cup|finger": 0.485,
+              "cup|robot": 2.796,
+              "cup|table_top": 1.64,
+              "cup|tray": 2.131
+            },
+            "max_object_penetration_mm": 2.796,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.292
+            },
+            "carry_slip_mm": {
+              "bowl": 8.105,
+              "cup": 5.026
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00703,
+              "cup": 0.00798
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4708,
+              "cup": 0.264
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              3.8,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.3,
+          "agent_ms": 1.99,
+          "envstep_ms": 9.51,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.191,
+              "bowl|table_top": 0.345,
+              "bowl|tray": 0.698,
+              "cup|finger": 0.5,
+              "cup|robot": 2.812,
+              "cup|table_top": 1.693,
+              "cup|tray": 2.17
+            },
+            "max_object_penetration_mm": 2.812,
+            "solver_niter_mean": 3.26,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.83,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.238,
+              "cup": 0.302
+            },
+            "carry_slip_mm": {
+              "bowl": 7.924,
+              "cup": 5.271
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00691,
+              "cup": 0.00898
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4523,
+              "cup": 0.3415
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              3.9,
+              5.9,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.64,
+          "agent_ms": 1.98,
+          "envstep_ms": 9.07,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.222,
+              "bowl|table_top": 0.352,
+              "bowl|tray": 0.756,
+              "cup|finger": 0.45,
+              "cup|robot": 2.816,
+              "cup|table_top": 1.906,
+              "cup|tray": 2.16
+            },
+            "max_object_penetration_mm": 2.816,
+            "solver_niter_mean": 2.54,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 7.912,
+              "cup": 5.251
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0091,
+              "cup": 0.00982
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.5489,
+              "cup": 0.373
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              3.3,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.42,
+          "agent_ms": 2.09,
+          "envstep_ms": 9.55,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.192,
+              "bowl|table_top": 0.361,
+              "bowl|tray": 0.729,
+              "cup|finger": 0.439,
+              "cup|robot": 2.754,
+              "cup|table_top": 1.644,
+              "cup|tray": 2.137
+            },
+            "max_object_penetration_mm": 2.754,
+            "solver_niter_mean": 2.76,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.88,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.262,
+              "cup": 0.284
+            },
+            "carry_slip_mm": {
+              "bowl": 8.068,
+              "cup": 5.109
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00575,
+              "cup": 0.00875
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.3469,
+              "cup": 0.339
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              2.5,
+              5.9,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 13.4,
+          "agent_ms": 1.96,
+          "envstep_ms": 9.63,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.184,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.736,
+              "cup|finger": 0.428,
+              "cup|robot": 2.842,
+              "cup|table_top": 1.674,
+              "cup|tray": 2.139
+            },
+            "max_object_penetration_mm": 2.842,
+            "solver_niter_mean": 3.04,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.303,
+              "cup": 0.284
+            },
+            "carry_slip_mm": {
+              "bowl": 8.318,
+              "cup": 5.556
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00561,
+              "cup": 0.00892
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.3534,
+              "cup": 0.281
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              4.0,
+              5.9,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 12.78,
+          "agent_ms": 1.99,
+          "envstep_ms": 9.08,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.171,
+              "bowl|table_top": 0.329,
+              "bowl|tray": 0.778,
+              "cup|finger": 0.436,
+              "cup|robot": 2.766,
+              "cup|table_top": 1.67,
+              "cup|tray": 2.127
+            },
+            "max_object_penetration_mm": 2.766,
+            "solver_niter_mean": 2.71,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 108,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.315
+            },
+            "carry_slip_mm": {
+              "bowl": 7.96,
+              "cup": 5.09
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.00703,
+              "cup": 0.0124
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.4707,
+              "cup": 0.4555
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              3.1,
+              5.9,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "filter_static_base": false,
+        "rigid_gap": 0.02
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 16.09,
+      "ms_per_frame_std": 2.22,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.73,
+      "envstep_ms_per_frame": 12.71,
+      "wall_time_s": 333.1,
+      "physics": {
+        "max_object_penetration_mm": 0.789,
+        "max_penetration_mm": {
+          "bowl|finger": 0.197,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.46,
+          "cup|finger": 0.434,
+          "cup|robot": 0.789,
+          "cup|table_top": 0.535,
+          "cup|tray": 0.755,
+          "robot|table_stand": 0.032
+        },
+        "solver_niter_mean": 1.37,
+        "solver_niter_max": 10,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 92,
+        "njmax_headroom_x": 16.7,
+        "contact_candidates_peak": 41,
+        "contacts_active_peak": 21,
+        "contacts_active_mean": 11.21,
+        "static_static_contacts_peak": 1,
+        "naconmax_headroom_x": 18.7,
+        "object_speed_peak_mps": 0.371,
+        "carry_slip_mm_max": 3.911,
+        "carry_slip_mm_mean": 2.906,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 7e-05,
+        "final_ang_speed_max_radps": 0.0031,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          2.7,
+          7.5,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 16.06,
+          "agent_ms": 1.83,
+          "envstep_ms": 12.43,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.166,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.067,
+              "cup|finger": 0.353,
+              "cup|robot": 0.75,
+              "cup|table_top": 0.477,
+              "cup|tray": 0.599,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.75,
+            "solver_niter_mean": 1.2,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 11.12,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.862,
+              "cup": 2.584
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              1.5,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 21.78,
+          "agent_ms": 1.76,
+          "envstep_ms": 18.07,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.101,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.075,
+              "cup|finger": 0.308,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.489,
+              "cup|tray": 0.537,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.5,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 39,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.93,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 19.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.281,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.86,
+              "cup": 1.872
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0019,
+              "cup": 0.0001
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              2.7,
+              6.2,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 18.27,
+          "agent_ms": 1.3,
+          "envstep_ms": 15.68,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.197,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.183,
+              "cup|finger": 0.247,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.535,
+              "cup|tray": 0.486,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.41,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 11.35,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.371
+            },
+            "carry_slip_mm": {
+              "bowl": 3.81,
+              "cup": 1.942
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0025,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              1.3,
+              6.2,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 15.5,
+          "agent_ms": 1.28,
+          "envstep_ms": 12.94,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.14,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.049,
+              "cup|finger": 0.434,
+              "cup|robot": 0.675,
+              "cup|table_top": 0.479,
+              "cup|tray": 0.563,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.675,
+            "solver_niter_mean": 1.29,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.96,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.342
+            },
+            "carry_slip_mm": {
+              "bowl": 3.818,
+              "cup": 2.219
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              2.0,
+              6.1,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 16.0,
+          "agent_ms": 1.98,
+          "envstep_ms": 12.18,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.129,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.089,
+              "cup|finger": 0.216,
+              "cup|robot": 0.727,
+              "cup|table_top": 0.454,
+              "cup|tray": 0.489,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.727,
+            "solver_niter_mean": 1.42,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 38,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.5,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 20.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.881,
+              "cup": 1.342
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              1.4,
+              6.3,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.77,
+          "agent_ms": 1.18,
+          "envstep_ms": 12.29,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.103,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.12,
+              "cup|finger": 0.287,
+              "cup|robot": 0.768,
+              "cup|table_top": 0.511,
+              "cup|tray": 0.544,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.768,
+            "solver_niter_mean": 1.41,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 39,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 10.7,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 19.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 3.799,
+              "cup": 2.909
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0025,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              1.6,
+              6.0,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.21,
+          "agent_ms": 1.2,
+          "envstep_ms": 11.79,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.168,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.132,
+              "cup|finger": 0.354,
+              "cup|robot": 0.789,
+              "cup|table_top": 0.504,
+              "cup|tray": 0.755,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.789,
+            "solver_niter_mean": 1.42,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 10.75,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.808,
+              "cup": 3.038
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.002,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              1.9,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 15.8,
+          "agent_ms": 2.94,
+          "envstep_ms": 10.75,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.105,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.165,
+              "cup|finger": 0.18,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.474,
+              "cup|tray": 0.526,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.17,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 38,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.58,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 20.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.26,
+              "cup": 0.285
+            },
+            "carry_slip_mm": {
+              "bowl": 3.836,
+              "cup": 1.243
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0031,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              1.2,
+              6.3,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.28,
+          "agent_ms": 1.9,
+          "envstep_ms": 10.54,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.104,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.46,
+              "cup|finger": 0.183,
+              "cup|robot": 0.759,
+              "cup|table_top": 0.501,
+              "cup|tray": 0.509,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.759,
+            "solver_niter_mean": 1.44,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 41,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.61,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 18.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.299,
+              "cup": 0.279
+            },
+            "carry_slip_mm": {
+              "bowl": 3.911,
+              "cup": 1.31
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0028,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              1.7,
+              6.4,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 14.28,
+          "agent_ms": 1.96,
+          "envstep_ms": 10.42,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.104,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.062,
+              "cup|finger": 0.22,
+              "cup|robot": 0.743,
+              "cup|table_top": 0.475,
+              "cup|tray": 0.544,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.743,
+            "solver_niter_mean": 1.46,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.57,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.315
+            },
+            "carry_slip_mm": {
+              "bowl": 3.838,
+              "cup": 1.231
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              2.0,
+              7.5,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "filter_static_base": false,
+        "rigid_gap": 0.1
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 23.51,
+      "ms_per_frame_std": 1.1,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.87,
+      "envstep_ms_per_frame": 19.85,
+      "wall_time_s": 445.2,
+      "physics": {
+        "max_object_penetration_mm": 0.789,
+        "max_penetration_mm": {
+          "bowl|finger": 0.197,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.184,
+          "cup|finger": 0.435,
+          "cup|robot": 0.789,
+          "cup|table_top": 0.536,
+          "cup|tray": 0.739,
+          "robot|table_stand": 0.032
+        },
+        "solver_niter_mean": 1.37,
+        "solver_niter_max": 9,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 92,
+        "njmax_headroom_x": 16.7,
+        "contact_candidates_peak": 126,
+        "contacts_active_peak": 21,
+        "contacts_active_mean": 11.2,
+        "static_static_contacts_peak": 1,
+        "naconmax_headroom_x": 6.1,
+        "object_speed_peak_mps": 0.371,
+        "carry_slip_mm_max": 3.912,
+        "carry_slip_mm_mean": 2.906,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 7e-05,
+        "final_ang_speed_max_radps": 0.0028,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          3.3,
+          6.4,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 21.11,
+          "agent_ms": 2.09,
+          "envstep_ms": 17.01,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.175,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.067,
+              "cup|finger": 0.309,
+              "cup|robot": 0.751,
+              "cup|table_top": 0.481,
+              "cup|tray": 0.595,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.751,
+            "solver_niter_mean": 1.21,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 126,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.11,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.862,
+              "cup": 2.584
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0023,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              1.6,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 22.93,
+          "agent_ms": 2.08,
+          "envstep_ms": 18.9,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.123,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.107,
+              "cup|finger": 0.308,
+              "cup|robot": 0.748,
+              "cup|table_top": 0.489,
+              "cup|tray": 0.535,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.748,
+            "solver_niter_mean": 1.47,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.94,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.281,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.86,
+              "cup": 1.872
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0028,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              3.3,
+              6.1,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 22.84,
+          "agent_ms": 1.98,
+          "envstep_ms": 18.91,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.197,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.184,
+              "cup|finger": 0.247,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.536,
+              "cup|tray": 0.486,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.41,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 125,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 11.37,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.371
+            },
+            "carry_slip_mm": {
+              "bowl": 3.81,
+              "cup": 1.941
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0022,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              2.5,
+              6.2,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 22.76,
+          "agent_ms": 1.84,
+          "envstep_ms": 19.16,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.14,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.049,
+              "cup|finger": 0.435,
+              "cup|robot": 0.722,
+              "cup|table_top": 0.48,
+              "cup|tray": 0.568,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.722,
+            "solver_niter_mean": 1.32,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 125,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.96,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.342
+            },
+            "carry_slip_mm": {
+              "bowl": 3.818,
+              "cup": 2.214
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              2.0,
+              6.2,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 23.57,
+          "agent_ms": 1.91,
+          "envstep_ms": 19.9,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.132,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.041,
+              "cup|finger": 0.216,
+              "cup|robot": 0.727,
+              "cup|table_top": 0.454,
+              "cup|tray": 0.487,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.727,
+            "solver_niter_mean": 1.42,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 126,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.47,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.881,
+              "cup": 1.342
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0025,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              2.0,
+              6.3,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 23.68,
+          "agent_ms": 1.82,
+          "envstep_ms": 20.19,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.103,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.149,
+              "cup|finger": 0.287,
+              "cup|robot": 0.768,
+              "cup|table_top": 0.511,
+              "cup|tray": 0.544,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.768,
+            "solver_niter_mean": 1.4,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 10.69,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 3.798,
+              "cup": 2.909
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0028,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              1.5,
+              6.0,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 23.89,
+          "agent_ms": 1.75,
+          "envstep_ms": 20.44,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.168,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.154,
+              "cup|finger": 0.357,
+              "cup|robot": 0.789,
+              "cup|table_top": 0.505,
+              "cup|tray": 0.739,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.789,
+            "solver_niter_mean": 1.44,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 10.75,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.807,
+              "cup": 3.049
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              2.4,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 24.59,
+          "agent_ms": 1.92,
+          "envstep_ms": 20.96,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.106,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.15,
+              "cup|finger": 0.18,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.475,
+              "cup|tray": 0.532,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.18,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 126,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.6,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.26,
+              "cup": 0.285
+            },
+            "carry_slip_mm": {
+              "bowl": 3.836,
+              "cup": 1.243
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0025,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              2.4,
+              6.4,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 24.82,
+          "agent_ms": 1.74,
+          "envstep_ms": 21.39,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.103,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.047,
+              "cup|finger": 0.183,
+              "cup|robot": 0.759,
+              "cup|table_top": 0.5,
+              "cup|tray": 0.509,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.759,
+            "solver_niter_mean": 1.43,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 126,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.59,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.299,
+              "cup": 0.279
+            },
+            "carry_slip_mm": {
+              "bowl": 3.912,
+              "cup": 1.31
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              2.5,
+              6.4,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 24.87,
+          "agent_ms": 1.59,
+          "envstep_ms": 21.65,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.099,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.15,
+              "cup|finger": 0.22,
+              "cup|robot": 0.74,
+              "cup|table_top": 0.475,
+              "cup|tray": 0.526,
+              "robot|table_stand": 0.032
+            },
+            "max_object_penetration_mm": 0.74,
+            "solver_niter_mean": 1.45,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 92,
+            "njmax": 1536,
+            "njmax_headroom_x": 16.7,
+            "contact_candidates_peak": 126,
+            "contacts_active_peak": 21,
+            "contacts_active_mean": 11.56,
+            "static_static_contacts_peak": 1,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.1,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.315
+            },
+            "carry_slip_mm": {
+              "bowl": 3.839,
+              "cup": 1.231
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0021,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              1.7,
+              6.3,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "filter_static_base": true,
+        "rigid_gap": 0.02
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 18.23,
+      "ms_per_frame_std": 1.08,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.77,
+      "envstep_ms_per_frame": 14.77,
+      "wall_time_s": 363.8,
+      "physics": {
+        "max_object_penetration_mm": 0.788,
+        "max_penetration_mm": {
+          "bowl|finger": 0.198,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.188,
+          "cup|finger": 0.435,
+          "cup|robot": 0.788,
+          "cup|table_top": 0.536,
+          "cup|tray": 0.776
+        },
+        "solver_niter_mean": 1.3,
+        "solver_niter_max": 7,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 88,
+        "njmax_headroom_x": 17.5,
+        "contact_candidates_peak": 38,
+        "contacts_active_peak": 20,
+        "contacts_active_mean": 10.21,
+        "static_static_contacts_peak": 0,
+        "naconmax_headroom_x": 20.2,
+        "object_speed_peak_mps": 0.371,
+        "carry_slip_mm_max": 3.912,
+        "carry_slip_mm_mean": 2.906,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 8e-05,
+        "final_ang_speed_max_radps": 0.0033,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          3.1,
+          6.7,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 19.66,
+          "agent_ms": 1.7,
+          "envstep_ms": 16.3,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.166,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.067,
+              "cup|finger": 0.343,
+              "cup|robot": 0.75,
+              "cup|table_top": 0.478,
+              "cup|tray": 0.598
+            },
+            "max_object_penetration_mm": 0.75,
+            "solver_niter_mean": 1.14,
+            "solver_niter_max": 4,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 10.1,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.862,
+              "cup": 2.583
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0029,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              1.5,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 20.15,
+          "agent_ms": 1.91,
+          "envstep_ms": 16.54,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.103,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.07,
+              "cup|finger": 0.309,
+              "cup|robot": 0.748,
+              "cup|table_top": 0.489,
+              "cup|tray": 0.535
+            },
+            "max_object_penetration_mm": 0.748,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.92,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.281,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.861,
+              "cup": 1.873
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 3e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0026,
+              "cup": 0.0007
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              1.8,
+              6.1,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 19.13,
+          "agent_ms": 1.67,
+          "envstep_ms": 15.76,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.198,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.188,
+              "cup|finger": 0.247,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.536,
+              "cup|tray": 0.486
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.33,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.37,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.371
+            },
+            "carry_slip_mm": {
+              "bowl": 3.81,
+              "cup": 1.941
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0028,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              2.5,
+              6.2,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.64,
+          "agent_ms": 1.68,
+          "envstep_ms": 14.3,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.14,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.037,
+              "cup|finger": 0.435,
+              "cup|robot": 0.668,
+              "cup|table_top": 0.48,
+              "cup|tray": 0.563
+            },
+            "max_object_penetration_mm": 0.668,
+            "solver_niter_mean": 1.24,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 9.98,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.342
+            },
+            "carry_slip_mm": {
+              "bowl": 3.818,
+              "cup": 2.245
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 8e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0033,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              2.1,
+              6.1,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 18.87,
+          "agent_ms": 1.97,
+          "envstep_ms": 15.14,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.093,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.074,
+              "cup|finger": 0.216,
+              "cup|robot": 0.726,
+              "cup|table_top": 0.454,
+              "cup|tray": 0.487
+            },
+            "max_object_penetration_mm": 0.726,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.49,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.881,
+              "cup": 1.343
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              1.6,
+              6.3,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.77,
+          "agent_ms": 1.82,
+          "envstep_ms": 14.24,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.125,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.162,
+              "cup|finger": 0.289,
+              "cup|robot": 0.769,
+              "cup|table_top": 0.511,
+              "cup|tray": 0.544
+            },
+            "max_object_penetration_mm": 0.769,
+            "solver_niter_mean": 1.31,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 76,
+            "njmax": 1536,
+            "njmax_headroom_x": 20.2,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 17,
+            "contacts_active_mean": 9.72,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 3.797,
+              "cup": 2.909
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              1.5,
+              6.0,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.22,
+          "agent_ms": 1.82,
+          "envstep_ms": 13.7,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.168,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.154,
+              "cup|finger": 0.328,
+              "cup|robot": 0.788,
+              "cup|table_top": 0.504,
+              "cup|tray": 0.776
+            },
+            "max_object_penetration_mm": 0.788,
+            "solver_niter_mean": 1.38,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 76,
+            "njmax": 1536,
+            "njmax_headroom_x": 20.2,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 17,
+            "contacts_active_mean": 9.79,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.807,
+              "cup": 3.028
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 7e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              1.7,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 16.75,
+          "agent_ms": 1.72,
+          "envstep_ms": 13.38,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.108,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.133,
+              "cup|finger": 0.18,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.474,
+              "cup|tray": 0.528
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.15,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.58,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.26,
+              "cup": 0.285
+            },
+            "carry_slip_mm": {
+              "bowl": 3.836,
+              "cup": 1.243
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              2.7,
+              6.3,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.48,
+          "agent_ms": 1.67,
+          "envstep_ms": 14.16,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.112,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.08,
+              "cup|finger": 0.183,
+              "cup|robot": 0.759,
+              "cup|table_top": 0.5,
+              "cup|tray": 0.509
+            },
+            "max_object_penetration_mm": 0.759,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 38,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.58,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 20.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.299,
+              "cup": 0.279
+            },
+            "carry_slip_mm": {
+              "bowl": 3.912,
+              "cup": 1.31
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0027,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              3.1,
+              6.4,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.66,
+          "agent_ms": 1.7,
+          "envstep_ms": 14.21,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.106,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.044,
+              "cup|finger": 0.22,
+              "cup|robot": 0.742,
+              "cup|table_top": 0.475,
+              "cup|tray": 0.533
+            },
+            "max_object_penetration_mm": 0.742,
+            "solver_niter_mean": 1.37,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.57,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.315
+            },
+            "carry_slip_mm": {
+              "bowl": 3.839,
+              "cup": 1.231
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0021,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              2.6,
+              6.7,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "filter_static_base": true,
+        "rigid_gap": 0.1
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 19.87,
+      "ms_per_frame_std": 1.58,
+      "frames_mean": 1288.0,
+      "agent_ms_per_frame": 1.39,
+      "envstep_ms_per_frame": 17.03,
+      "wall_time_s": 360.3,
+      "physics": {
+        "max_object_penetration_mm": 0.789,
+        "max_penetration_mm": {
+          "bowl|finger": 0.201,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.184,
+          "cup|finger": 0.434,
+          "cup|robot": 0.789,
+          "cup|table_top": 0.536,
+          "cup|tray": 0.738
+        },
+        "solver_niter_mean": 1.29,
+        "solver_niter_max": 8,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 88,
+        "njmax_headroom_x": 17.5,
+        "contact_candidates_peak": 123,
+        "contacts_active_peak": 20,
+        "contacts_active_mean": 10.22,
+        "static_static_contacts_peak": 0,
+        "naconmax_headroom_x": 6.2,
+        "object_speed_peak_mps": 0.371,
+        "carry_slip_mm_max": 3.911,
+        "carry_slip_mm_mean": 2.907,
+        "velocity_clamp_events": 0,
+        "final_lin_speed_max_mps": 6e-05,
+        "final_ang_speed_max_radps": 0.0025,
+        "arm_torque_peak_nm": [
+          6.4,
+          51.4,
+          9.8,
+          30.6,
+          2.6,
+          6.4,
+          5.1
+        ]
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 18.05,
+          "agent_ms": 1.89,
+          "envstep_ms": 14.19,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.163,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.067,
+              "cup|finger": 0.36,
+              "cup|robot": 0.75,
+              "cup|table_top": 0.478,
+              "cup|tray": 0.599
+            },
+            "max_object_penetration_mm": 0.75,
+            "solver_niter_mean": 1.15,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 122,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.1,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.862,
+              "cup": 2.584
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0023,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.0,
+              49.8,
+              6.6,
+              30.6,
+              2.6,
+              5.9,
+              3.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 21.45,
+          "agent_ms": 1.86,
+          "envstep_ms": 17.68,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.095,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.122,
+              "cup|finger": 0.308,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.489,
+              "cup|tray": 0.534
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.36,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 121,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.93,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.281,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.863,
+              "cup": 1.872
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.7,
+              50.9,
+              9.1,
+              30.6,
+              1.5,
+              6.1,
+              4.8
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 19.06,
+          "agent_ms": 1.18,
+          "envstep_ms": 16.62,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.201,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.184,
+              "cup|finger": 0.247,
+              "cup|robot": 0.747,
+              "cup|table_top": 0.536,
+              "cup|tray": 0.486
+            },
+            "max_object_penetration_mm": 0.747,
+            "solver_niter_mean": 1.32,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 122,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.38,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.371
+            },
+            "carry_slip_mm": {
+              "bowl": 3.809,
+              "cup": 1.942
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.4,
+              49.8,
+              8.4,
+              30.6,
+              2.5,
+              6.2,
+              4.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 17.75,
+          "agent_ms": 1.23,
+          "envstep_ms": 15.31,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.14,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.037,
+              "cup|finger": 0.434,
+              "cup|robot": 0.677,
+              "cup|table_top": 0.48,
+              "cup|tray": 0.562
+            },
+            "max_object_penetration_mm": 0.677,
+            "solver_niter_mean": 1.25,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 122,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 9.97,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.342
+            },
+            "carry_slip_mm": {
+              "bowl": 3.818,
+              "cup": 2.244
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0025,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              50.9,
+              7.1,
+              30.6,
+              1.4,
+              6.1,
+              3.0
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 18.42,
+          "agent_ms": 1.27,
+          "envstep_ms": 15.94,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.098,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.085,
+              "cup|finger": 0.216,
+              "cup|robot": 0.726,
+              "cup|table_top": 0.454,
+              "cup|tray": 0.487
+            },
+            "max_object_penetration_mm": 0.726,
+            "solver_niter_mean": 1.33,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.49,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.29
+            },
+            "carry_slip_mm": {
+              "bowl": 3.881,
+              "cup": 1.343
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0022,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.5,
+              51.4,
+              7.7,
+              30.6,
+              1.5,
+              6.3,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 18.9,
+          "agent_ms": 1.11,
+          "envstep_ms": 16.58,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.103,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.15,
+              "cup|finger": 0.287,
+              "cup|robot": 0.768,
+              "cup|table_top": 0.511,
+              "cup|tray": 0.544
+            },
+            "max_object_penetration_mm": 0.768,
+            "solver_niter_mean": 1.33,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 76,
+            "njmax": 1536,
+            "njmax_headroom_x": 20.2,
+            "contact_candidates_peak": 120,
+            "contacts_active_peak": 17,
+            "contacts_active_mean": 9.71,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 3.798,
+              "cup": 2.909
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0021,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.6,
+              51.2,
+              7.3,
+              30.6,
+              1.6,
+              6.0,
+              3.7
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 20.0,
+          "agent_ms": 1.13,
+          "envstep_ms": 17.66,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.166,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.153,
+              "cup|finger": 0.309,
+              "cup|robot": 0.789,
+              "cup|table_top": 0.504,
+              "cup|tray": 0.738
+            },
+            "max_object_penetration_mm": 0.789,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 76,
+            "njmax": 1536,
+            "njmax_headroom_x": 20.2,
+            "contact_candidates_peak": 120,
+            "contacts_active_peak": 17,
+            "contacts_active_mean": 9.85,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.312
+            },
+            "carry_slip_mm": {
+              "bowl": 3.808,
+              "cup": 3.043
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 6e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0024,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.1,
+              49.7,
+              6.6,
+              30.6,
+              2.5,
+              5.9,
+              3.5
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 21.74,
+          "agent_ms": 1.29,
+          "envstep_ms": 19.22,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.094,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.136,
+              "cup|finger": 0.18,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.474,
+              "cup|tray": 0.524
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.14,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.59,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.26,
+              "cup": 0.285
+            },
+            "carry_slip_mm": {
+              "bowl": 3.837,
+              "cup": 1.243
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              5.3,
+              51.3,
+              8.5,
+              30.6,
+              2.4,
+              6.2,
+              4.4
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 20.85,
+          "agent_ms": 1.23,
+          "envstep_ms": 18.39,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.097,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.03,
+              "cup|finger": 0.183,
+              "cup|robot": 0.759,
+              "cup|table_top": 0.499,
+              "cup|tray": 0.509
+            },
+            "max_object_penetration_mm": 0.759,
+            "solver_niter_mean": 1.36,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.6,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.299,
+              "cup": 0.279
+            },
+            "carry_slip_mm": {
+              "bowl": 3.911,
+              "cup": 1.31
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 5e-05,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0021,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              6.1,
+              51.0,
+              9.8,
+              30.6,
+              2.1,
+              6.4,
+              5.1
+            ],
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1288,
+          "ms_per_frame": 22.44,
+          "agent_ms": 1.74,
+          "envstep_ms": 18.73,
+          "physics": {
+            "frames": 1288,
+            "max_penetration_mm": {
+              "bowl|finger": 0.095,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.066,
+              "cup|finger": 0.22,
+              "cup|robot": 0.74,
+              "cup|table_top": 0.475,
+              "cup|tray": 0.525
+            },
+            "max_object_penetration_mm": 0.74,
+            "solver_niter_mean": 1.34,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.56,
+            "static_static_contacts_peak": 0,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.235,
+              "cup": 0.315
+            },
+            "carry_slip_mm": {
+              "bowl": 3.838,
+              "cup": 1.231
+            },
+            "final_lin_speed_max_mps": {
+              "bowl": 0.0,
+              "cup": 1e-05
+            },
+            "final_ang_speed_max_radps": {
+              "bowl": 0.0,
+              "cup": 0.0
+            },
+            "arm_torque_peak_nm": [
+              4.4,
+              51.4,
+              7.3,
+              30.6,
+              2.1,
+              6.3,
+              3.6
+            ],
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    }
+  ]
+}

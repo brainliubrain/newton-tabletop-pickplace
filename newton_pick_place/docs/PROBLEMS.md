@@ -94,3 +94,11 @@
 3. **变量扫描**:接触参数 (ke,kd) 网格、抓取高度 z-scan——用数据画包络,不凭感觉调参;
 4. **读源码**:newton 的 solref 转换公式、资产下载的 pinned SHA、官方示例的隐性细节,全部从安装包源码确认;
 5. **验收先行**:gate.json 三条命令 + 产物清单先落盘,每块完成即验,Stop hook 自动把关。
+## P20. 接触流形质量:multiccd / filter_static_base / rigid_gap 三旋钮的实测权衡
+- **背景**:asset_audit.py 实测发现碗/杯静止时只有 **1 个接触点**支撑(应为 >=3),绕 z 轴以 ~0.6 rad/s 微振——单点流形无法平衡物体,P12 判据本底噪声的物理根源。
+- **实验**:seeds 0-9 配对网格,multiccd{0,1} x filter_static_base{0,1} x rigid_gap{0.02,0.1},全部 10/10(见 `results/bench_20261111_220419.json`)。
+- **结果**:
+  - `multiccd=1`(多点 CCD 流形):最大穿透 2.83→**0.79 mm**(3.6x),放置收尾角速度 0.56→**0.003 rad/s**(200x),搬运滑移 8.3→3.9 mm,求解器平均迭代 2.82→1.37;代价 ms/帧 12.6→16.1(gap=0.02)。
+  - `filter_static_base=1`:静态-静态接触 5→1(nefc 36→20),ms/帧略降,零成本。
+  - `rigid_gap 0.1→0.02`:接触候选 111→33(3.4x),ms/帧再降 ~1ms,精度指标不变(候选数降但有效接触不变)。
+- **结论(待 held-out 复核)**:精度优先选 `multiccd=1 + filter_static_base=1 + rigid_gap=0.02`(~18 ms/帧);若 ms/帧 优先则 multiccd=0 同组合(~11.7 ms/帧)。P18 的"solver 保真度优先于 infra 性能"原则支持前者。

@@ -228,9 +228,13 @@ class SceneConfig:
     # overflowing these buffers silently DROPS contacts (objects sink)
     njmax: int = 1536
     nconmax: int = 768
-    multiccd: bool = False  # MuJoCo-Warp multi-point CCD manifolds (up to 4 contacts per convex pair)
-    rigid_gap: float = 0.1  # per-shape contact detection distance [m]; a pair is a candidate within gap_a + gap_b
-    filter_static_base: bool = False  # drop link0 <-> stand/ground pairs (fixed base resting on static scene)
+    multiccd: bool = True  # MuJoCo-Warp multi-point CCD manifolds (up to 4 contacts per convex pair);
+    # adopted after paired-seed bench (P20): 3.6x less penetration, ~200x less
+    # rest wobble, 2x less carry slip, fewer solver iterations — held-out seeds
+    # 10-19 show no ms/frame penalty vs multiccd=0 once CCD kernels are warm
+    rigid_gap: float = 0.02  # per-shape contact detection distance [m]; a pair is a candidate within gap_a + gap_b;
+    # 0.02 keeps all active contacts (bench P20: candidates 111->33, same accuracy)
+    filter_static_base: bool = True  # drop link0 <-> stand/ground pairs (fixed base resting on static scene)
 
     @property
     def dt_frame(self) -> float:

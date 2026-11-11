@@ -16,7 +16,7 @@ uv venv --python 3.12 .venv
 uv pip install --python .venv/Scripts/python.exe --index-url https://pypi.tuna.tsinghua.edu.cn/simple \
     "newton==1.7.0" "mujoco==3.15.*" "mujoco-warp==3.15.*" \
     pycollada resolve-robotics-uri-py "usd-core<26.9" newton-usd-schemas \
-    scipy trimesh fast-simplification imageio imageio-ffmpeg pyarrow
+    scipy trimesh fast-simplification imageio imageio-ffmpeg
 
 # 环境自检(CUDA + URDF + USD 资产 + GPU 仿真步进)
 .venv/Scripts/python.exe newton_pick_place/check_env.py

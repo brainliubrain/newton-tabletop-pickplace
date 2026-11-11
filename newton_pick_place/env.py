@@ -28,6 +28,7 @@ FRANKA_URDF = os.path.join(ASSETS, "franka_emika_panda", "urdf", "fr3_franka_han
 CUP_USD = os.path.join(ASSETS, "manipulation_objects", "cup", "model.usda")
 
 # Body indices inside the FR3 + hand URDF articulation (verified by check_env).
+BASE_BODY = 1  # fr3_link0 (fixed to the world)
 HAND_BODY = 10  # fr3_hand
 TCP_BODY = 11  # fr3_hand_tcp (massless fixed frame at the fingertips' center)
 FINGER_BODIES = (12, 13)  # fr3_leftfinger, fr3_rightfinger
@@ -153,14 +154,14 @@ def solve_home_q() -> list[float]:
     return q_np.tolist()
 
 
-# Contact material: newton calls convert_solref(ke, kd, d_width=1.0, d_r=1.0)
-# (kernels.py), i.e. timeconst = 2/kd and dampratio = kd/2*sqrt(1/ke) — NOT the
-# mujoco-doc width=0.001 form. With kd=5e4, timeconst=4e-5 s << 2*dt, so
-# MuJoCo's refsafe clamps it to 2*dt_substep: effective contact STIFFNESS is
-# set by the timestep, while dampratio (~1.5 here) is the real knob ke/kd
-# control. The library default (ke=2.5e3, kd=100) lets light objects rest
-# ~14 mm INSIDE the table; our values keep objects at <0.1 mm with quiet
-# settling. See docs/PROBLEMS.md P4/P18/P19 for the corrected analysis.
+# Contact material: newton converts (ke, kd) to mujoco solref via
+# timeconst = 2/(kd*width), dampratio = kd/2*sqrt(d_r/ke) with default
+# solimp width=0.001, d_r=0.9. The library default (ke=2.5e3, kd=100) yields
+# an ultra-soft contact that lets light objects rest ~14 mm INSIDE the table;
+# ke=2.5e8/kd=5e4 gives timeconst=0.04 s (> 2*dt) and dampratio~1.5, so
+# objects rest within ~0.1 mm of the true surface AND settle quietly
+# (slightly under-damped contacts keep micro-bouncing, which trips
+# velocity-based success criteria).
 CONTACT_KE = 2.5e8
 CONTACT_KD = 5.0e4
 
@@ -220,9 +221,9 @@ class SceneConfig:
     # overflowing these buffers silently DROPS contacts (objects sink)
     njmax: int = 1536
     nconmax: int = 768
-    # broadphase candidate gap [m]: newton default 0.1 generates ~6x more
-    # candidate pairs than real contacts on this scene (see PROBLEMS.md P19)
-    rigid_gap: float = 0.1
+    multiccd: bool = False  # MuJoCo-Warp multi-point CCD manifolds (up to 4 contacts per convex pair)
+    rigid_gap: float = 0.1  # per-shape contact detection distance [m]; a pair is a candidate within gap_a + gap_b
+    filter_static_base: bool = False  # drop link0 <-> stand/ground pairs (fixed base resting on static scene)
 
     @property
     def dt_frame(self) -> float:
@@ -349,6 +350,7 @@ class PickPlaceEnv:
         self.state_0, self.state_1 = self.model.state(), self.model.state()
         self.control = self.model.control()
         self.sim_time = 0.0
+        self.clamp_events = 0  # frames where the velocity safety clamp fired (hidden-instability counter)
         self._body_q = self.state_0.body_q.numpy()
         self._body_qd = self.state_0.body_qd.numpy()
         self._capture()
@@ -363,8 +365,7 @@ class PickPlaceEnv:
         # hardcoded against volatile shape ordering
         self.shape_roles: dict[str, list[int]] = {}
         builder = newton.ModelBuilder()
-        builder.rigid_gap = cfg.rigid_gap
-        cc = partial(contact_cfg, ke=cfg.contact_ke, kd=cfg.contact_kd)
+        cc = partial(contact_cfg, ke=cfg.contact_ke, kd=cfg.contact_kd, gap=cfg.rigid_gap)
         builder.default_shape_cfg = cc()
 
         # --- robot ------------------------------------------------------
@@ -455,7 +456,7 @@ class PickPlaceEnv:
             idx = builder.add_shape_mesh(
                 body=self.bowl_body,
                 mesh=bowl_mesh,
-                cfg=cc(has_shape_collision=False, density=0.0),  # visual only, massless
+                cfg=cc(has_shape_collision=False),  # visual only
             )
             self.shape_roles.setdefault("bowl_visual", []).append(int(idx))
 
@@ -519,6 +520,14 @@ class PickPlaceEnv:
 
         ground_idx = builder.add_ground_plane()
         self.shape_roles.setdefault("ground", []).append(int(ground_idx))
+        if cfg.filter_static_base:
+            # The fixed base (link0) rests on the stand and the floor. Newton
+            # exports a fixed root as a mocap body, so MuJoCo does not treat
+            # these as static-static and would solve them every substep.
+            base_shapes = [s for s, b in enumerate(builder.shape_body) if b == BASE_BODY]
+            for s in base_shapes:
+                for other in (*self.shape_roles["table_stand"], int(ground_idx)):
+                    builder.add_shape_collision_filter_pair(s, other)
         self.model = builder.finalize()
 
         # spatial indices used by the task / agent
@@ -536,6 +545,7 @@ class PickPlaceEnv:
             ls_iterations=cfg.ls_iterations,
             njmax=cfg.njmax,
             nconmax=cfg.nconmax,
+            enable_multiccd=cfg.multiccd,
         )
 
         # coord offset of each object's FREE joint inside state.joint_q — free
@@ -624,6 +634,7 @@ class PickPlaceEnv:
         self._joint_qd = self.state_0.joint_qd.numpy()
 
         self.sim_time = 0.0
+        self.clamp_events = 0
         return poses
 
     # ------------------------------------------------------------------ #
@@ -642,7 +653,10 @@ class PickPlaceEnv:
             with wp.ScopedCapture() as capture:
                 self._simulate()
             self._graph = capture.graph
-            print("[env] CUDA graph capture enabled")
+            if self._graph is not None:
+                print(f"[env] graph capture enabled on {wp.get_device()}")
+            else:
+                print(f"[env] device {wp.get_device()} has no graph capture; using eager stepping")
         except Exception as e:  # noqa: BLE001
             print(f"[env] CUDA graph capture unavailable ({e!r}); using eager stepping")
 
@@ -684,6 +698,7 @@ class PickPlaceEnv:
                 qd[b, 3:] *= MAX_ANG / ang
                 changed = True
         if changed:
+            self.clamp_events += 1
             self.state_0.body_qd.assign(qd)
 
     def step_frames(self, joint_target_fn, n_frames: int):

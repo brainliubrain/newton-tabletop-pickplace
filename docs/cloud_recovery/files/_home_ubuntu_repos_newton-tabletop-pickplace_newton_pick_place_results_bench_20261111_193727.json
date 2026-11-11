@@ -1,0 +1,3927 @@
+{
+  "device": "cpu",
+  "episodes": 10,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "multiccd": false,
+        "rigid_gap": 0.1,
+        "filter_static_base": false
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.79,
+      "ms_per_frame_std": 0.34,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.15,
+      "envstep_ms_per_frame": 4.55,
+      "wall_time_s": 73.4,
+      "physics": {
+        "max_object_penetration_mm": 2.849,
+        "max_penetration_mm": {
+          "bowl|finger": 2.206,
+          "bowl|table_top": 0.38,
+          "bowl|tray": 1.359,
+          "cup|finger": 0.569,
+          "cup|robot": 2.849,
+          "cup|table_top": 1.88,
+          "cup|tray": 2.176,
+          "ground|robot": 0.032,
+          "robot|table_stand": 37.532
+        },
+        "solver_niter_mean": 2.84,
+        "solver_niter_max": 13,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 48,
+        "njmax_headroom_x": 32.0,
+        "contact_candidates_peak": 114,
+        "contacts_active_peak": 10,
+        "contacts_active_mean": 7.84,
+        "naconmax_headroom_x": 6.7,
+        "object_speed_peak_mps": 0.378,
+        "carry_slip_mm_max": 10.835,
+        "carry_slip_mm_mean": 8.041,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.51,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.28,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.496,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.798,
+              "cup|finger": 0.537,
+              "cup|robot": 2.735,
+              "cup|table_top": 1.88,
+              "cup|tray": 2.065,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.735,
+            "solver_niter_mean": 2.44,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.376,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 10.661,
+              "cup": 5.283
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.59,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.37,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.16,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.751,
+              "cup|finger": 0.429,
+              "cup|robot": 2.849,
+              "cup|table_top": 1.702,
+              "cup|tray": 2.176,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.849,
+            "solver_niter_mean": 2.67,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 10.723,
+              "cup": 5.131
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.65,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.43,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.257,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.668,
+              "cup|finger": 0.428,
+              "cup|robot": 2.732,
+              "cup|table_top": 1.825,
+              "cup|tray": 2.118,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.732,
+            "solver_niter_mean": 2.46,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 10.603,
+              "cup": 5.907
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.62,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.39,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 2.206,
+              "bowl|table_top": 0.379,
+              "bowl|tray": 1.359,
+              "cup|finger": 0.569,
+              "cup|robot": 2.718,
+              "cup|table_top": 1.703,
+              "cup|tray": 2.102,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.718,
+            "solver_niter_mean": 2.85,
+            "solver_niter_max": 13,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.378,
+              "cup": 0.326
+            },
+            "carry_slip_mm": {
+              "bowl": 10.714,
+              "cup": 5.305
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.59,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.36,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.223,
+              "bowl|table_top": 0.354,
+              "bowl|tray": 0.652,
+              "cup|finger": 0.498,
+              "cup|robot": 2.792,
+              "cup|table_top": 1.593,
+              "cup|tray": 2.169,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.792,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.81,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.268
+            },
+            "carry_slip_mm": {
+              "bowl": 10.675,
+              "cup": 5.772
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.63,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.4,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.356,
+              "bowl|tray": 0.604,
+              "cup|finger": 0.517,
+              "cup|robot": 2.765,
+              "cup|table_top": 1.659,
+              "cup|tray": 2.106,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.765,
+            "solver_niter_mean": 2.99,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 10.652,
+              "cup": 5.13
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.56,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.34,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.146,
+              "bowl|table_top": 0.357,
+              "bowl|tray": 0.653,
+              "cup|finger": 0.48,
+              "cup|robot": 2.768,
+              "cup|table_top": 1.857,
+              "cup|tray": 2.128,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.768,
+            "solver_niter_mean": 2.5,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.295
+            },
+            "carry_slip_mm": {
+              "bowl": 10.608,
+              "cup": 5.262
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.94,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.7,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.153,
+              "bowl|table_top": 0.368,
+              "bowl|tray": 0.674,
+              "cup|finger": 0.43,
+              "cup|robot": 2.717,
+              "cup|table_top": 1.636,
+              "cup|tray": 2.09,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.717,
+            "solver_niter_mean": 3.23,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.83,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.262,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 10.654,
+              "cup": 5.606
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 5.14,
+          "agent_ms": 0.17,
+          "envstep_ms": 4.88,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.147,
+              "bowl|table_top": 0.38,
+              "bowl|tray": 0.718,
+              "cup|finger": 0.488,
+              "cup|robot": 2.771,
+              "cup|table_top": 1.684,
+              "cup|tray": 2.119,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.771,
+            "solver_niter_mean": 3.6,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.3,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 10.835,
+              "cup": 5.663
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 5.64,
+          "agent_ms": 0.17,
+          "envstep_ms": 5.37,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.177,
+              "bowl|table_top": 0.353,
+              "bowl|tray": 0.635,
+              "cup|finger": 0.433,
+              "cup|robot": 2.8,
+              "cup|table_top": 1.622,
+              "cup|tray": 2.127,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.8,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 114,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 10.61,
+              "cup": 5.021
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "rigid_gap": 0.1,
+        "filter_static_base": true
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.45,
+      "ms_per_frame_std": 0.18,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.15,
+      "envstep_ms_per_frame": 4.22,
+      "wall_time_s": 68.5,
+      "physics": {
+        "max_object_penetration_mm": 2.798,
+        "max_penetration_mm": {
+          "bowl|finger": 1.711,
+          "bowl|table_top": 0.38,
+          "bowl|tray": 1.349,
+          "cup|finger": 0.492,
+          "cup|robot": 2.798,
+          "cup|table_top": 1.86,
+          "cup|tray": 2.145
+        },
+        "solver_niter_mean": 2.73,
+        "solver_niter_max": 8,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 28,
+        "njmax_headroom_x": 54.9,
+        "contact_candidates_peak": 109,
+        "contacts_active_peak": 5,
+        "contacts_active_mean": 2.85,
+        "naconmax_headroom_x": 7.0,
+        "object_speed_peak_mps": 0.372,
+        "carry_slip_mm_max": 10.816,
+        "carry_slip_mm_mean": 7.976,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.96,
+          "agent_ms": 0.18,
+          "envstep_ms": 4.7,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.162,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 1.142,
+              "cup|finger": 0.443,
+              "cup|robot": 2.65,
+              "cup|table_top": 1.832,
+              "cup|tray": 2.07
+            },
+            "max_object_penetration_mm": 2.65,
+            "solver_niter_mean": 3.13,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.365,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 10.609,
+              "cup": 5.396
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.42,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.19,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.186,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.692,
+              "cup|finger": 0.418,
+              "cup|robot": 2.781,
+              "cup|table_top": 1.708,
+              "cup|tray": 2.133
+            },
+            "max_object_penetration_mm": 2.781,
+            "solver_niter_mean": 2.72,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.268
+            },
+            "carry_slip_mm": {
+              "bowl": 10.719,
+              "cup": 5.143
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.29,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.07,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.591,
+              "cup|finger": 0.428,
+              "cup|robot": 2.645,
+              "cup|table_top": 1.853,
+              "cup|tray": 2.055
+            },
+            "max_object_penetration_mm": 2.645,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.356
+            },
+            "carry_slip_mm": {
+              "bowl": 10.621,
+              "cup": 5.161
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.31,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.09,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.711,
+              "bowl|table_top": 0.379,
+              "bowl|tray": 1.349,
+              "cup|finger": 0.492,
+              "cup|robot": 2.759,
+              "cup|table_top": 1.669,
+              "cup|tray": 2.037
+            },
+            "max_object_penetration_mm": 2.759,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.372,
+              "cup": 0.321
+            },
+            "carry_slip_mm": {
+              "bowl": 10.654,
+              "cup": 5.145
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.43,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.21,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.354,
+              "bowl|tray": 0.643,
+              "cup|finger": 0.438,
+              "cup|robot": 2.758,
+              "cup|table_top": 1.63,
+              "cup|tray": 2.092
+            },
+            "max_object_penetration_mm": 2.758,
+            "solver_niter_mean": 2.72,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 10.731,
+              "cup": 4.957
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.41,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.19,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.197,
+              "bowl|table_top": 0.356,
+              "bowl|tray": 0.768,
+              "cup|finger": 0.428,
+              "cup|robot": 2.788,
+              "cup|table_top": 1.65,
+              "cup|tray": 2.116
+            },
+            "max_object_penetration_mm": 2.788,
+            "solver_niter_mean": 2.79,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.83,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.272
+            },
+            "carry_slip_mm": {
+              "bowl": 10.641,
+              "cup": 5.535
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.35,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.13,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.217,
+              "bowl|table_top": 0.357,
+              "bowl|tray": 0.708,
+              "cup|finger": 0.426,
+              "cup|robot": 2.798,
+              "cup|table_top": 1.86,
+              "cup|tray": 2.145
+            },
+            "max_object_penetration_mm": 2.798,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 10.575,
+              "cup": 5.635
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.47,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.25,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.154,
+              "bowl|table_top": 0.368,
+              "bowl|tray": 0.622,
+              "cup|finger": 0.442,
+              "cup|robot": 2.705,
+              "cup|table_top": 1.618,
+              "cup|tray": 2.101
+            },
+            "max_object_penetration_mm": 2.705,
+            "solver_niter_mean": 3.32,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.263,
+              "cup": 0.265
+            },
+            "carry_slip_mm": {
+              "bowl": 10.692,
+              "cup": 5.147
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.44,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.22,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.274,
+              "bowl|table_top": 0.38,
+              "bowl|tray": 0.826,
+              "cup|finger": 0.428,
+              "cup|robot": 2.786,
+              "cup|table_top": 1.679,
+              "cup|tray": 2.125
+            },
+            "max_object_penetration_mm": 2.786,
+            "solver_niter_mean": 2.6,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.84,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.256
+            },
+            "carry_slip_mm": {
+              "bowl": 10.816,
+              "cup": 5.658
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.41,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.18,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.172,
+              "bowl|table_top": 0.353,
+              "bowl|tray": 0.726,
+              "cup|finger": 0.443,
+              "cup|robot": 2.794,
+              "cup|table_top": 1.627,
+              "cup|tray": 2.136
+            },
+            "max_object_penetration_mm": 2.794,
+            "solver_niter_mean": 2.62,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 109,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "naconmax": 768,
+            "naconmax_headroom_x": 7.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 10.615,
+              "cup": 5.071
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "rigid_gap": 0.01,
+        "filter_static_base": false
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.09,
+      "ms_per_frame_std": 0.14,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.16,
+      "envstep_ms_per_frame": 3.86,
+      "wall_time_s": 63.9,
+      "physics": {
+        "max_object_penetration_mm": 2.849,
+        "max_penetration_mm": {
+          "bowl|finger": 2.206,
+          "bowl|table_top": 0.38,
+          "bowl|tray": 1.359,
+          "cup|finger": 0.569,
+          "cup|robot": 2.849,
+          "cup|table_top": 1.88,
+          "cup|tray": 2.176,
+          "ground|robot": 0.032,
+          "robot|table_stand": 37.532
+        },
+        "solver_niter_mean": 2.84,
+        "solver_niter_max": 13,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 48,
+        "njmax_headroom_x": 32.0,
+        "contact_candidates_peak": 26,
+        "contacts_active_peak": 10,
+        "contacts_active_mean": 7.84,
+        "naconmax_headroom_x": 29.5,
+        "object_speed_peak_mps": 0.378,
+        "carry_slip_mm_max": 10.835,
+        "carry_slip_mm_mean": 8.041,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.0,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.78,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.496,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.798,
+              "cup|finger": 0.537,
+              "cup|robot": 2.735,
+              "cup|table_top": 1.88,
+              "cup|tray": 2.065,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.735,
+            "solver_niter_mean": 2.44,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.376,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 10.661,
+              "cup": 5.283
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.42,
+          "agent_ms": 0.19,
+          "envstep_ms": 4.15,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.16,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.751,
+              "cup|finger": 0.429,
+              "cup|robot": 2.849,
+              "cup|table_top": 1.702,
+              "cup|tray": 2.176,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.849,
+            "solver_niter_mean": 2.67,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 26,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 29.5,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 10.723,
+              "cup": 5.131
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.24,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.02,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.257,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.668,
+              "cup|finger": 0.428,
+              "cup|robot": 2.732,
+              "cup|table_top": 1.825,
+              "cup|tray": 2.118,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.732,
+            "solver_niter_mean": 2.46,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 10.603,
+              "cup": 5.907
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.04,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.82,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 2.206,
+              "bowl|table_top": 0.379,
+              "bowl|tray": 1.359,
+              "cup|finger": 0.569,
+              "cup|robot": 2.718,
+              "cup|table_top": 1.703,
+              "cup|tray": 2.102,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.718,
+            "solver_niter_mean": 2.85,
+            "solver_niter_max": 13,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.378,
+              "cup": 0.326
+            },
+            "carry_slip_mm": {
+              "bowl": 10.714,
+              "cup": 5.305
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.98,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.77,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.223,
+              "bowl|table_top": 0.354,
+              "bowl|tray": 0.652,
+              "cup|finger": 0.498,
+              "cup|robot": 2.792,
+              "cup|table_top": 1.593,
+              "cup|tray": 2.169,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.792,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.81,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.268
+            },
+            "carry_slip_mm": {
+              "bowl": 10.675,
+              "cup": 5.772
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.01,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.79,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.356,
+              "bowl|tray": 0.604,
+              "cup|finger": 0.517,
+              "cup|robot": 2.765,
+              "cup|table_top": 1.659,
+              "cup|tray": 2.106,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.765,
+            "solver_niter_mean": 2.99,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 10.652,
+              "cup": 5.13
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.96,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.74,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.146,
+              "bowl|table_top": 0.357,
+              "bowl|tray": 0.653,
+              "cup|finger": 0.48,
+              "cup|robot": 2.768,
+              "cup|table_top": 1.857,
+              "cup|tray": 2.128,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.768,
+            "solver_niter_mean": 2.5,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.295
+            },
+            "carry_slip_mm": {
+              "bowl": 10.608,
+              "cup": 5.262
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.07,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.85,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.153,
+              "bowl|table_top": 0.368,
+              "bowl|tray": 0.674,
+              "cup|finger": 0.43,
+              "cup|robot": 2.717,
+              "cup|table_top": 1.636,
+              "cup|tray": 2.09,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.717,
+            "solver_niter_mean": 3.23,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.83,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.262,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 10.654,
+              "cup": 5.606
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.13,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.91,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.147,
+              "bowl|table_top": 0.38,
+              "bowl|tray": 0.718,
+              "cup|finger": 0.488,
+              "cup|robot": 2.771,
+              "cup|table_top": 1.684,
+              "cup|tray": 2.119,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.771,
+            "solver_niter_mean": 3.6,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 25,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 30.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.3,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 10.835,
+              "cup": 5.663
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.03,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.82,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.177,
+              "bowl|table_top": 0.353,
+              "bowl|tray": 0.635,
+              "cup|finger": 0.433,
+              "cup|robot": 2.8,
+              "cup|table_top": 1.622,
+              "cup|tray": 2.127,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 2.8,
+            "solver_niter_mean": 2.82,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 48,
+            "njmax": 1536,
+            "njmax_headroom_x": 32.0,
+            "contact_candidates_peak": 23,
+            "contacts_active_peak": 10,
+            "contacts_active_mean": 7.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 33.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 10.61,
+              "cup": 5.021
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": false,
+        "rigid_gap": 0.01,
+        "filter_static_base": true
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 3.84,
+      "ms_per_frame_std": 0.04,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.15,
+      "envstep_ms_per_frame": 3.63,
+      "wall_time_s": 60.7,
+      "physics": {
+        "max_object_penetration_mm": 2.798,
+        "max_penetration_mm": {
+          "bowl|finger": 1.711,
+          "bowl|table_top": 0.38,
+          "bowl|tray": 1.349,
+          "cup|finger": 0.492,
+          "cup|robot": 2.798,
+          "cup|table_top": 1.86,
+          "cup|tray": 2.145
+        },
+        "solver_niter_mean": 2.73,
+        "solver_niter_max": 8,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 28,
+        "njmax_headroom_x": 54.9,
+        "contact_candidates_peak": 21,
+        "contacts_active_peak": 5,
+        "contacts_active_mean": 2.85,
+        "naconmax_headroom_x": 36.6,
+        "object_speed_peak_mps": 0.372,
+        "carry_slip_mm_max": 10.816,
+        "carry_slip_mm_mean": 7.976,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.87,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.65,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.162,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 1.142,
+              "cup|finger": 0.443,
+              "cup|robot": 2.65,
+              "cup|table_top": 1.832,
+              "cup|tray": 2.07
+            },
+            "max_object_penetration_mm": 2.65,
+            "solver_niter_mean": 3.13,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.82,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.365,
+              "cup": 0.293
+            },
+            "carry_slip_mm": {
+              "bowl": 10.609,
+              "cup": 5.396
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.85,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.64,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.186,
+              "bowl|table_top": 0.375,
+              "bowl|tray": 0.692,
+              "cup|finger": 0.418,
+              "cup|robot": 2.781,
+              "cup|table_top": 1.708,
+              "cup|tray": 2.133
+            },
+            "max_object_penetration_mm": 2.781,
+            "solver_niter_mean": 2.72,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 21,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 36.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.283,
+              "cup": 0.268
+            },
+            "carry_slip_mm": {
+              "bowl": 10.719,
+              "cup": 5.143
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.78,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.56,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.367,
+              "bowl|tray": 0.591,
+              "cup|finger": 0.428,
+              "cup|robot": 2.645,
+              "cup|table_top": 1.853,
+              "cup|tray": 2.055
+            },
+            "max_object_penetration_mm": 2.645,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.356
+            },
+            "carry_slip_mm": {
+              "bowl": 10.621,
+              "cup": 5.161
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.78,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.56,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 1.711,
+              "bowl|table_top": 0.379,
+              "bowl|tray": 1.349,
+              "cup|finger": 0.492,
+              "cup|robot": 2.759,
+              "cup|table_top": 1.669,
+              "cup|tray": 2.037
+            },
+            "max_object_penetration_mm": 2.759,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.372,
+              "cup": 0.321
+            },
+            "carry_slip_mm": {
+              "bowl": 10.654,
+              "cup": 5.145
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.88,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.66,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.167,
+              "bowl|table_top": 0.354,
+              "bowl|tray": 0.643,
+              "cup|finger": 0.438,
+              "cup|robot": 2.758,
+              "cup|table_top": 1.63,
+              "cup|tray": 2.092
+            },
+            "max_object_penetration_mm": 2.758,
+            "solver_niter_mean": 2.72,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.86,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 10.731,
+              "cup": 4.957
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.86,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.65,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.197,
+              "bowl|table_top": 0.356,
+              "bowl|tray": 0.768,
+              "cup|finger": 0.428,
+              "cup|robot": 2.788,
+              "cup|table_top": 1.65,
+              "cup|tray": 2.116
+            },
+            "max_object_penetration_mm": 2.788,
+            "solver_niter_mean": 2.79,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.83,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.24,
+              "cup": 0.272
+            },
+            "carry_slip_mm": {
+              "bowl": 10.641,
+              "cup": 5.535
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.81,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.59,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.217,
+              "bowl|table_top": 0.357,
+              "bowl|tray": 0.708,
+              "cup|finger": 0.426,
+              "cup|robot": 2.798,
+              "cup|table_top": 1.86,
+              "cup|tray": 2.145
+            },
+            "max_object_penetration_mm": 2.798,
+            "solver_niter_mean": 2.45,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 10.575,
+              "cup": 5.635
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.9,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.69,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.154,
+              "bowl|table_top": 0.368,
+              "bowl|tray": 0.622,
+              "cup|finger": 0.442,
+              "cup|robot": 2.705,
+              "cup|table_top": 1.618,
+              "cup|tray": 2.101
+            },
+            "max_object_penetration_mm": 2.705,
+            "solver_niter_mean": 3.32,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.85,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.263,
+              "cup": 0.265
+            },
+            "carry_slip_mm": {
+              "bowl": 10.692,
+              "cup": 5.147
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.89,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.68,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.274,
+              "bowl|table_top": 0.38,
+              "bowl|tray": 0.826,
+              "cup|finger": 0.428,
+              "cup|robot": 2.786,
+              "cup|table_top": 1.679,
+              "cup|tray": 2.125
+            },
+            "max_object_penetration_mm": 2.786,
+            "solver_niter_mean": 2.6,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 20,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.84,
+            "naconmax": 768,
+            "naconmax_headroom_x": 38.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.256
+            },
+            "carry_slip_mm": {
+              "bowl": 10.816,
+              "cup": 5.658
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.8,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.59,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.172,
+              "bowl|table_top": 0.353,
+              "bowl|tray": 0.726,
+              "cup|finger": 0.443,
+              "cup|robot": 2.794,
+              "cup|table_top": 1.627,
+              "cup|tray": 2.136
+            },
+            "max_object_penetration_mm": 2.794,
+            "solver_niter_mean": 2.62,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 28,
+            "njmax": 1536,
+            "njmax_headroom_x": 54.9,
+            "contact_candidates_peak": 18,
+            "contacts_active_peak": 5,
+            "contacts_active_mean": 2.87,
+            "naconmax": 768,
+            "naconmax_headroom_x": 42.7,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 10.615,
+              "cup": 5.071
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "rigid_gap": 0.1,
+        "filter_static_base": false
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.64,
+      "ms_per_frame_std": 0.03,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.15,
+      "envstep_ms_per_frame": 4.41,
+      "wall_time_s": 70.9,
+      "physics": {
+        "max_object_penetration_mm": 0.784,
+        "max_penetration_mm": {
+          "bowl|finger": 0.123,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.284,
+          "cup|finger": 0.43,
+          "cup|robot": 0.784,
+          "cup|table_top": 0.498,
+          "cup|tray": 0.548,
+          "ground|robot": 0.032,
+          "robot|table_stand": 37.532
+        },
+        "solver_niter_mean": 1.31,
+        "solver_niter_max": 11,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 116,
+        "njmax_headroom_x": 13.2,
+        "contact_candidates_peak": 131,
+        "contacts_active_peak": 27,
+        "contacts_active_mean": 17.31,
+        "naconmax_headroom_x": 5.9,
+        "object_speed_peak_mps": 0.354,
+        "carry_slip_mm_max": 5.725,
+        "carry_slip_mm_mean": 3.609,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.6,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.37,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.102,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.247,
+              "cup|finger": 0.31,
+              "cup|robot": 0.766,
+              "cup|table_top": 0.463,
+              "cup|tray": 0.548,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.766,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 112,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.7,
+            "contact_candidates_peak": 130,
+            "contacts_active_peak": 26,
+            "contacts_active_mean": 17.06,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.258,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.377,
+              "cup": 2.542
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.64,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.41,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.086,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.204,
+              "cup|finger": 0.273,
+              "cup|robot": 0.737,
+              "cup|table_top": 0.498,
+              "cup|tray": 0.453,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.737,
+            "solver_niter_mean": 1.26,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 108,
+            "njmax": 1536,
+            "njmax_headroom_x": 14.2,
+            "contact_candidates_peak": 129,
+            "contacts_active_peak": 25,
+            "contacts_active_mean": 16.98,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.282,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 5.682,
+              "cup": 1.863
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.65,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.43,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.105,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.2,
+              "cup|finger": 0.3,
+              "cup|robot": 0.784,
+              "cup|table_top": 0.457,
+              "cup|tray": 0.505,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.784,
+            "solver_niter_mean": 1.39,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.41,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 5.316,
+              "cup": 1.657
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.62,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.39,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.12,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.016,
+              "cup|finger": 0.43,
+              "cup|robot": 0.758,
+              "cup|table_top": 0.458,
+              "cup|tray": 0.527,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.758,
+            "solver_niter_mean": 1.38,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 112,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.7,
+            "contact_candidates_peak": 130,
+            "contacts_active_peak": 26,
+            "contacts_active_mean": 16.94,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.249,
+              "cup": 0.322
+            },
+            "carry_slip_mm": {
+              "bowl": 5.312,
+              "cup": 2.194
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.71,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.48,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.115,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.03,
+              "cup|finger": 0.233,
+              "cup|robot": 0.761,
+              "cup|table_top": 0.446,
+              "cup|tray": 0.538,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.761,
+            "solver_niter_mean": 1.28,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.52,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 5.524,
+              "cup": 1.329
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.67,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.44,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.284,
+              "cup|finger": 0.273,
+              "cup|robot": 0.722,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.463,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.722,
+            "solver_niter_mean": 1.31,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.45,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.253,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 5.492,
+              "cup": 1.351
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.64,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.41,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.123,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.256,
+              "cup|finger": 0.367,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.483,
+              "cup|tray": 0.47,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.33,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 108,
+            "njmax": 1536,
+            "njmax_headroom_x": 14.2,
+            "contact_candidates_peak": 129,
+            "contacts_active_peak": 25,
+            "contacts_active_mean": 16.97,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.0,
+            "object_speed_peak_mps": {
+              "bowl": 0.253,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.331,
+              "cup": 2.666
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.59,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.36,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.114,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.066,
+              "cup|finger": 0.183,
+              "cup|robot": 0.775,
+              "cup|table_top": 0.471,
+              "cup|tray": 0.502,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.775,
+            "solver_niter_mean": 1.14,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.56,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.261,
+              "cup": 0.26
+            },
+            "carry_slip_mm": {
+              "bowl": 5.551,
+              "cup": 1.227
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.63,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.4,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.101,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.058,
+              "cup|finger": 0.172,
+              "cup|robot": 0.719,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.46,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.719,
+            "solver_niter_mean": 1.36,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.66,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 5.725,
+              "cup": 1.3
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.62,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.39,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.096,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.128,
+              "cup|finger": 0.191,
+              "cup|robot": 0.678,
+              "cup|table_top": 0.456,
+              "cup|tray": 0.489,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.678,
+            "solver_niter_mean": 1.34,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 131,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.6,
+            "naconmax": 768,
+            "naconmax_headroom_x": 5.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 5.522,
+              "cup": 1.218
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "rigid_gap": 0.1,
+        "filter_static_base": true
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.44,
+      "ms_per_frame_std": 0.04,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.16,
+      "envstep_ms_per_frame": 4.21,
+      "wall_time_s": 68.4,
+      "physics": {
+        "max_object_penetration_mm": 0.784,
+        "max_penetration_mm": {
+          "bowl|finger": 0.36,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.256,
+          "cup|finger": 0.426,
+          "cup|robot": 0.784,
+          "cup|table_top": 0.498,
+          "cup|tray": 0.546
+        },
+        "solver_niter_mean": 1.26,
+        "solver_niter_max": 7,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 88,
+        "njmax_headroom_x": 17.5,
+        "contact_candidates_peak": 124,
+        "contacts_active_peak": 20,
+        "contacts_active_mean": 10.32,
+        "naconmax_headroom_x": 6.2,
+        "object_speed_peak_mps": 0.354,
+        "carry_slip_mm_max": 5.813,
+        "carry_slip_mm_mean": 3.619,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.35,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.13,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.115,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.234,
+              "cup|finger": 0.31,
+              "cup|robot": 0.766,
+              "cup|table_top": 0.462,
+              "cup|tray": 0.546
+            },
+            "max_object_penetration_mm": 0.766,
+            "solver_niter_mean": 1.28,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.06,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.385,
+              "cup": 2.541
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.43,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.2,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.087,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.256,
+              "cup|finger": 0.273,
+              "cup|robot": 0.736,
+              "cup|table_top": 0.498,
+              "cup|tray": 0.453
+            },
+            "max_object_penetration_mm": 0.736,
+            "solver_niter_mean": 1.19,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 122,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.98,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.282,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 5.587,
+              "cup": 1.863
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.42,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.2,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.088,
+              "cup|finger": 0.299,
+              "cup|robot": 0.784,
+              "cup|table_top": 0.457,
+              "cup|tray": 0.505
+            },
+            "max_object_penetration_mm": 0.784,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.4,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 5.318,
+              "cup": 1.658
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.43,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.2,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.229,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.143,
+              "cup|finger": 0.426,
+              "cup|robot": 0.758,
+              "cup|table_top": 0.458,
+              "cup|tray": 0.527
+            },
+            "max_object_penetration_mm": 0.758,
+            "solver_niter_mean": 1.31,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 123,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 9.93,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.322
+            },
+            "carry_slip_mm": {
+              "bowl": 5.313,
+              "cup": 2.199
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.47,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.24,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.36,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.091,
+              "cup|finger": 0.233,
+              "cup|robot": 0.761,
+              "cup|table_top": 0.446,
+              "cup|tray": 0.538
+            },
+            "max_object_penetration_mm": 0.761,
+            "solver_niter_mean": 1.25,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.51,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 5.578,
+              "cup": 1.329
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.42,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.2,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.088,
+              "cup|finger": 0.273,
+              "cup|robot": 0.723,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.463
+            },
+            "max_object_penetration_mm": 0.723,
+            "solver_niter_mean": 1.27,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.47,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 5.57,
+              "cup": 1.352
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.47,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.24,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.121,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.033,
+              "cup|finger": 0.368,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.483,
+              "cup|tray": 0.468
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.3,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 122,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.99,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.337,
+              "cup": 2.681
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.44,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.2,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.114,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.239,
+              "cup|finger": 0.183,
+              "cup|robot": 0.775,
+              "cup|table_top": 0.471,
+              "cup|tray": 0.502
+            },
+            "max_object_penetration_mm": 0.775,
+            "solver_niter_mean": 1.12,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.58,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.261,
+              "cup": 0.26
+            },
+            "carry_slip_mm": {
+              "bowl": 5.59,
+              "cup": 1.227
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.52,
+          "agent_ms": 0.16,
+          "envstep_ms": 4.29,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.101,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.185,
+              "cup|finger": 0.172,
+              "cup|robot": 0.718,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.46
+            },
+            "max_object_penetration_mm": 0.718,
+            "solver_niter_mean": 1.29,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.66,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 5.813,
+              "cup": 1.3
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.44,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.21,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.085,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.166,
+              "cup|finger": 0.194,
+              "cup|robot": 0.677,
+              "cup|table_top": 0.455,
+              "cup|tray": 0.49
+            },
+            "max_object_penetration_mm": 0.677,
+            "solver_niter_mean": 1.29,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 124,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.63,
+            "naconmax": 768,
+            "naconmax_headroom_x": 6.2,
+            "object_speed_peak_mps": {
+              "bowl": 0.252,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 5.517,
+              "cup": 1.218
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "rigid_gap": 0.01,
+        "filter_static_base": false
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.06,
+      "ms_per_frame_std": 0.03,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.15,
+      "envstep_ms_per_frame": 3.84,
+      "wall_time_s": 63.6,
+      "physics": {
+        "max_object_penetration_mm": 0.784,
+        "max_penetration_mm": {
+          "bowl|finger": 0.123,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.284,
+          "cup|finger": 0.43,
+          "cup|robot": 0.784,
+          "cup|table_top": 0.498,
+          "cup|tray": 0.548,
+          "ground|robot": 0.032,
+          "robot|table_stand": 37.532
+        },
+        "solver_niter_mean": 1.31,
+        "solver_niter_max": 11,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 116,
+        "njmax_headroom_x": 13.2,
+        "contact_candidates_peak": 36,
+        "contacts_active_peak": 27,
+        "contacts_active_mean": 17.31,
+        "naconmax_headroom_x": 21.3,
+        "object_speed_peak_mps": 0.354,
+        "carry_slip_mm_max": 5.725,
+        "carry_slip_mm_mean": 3.609,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.12,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.89,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.102,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.247,
+              "cup|finger": 0.31,
+              "cup|robot": 0.766,
+              "cup|table_top": 0.463,
+              "cup|tray": 0.548,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.766,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 112,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.7,
+            "contact_candidates_peak": 34,
+            "contacts_active_peak": 26,
+            "contacts_active_mean": 17.06,
+            "naconmax": 768,
+            "naconmax_headroom_x": 22.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.258,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.377,
+              "cup": 2.542
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.09,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.87,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.086,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.204,
+              "cup|finger": 0.273,
+              "cup|robot": 0.737,
+              "cup|table_top": 0.498,
+              "cup|tray": 0.453,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.737,
+            "solver_niter_mean": 1.26,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 108,
+            "njmax": 1536,
+            "njmax_headroom_x": 14.2,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 25,
+            "contacts_active_mean": 16.98,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.282,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 5.682,
+              "cup": 1.863
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.09,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.86,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.105,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.2,
+              "cup|finger": 0.3,
+              "cup|robot": 0.784,
+              "cup|table_top": 0.457,
+              "cup|tray": 0.505,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.784,
+            "solver_niter_mean": 1.39,
+            "solver_niter_max": 9,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.41,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.239,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 5.316,
+              "cup": 1.657
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.04,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.82,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.12,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.016,
+              "cup|finger": 0.43,
+              "cup|robot": 0.758,
+              "cup|table_top": 0.458,
+              "cup|tray": 0.527,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.758,
+            "solver_niter_mean": 1.38,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 112,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.7,
+            "contact_candidates_peak": 34,
+            "contacts_active_peak": 26,
+            "contacts_active_mean": 16.94,
+            "naconmax": 768,
+            "naconmax_headroom_x": 22.6,
+            "object_speed_peak_mps": {
+              "bowl": 0.249,
+              "cup": 0.322
+            },
+            "carry_slip_mm": {
+              "bowl": 5.312,
+              "cup": 2.194
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.06,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.83,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.115,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.03,
+              "cup|finger": 0.233,
+              "cup|robot": 0.761,
+              "cup|table_top": 0.446,
+              "cup|tray": 0.538,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.761,
+            "solver_niter_mean": 1.28,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.52,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 5.524,
+              "cup": 1.329
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.05,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.83,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.284,
+              "cup|finger": 0.273,
+              "cup|robot": 0.722,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.463,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.722,
+            "solver_niter_mean": 1.31,
+            "solver_niter_max": 11,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.45,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.253,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 5.492,
+              "cup": 1.351
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.03,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.81,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.123,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.256,
+              "cup|finger": 0.367,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.483,
+              "cup|tray": 0.47,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.33,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 108,
+            "njmax": 1536,
+            "njmax_headroom_x": 14.2,
+            "contact_candidates_peak": 33,
+            "contacts_active_peak": 25,
+            "contacts_active_mean": 16.97,
+            "naconmax": 768,
+            "naconmax_headroom_x": 23.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.253,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.331,
+              "cup": 2.666
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.02,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.8,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.114,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.066,
+              "cup|finger": 0.183,
+              "cup|robot": 0.775,
+              "cup|table_top": 0.471,
+              "cup|tray": 0.502,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.775,
+            "solver_niter_mean": 1.14,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.56,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.261,
+              "cup": 0.26
+            },
+            "carry_slip_mm": {
+              "bowl": 5.551,
+              "cup": 1.227
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.07,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.85,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.101,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.058,
+              "cup|finger": 0.172,
+              "cup|robot": 0.719,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.46,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.719,
+            "solver_niter_mean": 1.36,
+            "solver_niter_max": 8,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 36,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.66,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.3,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 5.725,
+              "cup": 1.3
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.06,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.84,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.096,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.128,
+              "cup|finger": 0.191,
+              "cup|robot": 0.678,
+              "cup|table_top": 0.456,
+              "cup|tray": 0.489,
+              "ground|robot": 0.032,
+              "robot|table_stand": 37.532
+            },
+            "max_object_penetration_mm": 0.678,
+            "solver_niter_mean": 1.34,
+            "solver_niter_max": 10,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 116,
+            "njmax": 1536,
+            "njmax_headroom_x": 13.2,
+            "contact_candidates_peak": 35,
+            "contacts_active_peak": 27,
+            "contacts_active_mean": 17.6,
+            "naconmax": 768,
+            "naconmax_headroom_x": 21.9,
+            "object_speed_peak_mps": {
+              "bowl": 0.237,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 5.522,
+              "cup": 1.218
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    },
+    {
+      "config": {
+        "multiccd": true,
+        "rigid_gap": 0.01,
+        "filter_static_base": true
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 4.09,
+      "ms_per_frame_std": 0.23,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 0.16,
+      "envstep_ms_per_frame": 3.87,
+      "wall_time_s": 64.3,
+      "physics": {
+        "max_object_penetration_mm": 0.784,
+        "max_penetration_mm": {
+          "bowl|finger": 0.36,
+          "bowl|table_top": 0.199,
+          "bowl|tray": 0.256,
+          "cup|finger": 0.426,
+          "cup|robot": 0.784,
+          "cup|table_top": 0.498,
+          "cup|tray": 0.546
+        },
+        "solver_niter_mean": 1.26,
+        "solver_niter_max": 7,
+        "solver_cap_hit_frac": 0.0,
+        "nefc_peak": 88,
+        "njmax_headroom_x": 17.5,
+        "contact_candidates_peak": 29,
+        "contacts_active_peak": 20,
+        "contacts_active_mean": 10.32,
+        "naconmax_headroom_x": 26.5,
+        "object_speed_peak_mps": 0.354,
+        "carry_slip_mm_max": 5.813,
+        "carry_slip_mm_mean": 3.619,
+        "velocity_clamp_events": 0
+      },
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.95,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.73,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.115,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.234,
+              "cup|finger": 0.31,
+              "cup|robot": 0.766,
+              "cup|table_top": 0.462,
+              "cup|tray": 0.546
+            },
+            "max_object_penetration_mm": 0.766,
+            "solver_niter_mean": 1.28,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 10.06,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.385,
+              "cup": 2.541
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.97,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.75,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.087,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.256,
+              "cup|finger": 0.273,
+              "cup|robot": 0.736,
+              "cup|table_top": 0.498,
+              "cup|tray": 0.453
+            },
+            "max_object_penetration_mm": 0.736,
+            "solver_niter_mean": 1.19,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.98,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.282,
+              "cup": 0.267
+            },
+            "carry_slip_mm": {
+              "bowl": 5.587,
+              "cup": 1.863
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.96,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.74,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.088,
+              "cup|finger": 0.299,
+              "cup|robot": 0.784,
+              "cup|table_top": 0.457,
+              "cup|tray": 0.505
+            },
+            "max_object_penetration_mm": 0.784,
+            "solver_niter_mean": 1.35,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.4,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.354
+            },
+            "carry_slip_mm": {
+              "bowl": 5.318,
+              "cup": 1.658
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.93,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.72,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.229,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.143,
+              "cup|finger": 0.426,
+              "cup|robot": 0.758,
+              "cup|table_top": 0.458,
+              "cup|tray": 0.527
+            },
+            "max_object_penetration_mm": 0.758,
+            "solver_niter_mean": 1.31,
+            "solver_niter_max": 7,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 84,
+            "njmax": 1536,
+            "njmax_headroom_x": 18.3,
+            "contact_candidates_peak": 27,
+            "contacts_active_peak": 19,
+            "contacts_active_mean": 9.93,
+            "naconmax": 768,
+            "naconmax_headroom_x": 28.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.322
+            },
+            "carry_slip_mm": {
+              "bowl": 5.313,
+              "cup": 2.199
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 3.95,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.73,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.36,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.091,
+              "cup|finger": 0.233,
+              "cup|robot": 0.761,
+              "cup|table_top": 0.446,
+              "cup|tray": 0.538
+            },
+            "max_object_penetration_mm": 0.761,
+            "solver_niter_mean": 1.25,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.51,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.264
+            },
+            "carry_slip_mm": {
+              "bowl": 5.578,
+              "cup": 1.329
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.26,
+          "agent_ms": 0.15,
+          "envstep_ms": 4.03,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.116,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.088,
+              "cup|finger": 0.273,
+              "cup|robot": 0.723,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.463
+            },
+            "max_object_penetration_mm": 0.723,
+            "solver_niter_mean": 1.27,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.47,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.269
+            },
+            "carry_slip_mm": {
+              "bowl": 5.57,
+              "cup": 1.352
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.71,
+          "agent_ms": 0.19,
+          "envstep_ms": 4.43,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.121,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.033,
+              "cup|finger": 0.368,
+              "cup|robot": 0.776,
+              "cup|table_top": 0.483,
+              "cup|tray": 0.468
+            },
+            "max_object_penetration_mm": 0.776,
+            "solver_niter_mean": 1.3,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 80,
+            "njmax": 1536,
+            "njmax_headroom_x": 19.2,
+            "contact_candidates_peak": 26,
+            "contacts_active_peak": 18,
+            "contacts_active_mean": 9.99,
+            "naconmax": 768,
+            "naconmax_headroom_x": 29.5,
+            "object_speed_peak_mps": {
+              "bowl": 0.236,
+              "cup": 0.294
+            },
+            "carry_slip_mm": {
+              "bowl": 5.337,
+              "cup": 2.681
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.09,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.87,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.114,
+              "bowl|table_top": 0.198,
+              "bowl|tray": 0.239,
+              "cup|finger": 0.183,
+              "cup|robot": 0.775,
+              "cup|table_top": 0.471,
+              "cup|tray": 0.502
+            },
+            "max_object_penetration_mm": 0.775,
+            "solver_niter_mean": 1.12,
+            "solver_niter_max": 5,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.58,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.261,
+              "cup": 0.26
+            },
+            "carry_slip_mm": {
+              "bowl": 5.59,
+              "cup": 1.227
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.09,
+          "agent_ms": 0.15,
+          "envstep_ms": 3.87,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.101,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.185,
+              "cup|finger": 0.172,
+              "cup|robot": 0.718,
+              "cup|table_top": 0.442,
+              "cup|tray": 0.46
+            },
+            "max_object_penetration_mm": 0.718,
+            "solver_niter_mean": 1.29,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 29,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.66,
+            "naconmax": 768,
+            "naconmax_headroom_x": 26.5,
+            "object_speed_peak_mps": {
+              "bowl": 0.301,
+              "cup": 0.255
+            },
+            "carry_slip_mm": {
+              "bowl": 5.813,
+              "cup": 1.3
+            },
+            "velocity_clamp_events": 0
+          }
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 4.03,
+          "agent_ms": 0.16,
+          "envstep_ms": 3.81,
+          "physics": {
+            "frames": 1289,
+            "max_penetration_mm": {
+              "bowl|finger": 0.085,
+              "bowl|table_top": 0.199,
+              "bowl|tray": 0.166,
+              "cup|finger": 0.194,
+              "cup|robot": 0.677,
+              "cup|table_top": 0.455,
+              "cup|tray": 0.49
+            },
+            "max_object_penetration_mm": 0.677,
+            "solver_niter_mean": 1.29,
+            "solver_niter_max": 6,
+            "solver_iter_cap": 15,
+            "solver_cap_hit_frac": 0.0,
+            "nefc_peak": 88,
+            "njmax": 1536,
+            "njmax_headroom_x": 17.5,
+            "contact_candidates_peak": 28,
+            "contacts_active_peak": 20,
+            "contacts_active_mean": 10.63,
+            "naconmax": 768,
+            "naconmax_headroom_x": 27.4,
+            "object_speed_peak_mps": {
+              "bowl": 0.252,
+              "cup": 0.291
+            },
+            "carry_slip_mm": {
+              "bowl": 5.517,
+              "cup": 1.218
+            },
+            "velocity_clamp_events": 0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "task": "tabletop pick-place: bowl + cup into tray (kitless Newton, FR3, scripted IK agent)",
+  "episodes": 3,
+  "successes": 3,
+  "success_rate": 1.0,
+  "min_success_required": 0.66,
+  "passed": true,
+  "wall_time_s": 68.9,
+  "physics": {
+    "substeps": 8,
+    "contact_ke": 250000000.0,
+    "contact_kd": 50000.0,
+    "solver_iterations": 15,
+    "ls_iterations": 20,
+    "njmax": 1536,
+    "nconmax": 768
+  },
+  "records": [
+    {
+      "seed": 0,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "wall_s": 13.63,
+      "ms_per_frame": 10.57,
+      "agent_ms_per_frame": 1.19,
+      "envstep_ms_per_frame": 9.26,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5691,
+          0.0199,
+          0.4078,
+          0.0002,
+          0.0003,
+          0.9583,
+          -0.2859
+        ],
+        "cup": [
+          0.6783,
+          0.02,
+          0.4502,
+          0.0001,
+          -0.0002,
+          -0.9582,
+          -0.286
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4029,
+          -0.0741
+        ],
+        "cup": [
+          0.4655,
+          0.2137
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "wall_s": 13.87,
+      "ms_per_frame": 10.76,
+      "agent_ms_per_frame": 1.14,
+      "envstep_ms_per_frame": 9.5,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5686,
+          0.0198,
+          0.4078,
+          0.0002,
+          0.0003,
+          -0.6772,
+          0.7358
+        ],
+        "cup": [
+          0.6871,
+          0.0202,
+          0.4502,
+          0.0001,
+          0.0003,
+          -0.9235,
+          0.3836
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4358,
+          0.2622
+        ],
+        "cup": [
+          0.4286,
+          0.1179
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "wall_s": 13.93,
+      "ms_per_frame": 10.81,
+      "agent_ms_per_frame": 1.17,
+      "envstep_ms_per_frame": 9.51,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5694,
+          0.02,
+          0.4078,
+          0.0004,
+          0.0001,
+          0.9736,
+          0.2283
+        ],
+        "cup": [
+          0.6826,
+          0.0198,
+          0.4502,
+          -0.0002,
+          -0.0001,
+          0.8177,
+          0.5756
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4183,
+          0.0275
+        ],
+        "cup": [
+          0.4443,
+          0.2683
+        ]
+      }
+    }
+  ]
+}

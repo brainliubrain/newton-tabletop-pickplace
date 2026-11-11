@@ -59,8 +59,11 @@ def run_episode(
     bridge: PhysicsTelemetryBridge | None = None,
     collect_lerobot: bool = False,
     recorder=None,
+    probe=None,
 ):
     poses = env.reset(seed=seed)
+    if probe is not None:
+        probe.reset()
     agent.reset_episode({k: np.array([v.p[0], v.p[1], v.p[2]]) for k, v in poses.items()})
     spawn_z = {name: float(env.body_poses()[b, 2]) for name, b in env.object_bodies.items()}
 
@@ -96,6 +99,8 @@ def run_episode(
         t_agent += tb - ta
         t_envstep += tc - tb
         frames += 1
+        if probe is not None:
+            probe.sample(agent.phase_name)
 
         q = env.body_poses()
         qd = env.body_vels()
@@ -204,6 +209,8 @@ def run_episode(
             name: [round(float(v.p[0]), 4), round(float(v.p[1]), 4)] for name, v in poses.items()
         },
     }
+    if probe is not None:
+        record["physics"] = probe.summary()
 
     if collect_lerobot:
         record["lerobot_data"] = {
@@ -232,13 +239,12 @@ def main() -> int:
     parser.add_argument("--ls-iters", type=int, default=None)
     parser.add_argument("--njmax", type=int, default=None)
     parser.add_argument("--nconmax", type=int, default=None)
-    parser.add_argument("--rigid-gap", type=float, default=None)
     args = parser.parse_args()
 
     wp.init()
     scene_cfg = SceneConfig()
-    for f in ("substeps", "contact_ke", "contact_kd", "solver_iterations", "ls_iterations", "njmax", "nconmax", "rigid_gap"):
-        val = getattr(args, {"solver_iterations": "solver_iters", "ls_iterations": "ls_iters", "rigid_gap": "rigid_gap"}.get(f, f), None)
+    for f in ("substeps", "contact_ke", "contact_kd", "solver_iterations", "ls_iterations", "njmax", "nconmax"):
+        val = getattr(args, {"solver_iterations": "solver_iters", "ls_iterations": "ls_iters"}.get(f, f), None)
         if val is not None:
             setattr(scene_cfg, f, val)
     cfg = TaskConfig()
@@ -343,7 +349,6 @@ def main() -> int:
             "ls_iterations": scene_cfg.ls_iterations,
             "njmax": scene_cfg.njmax,
             "nconmax": scene_cfg.nconmax,
-            "rigid_gap": scene_cfg.rigid_gap,
         },
         "records": records,
     }

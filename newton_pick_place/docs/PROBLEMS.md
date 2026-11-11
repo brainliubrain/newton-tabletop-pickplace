@@ -86,14 +86,6 @@
 - **现象**:3 回合冒烟里 substeps=6/8/10 全过,看不出差别;换 10 个**未见过的 seed(10-19)** 后 substeps=6 只有 3/10,物体在抓取/放置中被接触求解器甩飞或穿透。
 - **根因**:dt_substep=1/360s(2.78ms)时,ke=2.5e8 的接触时间常数约束被突破——位置级 PD 伺服+硬接触在粗步长下出现能量注入。substeps=8(dt=2.08ms)在两个独立 seed 集(0-9, 10-19)共 20 回合全过。
 - **方法论教训**:小样本冒烟(3 eps)不足以支撑物理参数结论;bench.py 的配对种子 + held-out seed 复核是必需品。**结论:默认 substeps=8(480Hz),-17% 墙钟耗时,精度经 20 回合验证。**
-
-## P19. 外部审计推翻三处理论根基(Fable 5.2 cloud review)
-- **接触参数公式错误(P4/P18 根因修正)**:newton 实际调用 `convert_solref(ke, kd, d_width=1.0, d_r=1.0)`(kernels.py:7019),即 timeconst=2/kd=4e-5s,而非文档假设的 solimp width=0.001 → 0.04s。timeconst 远小于 2·dt,被 MuJoCo refsafe 钳到 2·dt_substep——**有效接触刚度由步长决定**,ke/kd 实际只控制 dampratio(∝kd/√ke)。此前 ke/kd 扫描扫的其实是阻尼比;P18 的"ke 稳定极限"解释作废,真实机制是粗步长下 PD 伺服+接触阻尼比组合失稳。
-- **broadphase 候选浪费**:`builder.rigid_gap` 默认 0.1m,本场景静止时 44 个候选接触对仅 7 个有效;P16 调大 njmax/nconmax 是治标。已暴露为 `SceneConfig.rigid_gap` 供扫描。
-- **碗质量重复计数**:碰撞圆柱(density=1500)+视觉 lathe 网格(默认 density≈1000)叠加 → 0.238kg 且惯量按实心算。已将视觉 shape 改 `density=0.0`。
-- **静态-静态无效约束**:link0 与底座圆柱穿透 37.5mm + link0-地面接触,静止时 36 行约束中约 20 行是静态体对静态体——待 asset audit 处理。
-- **安装缺 pyarrow**:telemetry_bridge/export_lerobot 依赖未写进 README 依赖清单,已补。
-
 ---
 (现场可讲的)
 

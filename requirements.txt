@@ -1,0 +1,16 @@
+# Pinned stack for the kitless Newton demo (Python 3.12).
+# newton 1.7.0 locks mujoco/mujoco-warp to 3.15.x (see docs/PROBLEMS.md P1).
+newton==1.7.0
+mujoco==3.15.*
+mujoco-warp==3.15.*
+pycollada
+resolve-robotics-uri-py
+usd-core<26.9
+newton-usd-schemas
+scipy
+trimesh
+fast-simplification
+imageio
+imageio-ffmpeg
+pyarrow  # telemetry_bridge / export_lerobot are imported by run_task.py at module level
+coacd    # real2sim convex decomposition (tests/test_real2sim_e2e.py)

@@ -45,3 +45,9 @@
 - 新增 `bench.py`(同进程配对种子网格评测,Wilson CI,ms/帧分解)+ `run_task.py` 物理参数 CLI 覆盖 + results.json 记录 physics 配置与 agent/envstep 分项耗时。
 - 扫描结论(solver iters / cadence / contact ke·kd,见 results/bench_*.json):默认改 **substeps 10→8**(480Hz,held-out seeds 20/20 验证,-17% 墙钟);solver iters 15/20 保持;contact 2.5e8/5e4 保持(ke=5e8+kd=3e4 有超时失败)。
 - 新发现 P18:substeps=6 在 held-out seeds 3/10 崩——cadence 稳定性悬崖,已写入 PROBLEMS.md。
+## 2026-11-12 solver sweep 收官(local GPU, seeds 0-9 调参 + 10-19 held-out)
+- 新默认: multiccd=1, filter_static_base=1, rigid_gap=0.02, substeps=8(维持)
+- 关键证据: bench_20261111_220419/222748/224338/225146/230218.json, probe_rest_energy_convergence_20261111_224521.json, asset_audit.json(14 PASS/10 WARN/0 FAIL)
+- P18 悬崖根因更正(P22): 单点接触流形而非 ke 极限; multiccd 后 substeps=6 也 10/10, 但精度权衡仍选 8
+- njmax/nconmax 保持 1536/768(P21: 收紧无收益, 保留分解资产余量)
+- asset_audit 修复: menagerie stl 补齐 + meshdir patch + link0/base 穿透修复(机器人抬升 37.5mm + IK 同步) + 碗质量 0.238->0.178kg

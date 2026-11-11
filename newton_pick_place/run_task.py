@@ -232,12 +232,13 @@ def main() -> int:
     parser.add_argument("--ls-iters", type=int, default=None)
     parser.add_argument("--njmax", type=int, default=None)
     parser.add_argument("--nconmax", type=int, default=None)
+    parser.add_argument("--rigid-gap", type=float, default=None)
     args = parser.parse_args()
 
     wp.init()
     scene_cfg = SceneConfig()
-    for f in ("substeps", "contact_ke", "contact_kd", "solver_iterations", "ls_iterations", "njmax", "nconmax"):
-        val = getattr(args, {"solver_iterations": "solver_iters", "ls_iterations": "ls_iters"}.get(f, f), None)
+    for f in ("substeps", "contact_ke", "contact_kd", "solver_iterations", "ls_iterations", "njmax", "nconmax", "rigid_gap"):
+        val = getattr(args, {"solver_iterations": "solver_iters", "ls_iterations": "ls_iters", "rigid_gap": "rigid_gap"}.get(f, f), None)
         if val is not None:
             setattr(scene_cfg, f, val)
     cfg = TaskConfig()
@@ -342,6 +343,7 @@ def main() -> int:
             "ls_iterations": scene_cfg.ls_iterations,
             "njmax": scene_cfg.njmax,
             "nconmax": scene_cfg.nconmax,
+            "rigid_gap": scene_cfg.rigid_gap,
         },
         "records": records,
     }

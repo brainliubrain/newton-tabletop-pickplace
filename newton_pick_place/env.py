@@ -153,14 +153,14 @@ def solve_home_q() -> list[float]:
     return q_np.tolist()
 
 
-# Contact material: newton converts (ke, kd) to mujoco solref via
-# timeconst = 2/(kd*width), dampratio = kd/2*sqrt(d_r/ke) with default
-# solimp width=0.001, d_r=0.9. The library default (ke=2.5e3, kd=100) yields
-# an ultra-soft contact that lets light objects rest ~14 mm INSIDE the table;
-# ke=2.5e8/kd=5e4 gives timeconst=0.04 s (> 2*dt) and dampratio~1.5, so
-# objects rest within ~0.1 mm of the true surface AND settle quietly
-# (slightly under-damped contacts keep micro-bouncing, which trips
-# velocity-based success criteria).
+# Contact material: newton calls convert_solref(ke, kd, d_width=1.0, d_r=1.0)
+# (kernels.py), i.e. timeconst = 2/kd and dampratio = kd/2*sqrt(1/ke) — NOT the
+# mujoco-doc width=0.001 form. With kd=5e4, timeconst=4e-5 s << 2*dt, so
+# MuJoCo's refsafe clamps it to 2*dt_substep: effective contact STIFFNESS is
+# set by the timestep, while dampratio (~1.5 here) is the real knob ke/kd
+# control. The library default (ke=2.5e3, kd=100) lets light objects rest
+# ~14 mm INSIDE the table; our values keep objects at <0.1 mm with quiet
+# settling. See docs/PROBLEMS.md P4/P18/P19 for the corrected analysis.
 CONTACT_KE = 2.5e8
 CONTACT_KD = 5.0e4
 
@@ -220,6 +220,9 @@ class SceneConfig:
     # overflowing these buffers silently DROPS contacts (objects sink)
     njmax: int = 1536
     nconmax: int = 768
+    # broadphase candidate gap [m]: newton default 0.1 generates ~6x more
+    # candidate pairs than real contacts on this scene (see PROBLEMS.md P19)
+    rigid_gap: float = 0.1
 
     @property
     def dt_frame(self) -> float:
@@ -360,6 +363,7 @@ class PickPlaceEnv:
         # hardcoded against volatile shape ordering
         self.shape_roles: dict[str, list[int]] = {}
         builder = newton.ModelBuilder()
+        builder.rigid_gap = cfg.rigid_gap
         cc = partial(contact_cfg, ke=cfg.contact_ke, kd=cfg.contact_kd)
         builder.default_shape_cfg = cc()
 
@@ -451,7 +455,7 @@ class PickPlaceEnv:
             idx = builder.add_shape_mesh(
                 body=self.bowl_body,
                 mesh=bowl_mesh,
-                cfg=cc(has_shape_collision=False),  # visual only
+                cfg=cc(has_shape_collision=False, density=0.0),  # visual only, massless
             )
             self.shape_roles.setdefault("bowl_visual", []).append(int(idx))
 

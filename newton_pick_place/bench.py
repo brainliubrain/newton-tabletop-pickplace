@@ -49,6 +49,7 @@ SWEEPABLE = {
         "ls_iterations",
         "njmax",
         "nconmax",
+        "rigid_gap",
         "bowl_density",
         "cup_density",
     }

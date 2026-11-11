@@ -1,0 +1,131 @@
+{
+  "task": "tabletop pick-place: bowl + cup into tray (kitless Newton, FR3, scripted IK agent)",
+  "episodes": 3,
+  "successes": 3,
+  "success_rate": 1.0,
+  "min_success_required": 0.66,
+  "passed": true,
+  "wall_time_s": 75.8,
+  "records": [
+    {
+      "seed": 0,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5679,
+          0.0199,
+          0.4079,
+          -0.0002,
+          -0.0001,
+          0.9997,
+          -0.0225
+        ],
+        "cup": [
+          0.6792,
+          0.0198,
+          0.4502,
+          0.0001,
+          -0.0,
+          -0.9962,
+          -0.0868
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4029,
+          -0.0741
+        ],
+        "cup": [
+          0.4655,
+          0.2137
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5675,
+          0.02,
+          0.4079,
+          0.0002,
+          0.0001,
+          -0.9772,
+          -0.2124
+        ],
+        "cup": [
+          0.6826,
+          0.0197,
+          0.4502,
+          -0.0002,
+          -0.0,
+          -0.9406,
+          0.3394
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4358,
+          0.2622
+        ],
+        "cup": [
+          0.4286,
+          0.1179
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "outcome": "success",
+      "success_frame": 1288,
+      "frames": 1289,
+      "grasped": {
+        "bowl": true,
+        "cup": true
+      },
+      "final_poses": {
+        "bowl": [
+          0.5686,
+          0.0199,
+          0.4079,
+          0.0,
+          -0.0002,
+          0.9495,
+          0.3138
+        ],
+        "cup": [
+          0.6741,
+          0.0191,
+          0.4502,
+          -0.0001,
+          -0.0,
+          0.8157,
+          0.5785
+        ]
+      },
+      "spawn_poses": {
+        "bowl": [
+          0.4183,
+          0.0275
+        ],
+        "cup": [
+          0.4443,
+          0.2683
+        ]
+      }
+    }
+  ]
+}

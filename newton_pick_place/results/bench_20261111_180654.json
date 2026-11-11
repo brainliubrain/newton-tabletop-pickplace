@@ -1,0 +1,458 @@
+{
+  "episodes": 10,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "substeps": 8,
+        "contact_ke": 100000000.0
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 11.49,
+      "ms_per_frame_std": 0.14,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 1.59,
+      "envstep_ms_per_frame": 9.79,
+      "wall_time_s": 262.8,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.48,
+          "agent_ms": 1.68,
+          "envstep_ms": 9.7
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.41,
+          "agent_ms": 1.55,
+          "envstep_ms": 9.76
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.62,
+          "agent_ms": 1.76,
+          "envstep_ms": 9.75
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.56,
+          "agent_ms": 1.68,
+          "envstep_ms": 9.77
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.61,
+          "agent_ms": 1.7,
+          "envstep_ms": 9.81
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.78,
+          "agent_ms": 1.74,
+          "envstep_ms": 9.94
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.37,
+          "agent_ms": 1.46,
+          "envstep_ms": 9.82
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.34,
+          "agent_ms": 1.47,
+          "envstep_ms": 9.78
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.38,
+          "agent_ms": 1.46,
+          "envstep_ms": 9.82
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.32,
+          "agent_ms": 1.44,
+          "envstep_ms": 9.78
+        }
+      ]
+    },
+    {
+      "config": {
+        "substeps": 8,
+        "contact_ke": 250000000.0
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 11.43,
+      "ms_per_frame_std": 0.15,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 1.51,
+      "envstep_ms_per_frame": 9.83,
+      "wall_time_s": 259.2,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.41,
+          "agent_ms": 1.52,
+          "envstep_ms": 9.79
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.34,
+          "agent_ms": 1.48,
+          "envstep_ms": 9.77
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.21,
+          "agent_ms": 1.44,
+          "envstep_ms": 9.69
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.25,
+          "agent_ms": 1.46,
+          "envstep_ms": 9.7
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.39,
+          "agent_ms": 1.51,
+          "envstep_ms": 9.79
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.53,
+          "agent_ms": 1.56,
+          "envstep_ms": 9.87
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.39,
+          "agent_ms": 1.48,
+          "envstep_ms": 9.81
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.61,
+          "agent_ms": 1.52,
+          "envstep_ms": 10.0
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.45,
+          "agent_ms": 1.49,
+          "envstep_ms": 9.86
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.71,
+          "agent_ms": 1.59,
+          "envstep_ms": 10.02
+        }
+      ]
+    },
+    {
+      "config": {
+        "substeps": 10,
+        "contact_ke": 100000000.0
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 13.84,
+      "ms_per_frame_std": 0.14,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 1.55,
+      "envstep_ms_per_frame": 12.19,
+      "wall_time_s": 293.0,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.61,
+          "agent_ms": 1.57,
+          "envstep_ms": 11.93
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.7,
+          "agent_ms": 1.46,
+          "envstep_ms": 12.14
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.67,
+          "agent_ms": 1.53,
+          "envstep_ms": 12.04
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.89,
+          "agent_ms": 1.66,
+          "envstep_ms": 12.12
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.82,
+          "agent_ms": 1.48,
+          "envstep_ms": 12.24
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.8,
+          "agent_ms": 1.48,
+          "envstep_ms": 12.22
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 14.06,
+          "agent_ms": 1.56,
+          "envstep_ms": 12.38
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.99,
+          "agent_ms": 1.56,
+          "envstep_ms": 12.32
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.96,
+          "agent_ms": 1.55,
+          "envstep_ms": 12.3
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.93,
+          "agent_ms": 1.6,
+          "envstep_ms": 12.23
+        }
+      ]
+    },
+    {
+      "config": {
+        "substeps": 10,
+        "contact_ke": 250000000.0
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 13.56,
+      "ms_per_frame_std": 0.1,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 1.51,
+      "envstep_ms_per_frame": 11.95,
+      "wall_time_s": 285.1,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.47,
+          "agent_ms": 1.55,
+          "envstep_ms": 11.82
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.68,
+          "agent_ms": 1.58,
+          "envstep_ms": 12.0
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.47,
+          "agent_ms": 1.47,
+          "envstep_ms": 11.9
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.53,
+          "agent_ms": 1.57,
+          "envstep_ms": 11.86
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.53,
+          "agent_ms": 1.49,
+          "envstep_ms": 11.94
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.51,
+          "agent_ms": 1.47,
+          "envstep_ms": 11.95
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.51,
+          "agent_ms": 1.45,
+          "envstep_ms": 11.96
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.51,
+          "agent_ms": 1.44,
+          "envstep_ms": 11.98
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.77,
+          "agent_ms": 1.6,
+          "envstep_ms": 12.06
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.65,
+          "agent_ms": 1.5,
+          "envstep_ms": 12.05
+        }
+      ]
+    }
+  ]
+}

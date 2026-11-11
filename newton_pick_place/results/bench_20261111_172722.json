@@ -1,0 +1,348 @@
+{
+  "episodes": 3,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "solver_iterations": 8,
+        "ls_iterations": 12
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.57,
+      "ms_per_frame_std": 0.03,
+      "frames_mean": 1289.0,
+      "wall_time_s": 95.9,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.54
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.55
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.61
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 8,
+        "ls_iterations": 20
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.87,
+      "ms_per_frame_std": 0.11,
+      "frames_mean": 1289.0,
+      "wall_time_s": 89.9,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.86
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 14.01
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.73
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 8,
+        "ls_iterations": 30
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.72,
+      "ms_per_frame_std": 0.06,
+      "frames_mean": 1289.0,
+      "wall_time_s": 86.3,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.64
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.74
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.77
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 15,
+        "ls_iterations": 12
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.74,
+      "ms_per_frame_std": 0.19,
+      "frames_mean": 1289.0,
+      "wall_time_s": 85.5,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.53
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.99
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.69
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 15,
+        "ls_iterations": 20
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.91,
+      "ms_per_frame_std": 0.05,
+      "frames_mean": 1289.0,
+      "wall_time_s": 86.9,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.97
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.85
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.9
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 15,
+        "ls_iterations": 30
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.67,
+      "ms_per_frame_std": 0.19,
+      "frames_mean": 1289.0,
+      "wall_time_s": 87.5,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.4
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.84
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.78
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 25,
+        "ls_iterations": 12
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.75,
+      "ms_per_frame_std": 0.25,
+      "frames_mean": 1289.0,
+      "wall_time_s": 87.9,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.4
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.97
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.87
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 25,
+        "ls_iterations": 20
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.82,
+      "ms_per_frame_std": 0.16,
+      "frames_mean": 1289.0,
+      "wall_time_s": 90.3,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.86
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.99
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.61
+        }
+      ]
+    },
+    {
+      "config": {
+        "solver_iterations": 25,
+        "ls_iterations": 30
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.39,
+      "ms_per_frame_std": 0.19,
+      "frames_mean": 1289.0,
+      "wall_time_s": 87.7,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.12
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.54
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.51
+        }
+      ]
+    }
+  ]
+}

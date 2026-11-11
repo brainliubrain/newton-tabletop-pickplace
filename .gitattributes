@@ -1,0 +1,10 @@
+# 3D assets: treat as binary to avoid CRLF corruption of mesh data
+*.dae binary
+*.obj binary
+*.stl binary
+*.ply binary
+*.fcl binary
+*.vhacd binary
+*.usda text eol=lf
+*.mp4 binary
+*.png binary

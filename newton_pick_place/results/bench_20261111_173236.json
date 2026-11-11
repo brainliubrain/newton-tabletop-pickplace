@@ -1,0 +1,117 @@
+{
+  "episodes": 3,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "substeps": 8
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 11.05,
+      "ms_per_frame_std": 0.05,
+      "frames_mean": 1289.0,
+      "wall_time_s": 80.6,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 10.98
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.06
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.11
+        }
+      ]
+    },
+    {
+      "config": {
+        "substeps": 10
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 13.33,
+      "ms_per_frame_std": 0.06,
+      "frames_mean": 1289.0,
+      "wall_time_s": 89.6,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.26
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.41
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 13.33
+        }
+      ]
+    },
+    {
+      "config": {
+        "substeps": 12
+      },
+      "episodes": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "successes": 3,
+      "success_rate": 1.0,
+      "ms_per_frame_mean": 15.81,
+      "ms_per_frame_std": 0.06,
+      "frames_mean": 1289.0,
+      "wall_time_s": 96.6,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 15.73
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 15.83
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 15.86
+        }
+      ]
+    }
+  ]
+}

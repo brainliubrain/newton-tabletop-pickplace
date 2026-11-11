@@ -1,0 +1,20 @@
+{
+  "task": "IsaacLab3.0/Newton kitless 桌面 pick-place:托盘+碗+杯,机械臂抓放入托盘,含任务定义/成功判据/控制 agent",
+  "commands": [
+    ".venv\\Scripts\\python.exe newton_pick_place\\check_env.py",
+    ".venv\\Scripts\\python.exe newton_pick_place\\test_success.py",
+    ".venv\\Scripts\\python.exe newton_pick_place\\run_task.py --episodes 3 --no-video --min-success 0.66"
+  ],
+  "files": [
+    "STATE.md",
+    "newton_pick_place/env.py",
+    "newton_pick_place/task.py",
+    "newton_pick_place/agent.py",
+    "newton_pick_place/run_task.py",
+    "newton_pick_place/check_env.py",
+    "newton_pick_place/test_success.py",
+    "newton_pick_place/README.md",
+    "newton_pick_place/docs/PROBLEMS.md",
+    "newton_pick_place/results/results.json"
+  ]
+}

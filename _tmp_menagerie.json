@@ -1,0 +1,624 @@
+{
+  "sha": "da76818e269b82289eba39808e2fb91d679d6994",
+  "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/da76818e269b82289eba39808e2fb91d679d6994",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3f4b945985607958e0b6da9df5efb24812e05df",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/a3f4b945985607958e0b6da9df5efb24812e05df"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cea87973b4e6898fef3a973d0b7362619b3ff14",
+      "size": 29,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/1cea87973b4e6898fef3a973d0b7362619b3ff14"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d18ab5ae3b5df7318ec3e313f3f89bb71db7e8fe",
+      "size": 1418,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/d18ab5ae3b5df7318ec3e313f3f89bb71db7e8fe"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "275bd614d902d395148f77948e04b1404b5e78ad",
+      "size": 2234,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/275bd614d902d395148f77948e04b1404b5e78ad"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e54d5a9003df990c4608c639c2e5788931c059a",
+      "size": 337,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/4e54d5a9003df990c4608c639c2e5788931c059a"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65962c7e424c1025ffbb7c74431b1b48cb37e7e7",
+      "size": 4580,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/65962c7e424c1025ffbb7c74431b1b48cb37e7e7"
+    },
+    {
+      "path": "CONTRIBUTORS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71e3483ebe2896a63a7576ac93afecd576f32cf1",
+      "size": 2408,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/71e3483ebe2896a63a7576ac93afecd576f32cf1"
+    },
+    {
+      "path": "FAQ.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8ed3a2485f07b303ac696ee7f183c7f56243317",
+      "size": 1688,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/d8ed3a2485f07b303ac696ee7f183c7f56243317"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d25e382a3f81d38785845d04c26b4a379e50869",
+      "size": 411366,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/1d25e382a3f81d38785845d04c26b4a379e50869"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdb0deecf311758ba0e4acdb57a46407ca0e8122",
+      "size": 883,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/fdb0deecf311758ba0e4acdb57a46407ca0e8122"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e038c151c8280f26ecf60ded71a3a02d868886b",
+      "size": 27429,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/6e038c151c8280f26ecf60ded71a3a02d868886b"
+    },
+    {
+      "path": "agilex_piper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f81f24a9aa3be3a2c0e68cf30efc75f7f44d455",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4f81f24a9aa3be3a2c0e68cf30efc75f7f44d455"
+    },
+    {
+      "path": "agility_cassie",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fcaa075b1d622a13a786e5475d154fac4dbb31c7",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/fcaa075b1d622a13a786e5475d154fac4dbb31c7"
+    },
+    {
+      "path": "aloha",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "402ce95ae465eed4c6009f2d0c00fa2219944664",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/402ce95ae465eed4c6009f2d0c00fa2219944664"
+    },
+    {
+      "path": "anybotics_anymal_b",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc0d1e837a9e2ec88ee1a5b52128fce240fb2eaa",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/bc0d1e837a9e2ec88ee1a5b52128fce240fb2eaa"
+    },
+    {
+      "path": "anybotics_anymal_c",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eccaa604ebc85da1d934b85c8571dbc1753a6f8f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/eccaa604ebc85da1d934b85c8571dbc1753a6f8f"
+    },
+    {
+      "path": "apptronik_apollo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dfda762c31d598a8887b9e88e5872fd52dfc69de",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/dfda762c31d598a8887b9e88e5872fd52dfc69de"
+    },
+    {
+      "path": "arx_l5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f17faa15187d775848f270a97fcc330c55c0205",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/3f17faa15187d775848f270a97fcc330c55c0205"
+    },
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6bcc91cc08da1122c5b43621e1a57746425b891e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/6bcc91cc08da1122c5b43621e1a57746425b891e"
+    },
+    {
+      "path": "berkeley_humanoid",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c29239060f5107160613a07ffe3bbda96fc9adf7",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/c29239060f5107160613a07ffe3bbda96fc9adf7"
+    },
+    {
+      "path": "bitcraze_crazyflie_2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe58549ca0101a208b3a459b6eac49ac0e1ba38f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/fe58549ca0101a208b3a459b6eac49ac0e1ba38f"
+    },
+    {
+      "path": "booster_t1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0462e68226cd67351270236e8650355e3dc5eb0",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/c0462e68226cd67351270236e8650355e3dc5eb0"
+    },
+    {
+      "path": "boston_dynamics_spot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5da1f3c532ab7b9fb744e855ae8a71b2d7b0cbc1",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/5da1f3c532ab7b9fb744e855ae8a71b2d7b0cbc1"
+    },
+    {
+      "path": "dynamixel_2r",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b6c04cb7781653e358d25a9950c43075abbf5bb",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/7b6c04cb7781653e358d25a9950c43075abbf5bb"
+    },
+    {
+      "path": "flexiv_rizon4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ab5b2d9656d83c406858a5c2944073c94d0c2d6e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/ab5b2d9656d83c406858a5c2944073c94d0c2d6e"
+    },
+    {
+      "path": "flexiv_rizon4s",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "133ad9ae4b6124b089dd4f764b6ea3e87d3f5f0e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/133ad9ae4b6124b089dd4f764b6ea3e87d3f5f0e"
+    },
+    {
+      "path": "flybody",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e56ea785d61e5a0ae7cfb737915e722b3f34391e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/e56ea785d61e5a0ae7cfb737915e722b3f34391e"
+    },
+    {
+      "path": "format_xml.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "662be1d5eb0bd6e1a976ed239a94b955ef4c7af6",
+      "size": 5629,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/662be1d5eb0bd6e1a976ed239a94b955ef4c7af6"
+    },
+    {
+      "path": "fourier_n1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28ffaee512aa2df6f138ed773a41aa85fe52436a",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/28ffaee512aa2df6f138ed773a41aa85fe52436a"
+    },
+    {
+      "path": "franka_emika_panda",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d2262eeb81ecec19abfa31dd509e35abbb33e67",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/3d2262eeb81ecec19abfa31dd509e35abbb33e67"
+    },
+    {
+      "path": "franka_fr3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b6cad1dd73c806944dd8c67161cf1e6270d223b2",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/b6cad1dd73c806944dd8c67161cf1e6270d223b2"
+    },
+    {
+      "path": "franka_fr3_v2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "91c7e8aaf77d78512697f300b067e6c67a1caaac",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/91c7e8aaf77d78512697f300b067e6c67a1caaac"
+    },
+    {
+      "path": "generate_gallery.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f7eb1b6c57c46b020a6bb6d3672f9991b7463f9",
+      "size": 19343,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/1f7eb1b6c57c46b020a6bb6d3672f9991b7463f9"
+    },
+    {
+      "path": "google_barkour_v0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f5cb4048b2886a0bbeee88de60d27892bd4f84f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4f5cb4048b2886a0bbeee88de60d27892bd4f84f"
+    },
+    {
+      "path": "google_barkour_vb",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be2df4bf92d5dc6a7aa4a2641d69d64402e9727a",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/be2df4bf92d5dc6a7aa4a2641d69d64402e9727a"
+    },
+    {
+      "path": "google_robot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dc7d7cc501ed965f42dec9ca8835916b3ded1ad3",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/dc7d7cc501ed965f42dec9ca8835916b3ded1ad3"
+    },
+    {
+      "path": "hello_robot_stretch",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d37c1fc83fc259f0681856608f3c59df66ce7c1d",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/d37c1fc83fc259f0681856608f3c59df66ce7c1d"
+    },
+    {
+      "path": "hello_robot_stretch_3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0d787abe0e11101d51ce4fe6bb1b010567d1564",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/e0d787abe0e11101d51ce4fe6bb1b010567d1564"
+    },
+    {
+      "path": "i2rt_yam",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79c049c37b713334ce52f9a0c6dfd03594882048",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/79c049c37b713334ce52f9a0c6dfd03594882048"
+    },
+    {
+      "path": "iit_softfoot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f7736d49cf0f3a1f1a4529971407e730e3381314",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/f7736d49cf0f3a1f1a4529971407e730e3381314"
+    },
+    {
+      "path": "kinova_gen3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b430075c85c0567e70f6c242b94b449580a3cee",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/6b430075c85c0567e70f6c242b94b449580a3cee"
+    },
+    {
+      "path": "kuka_iiwa_14",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "83262d87764c82a92b87a27e19730582bcc334fb",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/83262d87764c82a92b87a27e19730582bcc334fb"
+    },
+    {
+      "path": "leap_hand",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "efe8f001e555cc08cdd21fdbacc30bfd896241e3",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/efe8f001e555cc08cdd21fdbacc30bfd896241e3"
+    },
+    {
+      "path": "low_cost_robot_arm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4a2f9a7d1f9fdfd7d88971cab338b8352b3d25cf",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4a2f9a7d1f9fdfd7d88971cab338b8352b3d25cf"
+    },
+    {
+      "path": "ms_human_700",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8de0afc55672eb13b10f830dd1726dd54057e5fe",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/8de0afc55672eb13b10f830dd1726dd54057e5fe"
+    },
+    {
+      "path": "pal_talos",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ee47fcceea2765e965d0e92e3e9cf4b823c6d14",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/6ee47fcceea2765e965d0e92e3e9cf4b823c6d14"
+    },
+    {
+      "path": "pal_tiago",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d163003929231767aad45015339322e73586ed80",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/d163003929231767aad45015339322e73586ed80"
+    },
+    {
+      "path": "pal_tiago_dual",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1f7ee7ee24442c550b9e484964e55fe38e271e3",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/a1f7ee7ee24442c550b9e484964e55fe38e271e3"
+    },
+    {
+      "path": "pndbotics_adam_lite",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fd6d43a296b05247bb9b8ba0102feebfdefa06df",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/fd6d43a296b05247bb9b8ba0102feebfdefa06df"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38161d71eb0df22fedd1f277f03e0ce61f8ad103",
+      "size": 428,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/38161d71eb0df22fedd1f277f03e0ce61f8ad103"
+    },
+    {
+      "path": "rainbow_robotics_rby1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "128cade03001e3bcee1c7a2e168c385c02cf044f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/128cade03001e3bcee1c7a2e168c385c02cf044f"
+    },
+    {
+      "path": "realsense_d435i",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6a591cce02d4f074d26b74bf210c7850e772d009",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/6a591cce02d4f074d26b74bf210c7850e772d009"
+    },
+    {
+      "path": "regenerate_license.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a969bc01c5775219d591dcf6607a795b27c85255",
+      "size": 3708,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/a969bc01c5775219d591dcf6607a795b27c85255"
+    },
+    {
+      "path": "rethink_robotics_sawyer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b0d742b4136b8f8ec9a30af036dea239588d485",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4b0d742b4136b8f8ec9a30af036dea239588d485"
+    },
+    {
+      "path": "robot_soccer_kit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5b76e03c087e47078a7cd99d8fb644eb563ca79d",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/5b76e03c087e47078a7cd99d8fb644eb563ca79d"
+    },
+    {
+      "path": "robotiq_2f85",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3c3ba06388c189616c59bc55ba8cd0e1923309f5",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/3c3ba06388c189616c59bc55ba8cd0e1923309f5"
+    },
+    {
+      "path": "robotiq_2f85_v4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d6c34a7e5192fad47ba039893d4194950d2cbd63",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/d6c34a7e5192fad47ba039893d4194950d2cbd63"
+    },
+    {
+      "path": "robotis_op3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0b2a52ecc849d86bce884872d377b6267d18480",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/c0b2a52ecc849d86bce884872d377b6267d18480"
+    },
+    {
+      "path": "robotstudio_so101",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "76a095b3fec789ca460f4b8ceca66d11ba96040c",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/76a095b3fec789ca460f4b8ceca66d11ba96040c"
+    },
+    {
+      "path": "seeed_rebot_devarm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9fd2e5e69456f8c10bf208ef72e2ae42890ad2d",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/a9fd2e5e69456f8c10bf208ef72e2ae42890ad2d"
+    },
+    {
+      "path": "shadow_dexee",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "efbb028eb9571ed525c5c4615993eb385df0b8ba",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/efbb028eb9571ed525c5c4615993eb385df0b8ba"
+    },
+    {
+      "path": "shadow_hand",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f85903630df9e0738b2df3c3cb0e8b3dd421c63",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/8f85903630df9e0738b2df3c3cb0e8b3dd421c63"
+    },
+    {
+      "path": "sharpa_wave",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "177b371e5eec9021f15e8dab89fc3690cec76b4c",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/177b371e5eec9021f15e8dab89fc3690cec76b4c"
+    },
+    {
+      "path": "skydio_x2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2561431fb50af23577b29e63598911b753763d7c",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/2561431fb50af23577b29e63598911b753763d7c"
+    },
+    {
+      "path": "stanford_tidybot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "419ae2350bbc5b220bf3f4adf08963b192b8a680",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/419ae2350bbc5b220bf3f4adf08963b192b8a680"
+    },
+    {
+      "path": "test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e7cf86119197704f108b873c581e91a955e54ea9",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/e7cf86119197704f108b873c581e91a955e54ea9"
+    },
+    {
+      "path": "tetheria_aero_hand_open",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "72f6fd59fa0ee52d28778aba6ea2b8400d19a99f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/72f6fd59fa0ee52d28778aba6ea2b8400d19a99f"
+    },
+    {
+      "path": "toddlerbot_2xc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cf152e3533e35c62920310dc3fcbd1c31afeef2e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/cf152e3533e35c62920310dc3fcbd1c31afeef2e"
+    },
+    {
+      "path": "toddlerbot_2xm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23b123674d49b72fcdbc289229d4cbd67fd7bbcb",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/23b123674d49b72fcdbc289229d4cbd67fd7bbcb"
+    },
+    {
+      "path": "trossen_vx300s",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "659ff3e33ef9b996faca06fd47ec18da82719ec3",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/659ff3e33ef9b996faca06fd47ec18da82719ec3"
+    },
+    {
+      "path": "trossen_wx250s",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "09f19f52c372a040c62dad4635d3780a6e3b48f6",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/09f19f52c372a040c62dad4635d3780a6e3b48f6"
+    },
+    {
+      "path": "trossen_wxai",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cc599081ed3927553802f0ed85fa9c8770ef6512",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/cc599081ed3927553802f0ed85fa9c8770ef6512"
+    },
+    {
+      "path": "trs_so_arm100",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1214e62ef659a338da781b232d897b61ff046eb8",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/1214e62ef659a338da781b232d897b61ff046eb8"
+    },
+    {
+      "path": "tutorial.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc283e559e0f13ea7cdece8825f3f3f64201a316",
+      "size": 7525,
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/blobs/bc283e559e0f13ea7cdece8825f3f3f64201a316"
+    },
+    {
+      "path": "ufactory_lite6",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e9ddb13efb55994c1c41cf541438433416696db",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/0e9ddb13efb55994c1c41cf541438433416696db"
+    },
+    {
+      "path": "ufactory_xarm7",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16cfe120310f44c04f43046a5994e83e7e41d636",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/16cfe120310f44c04f43046a5994e83e7e41d636"
+    },
+    {
+      "path": "umi_gripper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c906d8c87d1ac6595e88405d8777760074110f8e",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/c906d8c87d1ac6595e88405d8777760074110f8e"
+    },
+    {
+      "path": "unitree_a1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "94697b6b078c8781fce0eea097c3ce6cf4d9822f",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/94697b6b078c8781fce0eea097c3ce6cf4d9822f"
+    },
+    {
+      "path": "unitree_g1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57c00d310bfd8ae7d5676c64b959c86fbdd61d20",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/57c00d310bfd8ae7d5676c64b959c86fbdd61d20"
+    },
+    {
+      "path": "unitree_go1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4457a836cc377ad4e97b8e6a7edf251502e5ec64",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4457a836cc377ad4e97b8e6a7edf251502e5ec64"
+    },
+    {
+      "path": "unitree_go2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "98d14ab27a56c3623e29d852a997a422bbfefa19",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/98d14ab27a56c3623e29d852a997a422bbfefa19"
+    },
+    {
+      "path": "unitree_h1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4deafb41d0fdb8fbff291be01c6f17aded66baf5",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/4deafb41d0fdb8fbff291be01c6f17aded66baf5"
+    },
+    {
+      "path": "unitree_z1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57dcad724b33c8e5a7103bf22a7ef61f8d839b22",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/57dcad724b33c8e5a7103bf22a7ef61f8d839b22"
+    },
+    {
+      "path": "universal_robots_ur10e",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3cde0a472d80becab7662c76cc928c27af85d2c3",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/3cde0a472d80becab7662c76cc928c27af85d2c3"
+    },
+    {
+      "path": "universal_robots_ur5e",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2a3464301404aba712e25a68701afeeff4ddedf8",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/2a3464301404aba712e25a68701afeeff4ddedf8"
+    },
+    {
+      "path": "wonik_allegro",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "42564d556620bc0c3ba41823bbdf860887f10ff4",
+      "url": "https://api.github.com/repos/google-deepmind/mujoco_menagerie/git/trees/42564d556620bc0c3ba41823bbdf860887f10ff4"
+    }
+  ],
+  "truncated": false
+}

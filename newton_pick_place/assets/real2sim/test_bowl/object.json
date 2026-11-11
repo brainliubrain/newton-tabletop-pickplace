@@ -1,0 +1,47 @@
+{
+  "name": "test_bowl",
+  "category": "bowl",
+  "source_mesh": "C:\\Users\\HHH\\.zcode\\workspace\\draft-75bd8b6f-f7da-45d8-aff2-4dc217c4ed6e\\newton_pick_place\\tests\\synthetic_scan_bowl.obj",
+  "up_axis": "z",
+  "scale": 1.0,
+  "bbox_m": [
+    0.057,
+    0.057,
+    0.05
+  ],
+  "volume_m3": 0.00012275,
+  "mass_kg": 0.25,
+  "density": 2036.64,
+  "mu": 0.8,
+  "rgba": "0.80 0.36 0.16 1",
+  "transparent": false,
+  "origin": "base-center (standing on z=0)",
+  "visual": {
+    "file": "visual.obj",
+    "faces": 672
+  },
+  "collision": {
+    "mode": "decomp",
+    "files": [
+      "collision_000.obj",
+      "collision_001.obj",
+      "collision_002.obj",
+      "collision_003.obj",
+      "collision_004.obj",
+      "collision_005.obj",
+      "collision_006.obj",
+      "collision_007.obj",
+      "collision_008.obj",
+      "collision_009.obj",
+      "collision_010.obj",
+      "collision_011.obj",
+      "collision_012.obj",
+      "collision_013.obj",
+      "collision_014.obj",
+      "collision_015.obj"
+    ],
+    "parts": 16,
+    "faces": 7024
+  },
+  "spawn_clearance_m": 0.002
+}

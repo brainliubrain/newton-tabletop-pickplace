@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>光轮智能 (Lightwheel AI) 仿真 Infra / Solver 技术答辩 — Isaac Lab 3.0 × Newton</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0d1117; color: #e6edf3; overflow: hidden;
+    height: 100vh; width: 100vw;
+  }
+  .slide {
+    display: none; height: 100vh; width: 100vw;
+    padding: 36px 56px 68px 56px; flex-direction: column; justify-content: space-between;
+  }
+  .slide.active { display: flex; }
+  h1 { font-size: 38px; font-weight: 700; color: #58a6ff; line-height: 1.24; }
+  h2 { font-size: 27px; font-weight: 600; color: #79c0ff; margin-bottom: 10px; border-left: 5px solid #58a6ff; padding-left: 14px; }
+  h3 { font-size: 18px; color: #ffa657; margin: 6px 0 6px; }
+  p, li { font-size: 16px; line-height: 1.52; color: #c9d1d9; }
+  ul { padding-left: 20px; }
+  li { margin: 3px 0; }
+  code {
+    background: #161b22; color: #ff7b72; padding: 2px 6px;
+    border-radius: 4px; font-family: Consolas, monospace; font-size: 14px;
+  }
+  pre {
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    padding: 10px 14px; font-family: Consolas, monospace; font-size: 13.5px;
+    color: #d2a8ff; overflow-x: auto; line-height: 1.42;
+  }
+  .tag {
+    display: inline-block; background: #1f6feb; color: #fff;
+    padding: 3px 10px; border-radius: 14px; font-size: 13px; margin-right: 8px; font-weight: 600;
+  }
+  .tag.green { background: #238636; }
+  .tag.orange { background: #9e6a03; }
+  .tag.purple { background: #8957e5; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; align-items: start; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; flex: 1; align-items: stretch; }
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 10px;
+    padding: 14px 18px; display: flex; flex-direction: column;
+  }
+  .hero-video {
+    width: 100%; max-height: 56vh; background: #000; border-radius: 8px;
+    border: 2px solid #58a6ff; box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 14.5px; }
+  th, td { border: 1px solid #30363d; padding: 6px 10px; text-align: left; }
+  th { background: #161b22; color: #79c0ff; font-weight: 600; }
+  .ok { color: #3fb950; font-weight: 700; }
+  .warn { color: #d29922; font-weight: 700; }
+  .bad { color: #f85149; font-weight: 700; }
+  .footer {
+    position: fixed; bottom: 12px; right: 28px; left: 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13.5px; color: #8b949e; z-index: 20; pointer-events: none;
+  }
+  .footer-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; }
+  .btn {
+    background: #21262d; color: #c9d1d9; border: 1px solid #30363d;
+    padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 13px;
+  }
+  .btn:hover { background: #30363d; color: #fff; }
+  .bar {
+    position: fixed; bottom: 0; left: 0; height: 4px;
+    background: linear-gradient(90deg, #58a6ff, #3fb950); transition: width 0.25s; z-index: 25;
+  }
+  .metric {
+    font-size: 28px; font-weight: 700; color: #3fb950;
+    background: #0d1117; border: 1px solid #238636; border-radius: 8px;
+    padding: 5px 12px; display: inline-block; margin-right: 8px; margin-bottom: 6px;
+  }
+  .metric b { font-size: 13px; color: #8b949e; display: block; font-weight: 400; }
+  .dim { color: #8b949e; font-size: 14px; }
+  .speaker-note {
+    background: rgba(31, 111, 235, 0.12); border-left: 4px solid #58a6ff;
+    border-radius: 6px; padding: 8px 14px; margin-top: 8px; font-size: 14px; color: #d2a8ff;
+  }
+  body.hide-notes .speaker-note { display: none; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: 开篇与题目对标 -->
+<section class="slide active">
+  <div>
+    <span class="tag">光轮智能 · 仿真 Infra / Solver 面试答辩</span>
+    <span class="tag green">Newton 1.7.0 GPU 10/10 = 100%</span>
+    <span class="tag purple">CUDA Graph 63× 提速</span>
+    <h1 style="margin-top:14px;">基于 Isaac Lab 3.0 与 Newton 物理引擎的<br>桌面双物体抓取置入托盘仿真与求解器深度排障</h1>
+    <p style="margin-top:8px; font-size:18px; color:#8b949e;">
+      核心面试题闭环（托盘 + 碗 + 杯子 &rarr; 100% 置入） + 12 项底层物理求解器排障实录 + LeRobot 数据集与 60FPS 实时交互
+    </p>
+  </div>
+  <div class="grid2" style="margin-top:12px; align-items:center;">
+    <div class="card">
+      <h3>🎯 面试考核要求 100% 逐项严格对标</h3>
+      <ul>
+        <li><b>场景与资产 (Env)</b>：橡木桌面 + 矩形托盘 (Tray) + 宽口陶瓷碗 (Bowl) + 带柄咖啡杯 (Cup) + Franka FR3 机械臂，100% 离线确定性复现</li>
+        <li><b>完整任务与成功判据 (Task)</b>：四维联合几何/动力学防作弊成功判据（托盘内腔包络 + 倾角 &le; 30&deg; + 连续 20 帧低速静置 + 夹爪 Hands-off 门禁）+ 8 项单测全绿</li>
+        <li><b>智能体控制 (Agent)</b>：解析/阻尼最小二乘逆运动学 (DLS-IK) + 零空间姿态保持 + 五次多项式平滑轨迹 + 下降段重瞄准 + 两段式防弹射释放</li>
+        <li><b>求解器 Infra 深度排障 (Solver)</b>：深度定位并解决 <b>12 项</b> 接触力学、广义坐标权威、凹体碰撞、CUDA 图捕获等底层工程硬核卡点</li>
+      </ul>
+    </div>
+    <div>
+      <div>
+        <span class="metric">10/10<b>核心题成功率 (100%)</b></span>
+        <span class="metric">63×<b>CUDA Graph 加速比</b></span>
+        <span class="metric">12 项<b>Solver 深度排障</b></span>
+      </div>
+      <div style="margin-top:6px;">
+        <span class="metric">8/8 绿<b>成功门禁单元测试</b></span>
+        <span class="metric">60 FPS<b>原生 3D 实时交互</b></span>
+        <span class="metric">LeRobot v2<b>标准数据集交付</b></span>
+      </div>
+      <div class="speaker-note">
+        🎙️ <b>开场话术</b>：“面试官您好！针对本次考察仿真 Infra 与 Solver 能力的题目，我基于 Newton 1.7.0 + MuJoCo-Warp CUDA GPU 求解器，从底层完整构建了‘桌面托盘+碗+杯子’的物理环境并实现 10/10 (100%) 稳定双入盘。同时，我深入源码定位并彻底解决了 12 项接触刚度反推、广义坐标权威、西瓜籽弹射等底层排障案例，并打造了 60FPS 原生交互视窗与答辩系统。”
+      </div>
+    </div>
+  </div>
+  <div class="dim">按 &larr; &rarr; 键或空格翻页 &middot; 按 N 键切换【面试提词器】 &middot; 视频支持随时暂停与拖动精讲</div>
+</section>
+
+<!-- Slide 2: 实机真物理视频展示 -->
+<section class="slide">
+  <h2>Slide 2【实机真物理视频】：碗 (Bowl) + 杯子 (Cup) &rarr; 托盘 (Tray)</h2>
+  <div class="grid2" style="align-items:center;">
+    <div>
+      <video class="hero-video" src="results/bowl_cup_tray_studio.mp4" controls autoplay loop muted poster="results/frame_studio.png"></video>
+      <p class="dim" style="margin-top:6px;">
+        ▲ 1280&times;720 影棚级 3D 渲染（右上角 15Hz 近景特写画中画 + 青色 3D 轨迹尾迹线 + 底部动态遥测 HUD 条）
+      </p>
+    </div>
+    <div class="card">
+      <h3>物理仿真与执行流拆解 (10/10 回合 100% 成功)</h3>
+      <ul>
+        <li><b>物理仿真引擎栈</b>：<code>Newton 1.7.0</code> + <code>Warp 1.19 CUDA GPU</code> + <code>SolverMuJoCo (mjwarp)</code>，60Hz 控制帧，底蕴 600Hz 10 子步</li>
+        <li><b>Subtask 1/2（抓碗入托盘左槽位）</b>：
+          <ul>
+            <li>碗随机生成于桌面舒适区，机械臂平滑悬停 &rarr; 下降段重瞄准 (Re-aiming) 动态消除滑移 &rarr; 闭合夹持</li>
+            <li>沿五次多项式无冲击曲线平稳抬升并平移至托盘左侧槽位 <code>(0.56, 0.02)m</code></li>
+            <li>执行<b>两段式缓释</b>（泄压松手 &rarr; 全开撤离），碗平稳着陆托盘底面</li>
+          </ul>
+        </li>
+        <li><b>Subtask 2/2（抓杯子入托盘右槽位）</b>：
+          <ul>
+            <li>转向桌面右侧水杯 <code>(0.47, 0.21)m</code>，精准夹持杯身下部</li>
+            <li>平稳跨桌面运送至托盘右侧槽位 <code>(0.68, 0.02)m</code>，双物体并列入盘，安全间距 3cm</li>
+            <li>机械臂完全撤离至 <code>z=0.62m</code> (Hands-off)，连续 20 帧静止判定触发 <code>SUCCESS</code></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>演示话术</b>：“请看左侧 1280x720 实机视频：全程纯正向运动学 (FK) 物理驱动，绝无 Mocap 作弊。右上角特写清晰展现了夹爪对碗沿和杯壁的贴合过程。第一阶段碗平稳落入托盘左槽，第二阶段杯子落入右槽，双物体在托盘内直立静止，机械臂离手撤退，10 个随机种子全部 100% 成功。”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 3: Task 定义与四维防作弊判据 -->
+<section class="slide">
+  <h2>Slide 3【Task 定义与四维防作弊判据】：<code>task.py</code> & 8 项独立单测</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>拒绝规避作弊：四维联合成功门禁 (<code>EpisodeJudge</code>)</h3>
+      <p>为防止策略网络产生“空中飞掠判定”、“倒扣倾翻算成功”、“夹住不放算放置”等假阳性作弊漏洞，构建四维严密硬锁：</p>
+      <table>
+        <tr><th>判定维度</th><th>数学公差约束</th><th>工程防作弊物理意义</th></tr>
+        <tr><td>① 内腔水平包含</td><td>$|x - 0.62| \le 0.125\text{m}$<br>$|y - 0.02| \le 0.085\text{m}$</td><td>质心整体落入托盘底板内，排除骑跨在 1cm 宽托盘挡墙上的假置入</td></tr>
+        <tr><td>② 内腔垂直高度</td><td>$0.403\text{m} \le z \le 0.488\text{m}$</td><td>底线 $0.403\text{m}$ 允许弹性形变，排除穿底掉出；上限排除悬空假置入</td></tr>
+        <tr><td>③ 直立姿态余弦</td><td>$R_{zz} \ge \cos(30^\circ) \approx 0.866$</td><td>碗口与杯口必须朝上直立，倾斜超过 $30^\circ$ 或倒扣立即一票否决</td></tr>
+        <tr><td>④ 动力学静止</td><td>$\|\mathbf{v}\|_2 \le 0.040\text{ m/s}$ (连续 20 帧)</td><td>过滤弹跳瞬态，杜绝物体砸入托盘又弹出的伪阳性</td></tr>
+        <tr><td>⑤ 夹爪 Hands-off</td><td>$z_{\text{tcp}} > 0.500\text{m}$</td><td>机械臂必须完全泄压张开并上升撤离，确保纯外力解耦与重力平衡</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>稠密奖励函数塑造与 8 项单元测试全绿 (<code>test_success.py</code>)</h3>
+      <pre>
+# task.py: 供 RL / 评估共用的分阶段可微分稠密奖励
+R_step = sum_obj(
+    1.0 * (1.0 - tanh(5.0 * dist_tcp_to_obj))    # 趋近抓取引导
+  + 2.0 * min(1.0, max(0.0, z_obj - z_spawn) / 0.05) # 举升脱离桌面
+  + 3.0 * (1.0 - tanh(3.0 * dist_obj_to_slot))   # 托盘槽位对齐
+  + 2.0 * float(in_tray and upright)             # 直立姿态激励
+  + 3.0 * float(at_rest and streak >= 20)        # 连续稳定静置
+) + 10.0 * float(all_placed and hands_off)       # 终局大奖</pre>
+      <ul style="margin-top:6px;">
+        <li>编写 <code>test_success.py</code> 覆盖 8 大极限边界反例单测：正向双入盘、落水掉桌、速度超限、倾倒 60&deg;、单入盘断言、连击打断清零、早期坠落失败截断、奖励单调性。全部 <span class="ok">8/8 PASS 全绿</span>！</li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>讲解亮点</b>：“很多做仿真的策略喜欢钻判据的空子——比如夹着物体伸到托盘上方不松手算成功，或者物体高速穿过托盘算成功。我在 `task.py` 里用内腔几何包络、直立余弦、20 帧去抖、离手撤退四合院门禁彻底焊死漏洞，并用 8 个独立单测保证了判据代码自身的 100% 可靠性。”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4: 两层解耦控制架构 -->
+<section class="slide">
+  <h2>Slide 4【两层解耦控制架构】：状态机编排 + DLS-IK + 五次多项式平滑</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>两层解耦控制系统：高层任务编排 & 底层 IK/PD 伺服</h3>
+      <pre>
+[高层状态机: PTP Waypoint List 顺序执行]
+  0. home              (TCP悬停于桌面上方 0.62m 避障区)
+  1. bowl:hover        (平移至碗上方 0.55m)
+  2. bowl:descend      (重瞄准下降至抓取高度 0.45m)
+  3. bowl:grasp        (保持位置，夹爪闭合预紧)
+  4. bowl:lift         (垂直抬升至 0.55m 脱离桌面)
+  5. bowl:move         (跨桌面弧线平移至托盘左槽 0.60m)
+  6. bowl:lower        (降至托盘底面 0.44m 坐稳)
+  7. bowl:release/open (两段式泄压松手 0.027m -> 0.04m)
+  8. bowl:retract      (垂直撤回至 0.56m)
+  -> 9~16. cup: [hover -> descend -> grasp -> lift -> move -> lower -> release -> retract]
+  17. settle           (回 home，等待 20 帧静止判定)</pre>
+      <p style="margin-top:6px;"><b>控制协议完全标准化</b>：<code>agent.act() -> np.ndarray(9,)</code> 仅依赖标准状态观测，无任何特权信息，可即插即用替换为 ACT / Diffusion Policy 策略网络。</p>
+    </div>
+    <div class="card">
+      <h3>数学规范与运动学抗奇异点保障</h3>
+      <ul>
+        <li><b>阻尼最小二乘法 (DLS-IK) + 零空间投影</b>：
+          $$\Delta \mathbf{q} = \mathbf{J}^T(\mathbf{J}\mathbf{J}^T + \lambda^2 \mathbf{I})^{-1}\mathbf{e} + (\mathbf{I} - \mathbf{J}^\dagger \mathbf{J})\alpha(\mathbf{q}_{\text{home}} - \mathbf{q})$$
+          引入阻尼因子 $\lambda=0.1$ 彻底消除 7-DOF 冗余机械臂在肘部伸直位态下的数值爆炸；零空间项约束机械臂在俯冲抓取时始终保持掌心垂直向下 ($\mathbf{R}_x(\pi)$)。</li>
+        <li><b>五次多项式时间平滑 (Quintic Smoothstep)</b>：
+          $$s(u) = 10u^3 - 15u^4 + 6u^5, \quad \dot{s}(0)=\dot{s}(1)=\ddot{s}(0)=\ddot{s}(1)=0$$
+          首末速度、加速度全为零，杜绝段间过渡出现加速度跃变 (Jerk)，消除了抓持轻质物体的惯性滑脱。</li>
+        <li><b>下降段动态重瞄准 (Re-aiming on Descent)</b>：
+          在 <code>descend</code> 阶段实时读取物体当前真实的 $(x,y)$ 坐标重新求解 IK，彻底免疫因手臂运送风阻或微碰带来的毫米级位置偏移。</li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>讲解亮点</b>：“在控制架构上，我采用了工业机器人最推崇的 PTP 路标点解耦设计。不仅有 DLS-IK 和零空间姿态保持，更加入了五次多项式加速度平滑和下降段实时重瞄准，确保抓取的鲁棒性达到 100%。”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: 接触力学排障精析 (P4) -->
+<section class="slide">
+  <h2>Slide 5【接触力学排障精析】：Newton 接触刚度底层反推与 14mm 沉降根治 (P4)</h2>
+  <p><b>严重物理病灶</b>：碗和杯子初始静置在桌面，抓取时指尖总提前 1cm 碰撞物体或抓空；打印坐标发现物体居然静止在 $z=0.387\text{m}$（桌面高 $0.400\text{m}$），<b>整整陷入桌面 14mm</b>！夹爪一碰就发生弹性动能暴涨弹飞。</p>
+  <div class="grid2" style="margin-top:10px;">
+    <div class="card">
+      <h3>第一性原理根因剖析：Newton &rarr; MuJoCo <code>solref</code> 转换公式</h3>
+      <p>扒开 <code>newton/_src/solvers/mujoco/solver_mujoco.py</code> 源码，发现了 Newton 底层将材质的 <code>(ke, kd)</code> 转换为 MuJoCo 求解器接触参数的真实映射机制：</p>
+      <pre>
+# Newton 官方源码映射机制:
+timeconst = 2.0 / (kd * width)
+dampratio = (kd / 2.0) * sqrt(d_r / ke)
+# 默认常量: width = 0.001 m, d_r = 0.9</pre>
+      <ul>
+        <li><b>默认值灾难</b>：Newton 默认参数 <code>ke=2.5e3, kd=100</code> 代入公式后：
+          $$d = \frac{mg}{k_e} \approx 14\text{ mm}, \quad \text{timeconst} \approx 20\text{ s} \gg dt$$
+          相当于给桌面垫了一张<b>20 秒周期的超软弹性海绵床垫</b>！轻物体深陷其中，夹持瞬间微接触力直接将其击飞。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>定量数学反推方案与前后对比</h3>
+      <p>确立刚体仿真物理黄金指标：<b>时间常数 $\tau \approx 0.04\text{ s}$（大于 2 个子步以保稳定）、过阻尼比 $\zeta \approx 1.5$（吸收振动能量）</b>，列方程反推：</p>
+      $$k_d = \frac{2.0}{\tau \cdot \text{width}} = \frac{2.0}{0.04 \times 0.001} = \mathbf{5.0 \times 10^4}$$
+      $$k_e = \frac{k_d^2 \cdot d_r}{4 \cdot \zeta^2} = \frac{(5\times 10^4)^2 \times 0.9}{4 \times 1.5^2} = \mathbf{2.5 \times 10^8}$$
+      <table>
+        <tr><th>接触物理量</th><th>修改前 (Newton 默认)</th><th>定量反推修复后</th><th>工程实效</th></tr>
+        <tr><td><code>contact_ke</code></td><td>$2.5 \times 10^3\text{ N/m}$</td><td><b>$2.5 \times 10^8\text{ N/m}$</b></td><td>静态桌面沉降从 $14\text{mm} \to \mathbf{<0.1\text{mm}}$</td></tr>
+        <tr><td><code>contact_kd</code></td><td>$1.0 \times 10^2\text{ Ns/m}$</td><td><b>$5.0 \times 10^4\text{ Ns/m}$</b></td><td>过阻尼吸收冲击，<b>彻底消除微弹跳</b></td></tr>
+        <tr><td>物理速度判据</td><td>抖动频繁误触发</td><td><b>零本底噪声</b></td><td>使连续 20 帧静止判据具备确定性</td></tr>
+      </table>
+      <div class="speaker-note">
+        🎙️ <b>核心答辩杀手锏</b>：“这是本次任务最硬核的一个排障点。很多工程师遇到物体陷进桌面只会凭感觉瞎调调参。我直接扒了 Newton 的底层源码，发现它把 (ke, kd) 映射为 MuJoCo 的 solref。我根据时间常数 0.04s 和过阻尼比 1.5 严格反推出了 ke=2.5e8, kd=5e4，瞬间把 14mm 沉降压到 0.1mm 以内，从物理根源上消除了弹跳。”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: 状态源权威与碰撞隔离 (P5 & P8) -->
+<section class="slide">
+  <h2>Slide 6【状态源权威与碰撞隔离】：广义坐标权威 (P5) 与凸包过滤白名单 (P8)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>排障 P5：Episode Reset 写了 <code>body_q</code>，下一帧全部瞬移回原点！</h3>
+      <ul>
+        <li><b>现象</b>：在回合 reset 时随机采样物体位姿，将坐标写入 <code>state.body_q</code> 并执行 <code>eval_fk</code>，但在 step 启动的第 1 帧物体全部瞬移回模型默认原点。</li>
+        <li><b>底层根因</b>：MuJoCo 是<b>广义坐标系 (Reduced-Coordinate)</b> 求解器，自由刚体的<b>唯一真状态源 (Single Source of Truth) 是 FREE 关节的广义坐标 <code>state.joint_q</code></b>！<code>state.body_q</code> 只是求解器每步正向运动学计算出来的衍生张量，每步都会被底层强制覆盖覆写。</li>
+        <li><b>正确解法</b>：按 <code>joint_type == FREE (4)</code>（占 7 个标量：3 位置 + 4 四元数）精确定位每个物体的 FREE 关节偏移量，写入 <code>state.joint_q[off:off+7]</code>，再调 <code>newton.eval_fk</code> 重建 <code>body_q</code>。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>排障 P8：USD/Mesh 凸包化把视觉网格变成“幻影碰撞体”</h3>
+      <ul>
+        <li><b>现象</b>：抓碗时夹爪手指指令已闭合至 $0.015\text{m}$，实测指距却死死卡在 $8.8\text{cm}$（已超出机械 $8\text{cm}$ 上限），1.6s 后突然合拢；接触传感器显示无接触。</li>
+        <li><b>底层根因</b>：调用 <code>builder.approximate_meshes("convex_hull")</code> 时若不传 <code>shape_indices</code>，Newton 会把所有 Mesh（包括高模视觉网格）全部转成带 COLLIDE 标志的凸包！原本仅供外观渲染的粗胖视觉网格变成了<b>看不见的幽灵碰撞壳</b>，将夹爪生生卡住。</li>
+        <li><b>正确解法</b>：建立真碰撞网格白名单：
+          <pre>
+collide_shapes = [s for s in range(builder.shape_count)
+    if (builder.shape_flags[s] & ShapeFlags.COLLIDE_SHAPES)]
+builder.approximate_meshes(shape_indices=collide_shapes)</pre>
+        </li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>讲解亮点</b>：“P5 和 P8 展现了对仿真引擎架构的深入理解：在 MuJoCo 这类缩减坐标系求解器中，必须牢记 `joint_q` 才是真状态源；而在网格几何处理上，必须用白名单隔离视觉与碰撞 Mesh，避免幽灵碰撞体。”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: 弹性蓄能与 CUDA Graph (P6 & P10) -->
+<section class="slide">
+  <h2>Slide 7【弹性蓄能与 CUDA Graph】：“西瓜籽”弹射泄压 (P10) 与 63× 性能飞跃 (P6)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>排障 P10：“西瓜籽效应”两段式弹性势能泄放机制</h3>
+      <ul>
+        <li><b>现象</b>：碗和杯子在释放瞬间偶发被斜向暴射飞出托盘，速度甚至超过物理极限穿透地板至 $-43\text{m}$。</li>
+        <li><b>根因机理</b>：位置伺服夹爪的闭合目标设得略小于物体尺寸 &rarr; 夹持状态下指垫积蓄了微弹性法向挤压势能 $\frac{1}{2} k_e \delta^2$；张爪瞬间非对称分离，轻质物体就像两手挤压的西瓜籽一样被射出！官方 <code>panda_hydro</code> 亦特意注释指出了这一 Compliant drive 现象。</li>
+        <li><b>工程治本方案</b>：
+          <ol>
+            <li><b>两段式释放</b>：释放前先执行 $0.9\text{s}$ 的“松压”动作（间距退至 $0.027\text{m}$ 泄放弹性势能），然后再完全打开；</li>
+            <li><b>托盘底板承托</b>：降低释放高度，让物体底部先<b>坐在托盘底面上</b>再松手，由托盘四壁兜底；</li>
+            <li><b>安全速度钳制</b>：增加物体线速度 $1.5\text{m/s}$、角速度 $12\text{rad/s}$ 底层守护钳位。</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>排障 P6：Warp <code>ScopedCapture</code> 捕获单图，性能提速 63 倍</h3>
+      <ul>
+        <li><b>性能瓶颈</b>：每帧包含 10 个子步，每个子步频繁触发数十个 CUDA Kernel 发射。Python 端的 Launch Overhead 远远盖过了 GPU 真实的物理计算耗时，导致<b>单帧耗时高达 698 ms (仅 1.4 FPS)</b>，评测一次需要等半小时。</li>
+        <li><b>CUDA Graph 捕获架构</b>：
+          <pre>
+# env.py: 初始化时预编译录制整个子步循环
+with wp.ScopedCapture() as capture:
+    self._simulate() # 包含 10 个子步的前向动力学
+self._graph = capture.graph
+
+# 运行时每帧仅需一次极速图发射:
+wp.capture_launch(self._graph)</pre>
+        </li>
+        <li><b>实测效果</b>：单帧耗时从 <b>698 ms 暴降至 11 ms</b>，带来 <b>63× 的惊人提速</b>！10 回合全量物理仿真仅需 4 分钟。</li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>讲解亮点</b>：“西瓜籽弹射是接触力学中典型的弹性势能释放问题，我通过两段式泄压和底板承托彻底解决；而在工程 Infra 方面，Warp 的 CUDA Graph 捕获将 CPU 发射开销彻底旁路，带来了 63 倍的物理加速！”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: 12 项排障全景总账本 -->
+<section class="slide">
+  <h2>Slide 8【12 项排障全景总账本】：<code>docs/PROBLEMS.md</code> 完整排障实录</h2>
+  <div class="card" style="flex:1; overflow-y:auto;">
+    <table>
+      <tr><th>编号</th><th>故障现象 / 卡点</th><th>第一性原理根因定位</th><th>工程解决方案与效果验证</th></tr>
+      <tr><td><b>P1</b></td><td>包名陷阱：<code>newton-physics</code> 改名</td><td>1.0.0 是改名占位空包，导致 <code>import newton</code> 失败</td><td>锁定 <code>newton==1.7.0</code> 并显式安装 <code>mujoco-warp==3.15</code></td></tr>
+      <tr><td><b>P2</b></td><td>离线资产获取受阻</td><td>官方 asset 走 github clone，外网连接不稳定</td><td>解析 pinned SHA，按需 vendoring 27MB URDF/USD 资产到本地，100% 离线秒级加载</td></tr>
+      <tr><td><b>P3</b></td><td>官方示例 home 姿态冲突</td><td>panda_hydro 的 home 让手悬在 z=0.33m，而桌面高 0.40m，机械臂插进桌子</td><td>启动时用 <code>newton.ik.IKSolver</code> 解析推导出 z=0.62m 的悬停安全 home，FK 误差 0.00mm</td></tr>
+      <tr><td><b>P4</b></td><td>接触参数导致物体沉降 14mm</td><td>Newton (ke, kd) 转换为 MuJoCo solref 导致时间常数达 20s 超软弹簧</td><td>反解 $\tau=0.04\text{s}, \zeta=1.5$ 得到 <b>$k_e=2.5\times 10^8, k_d=5.0\times 10^4$</b>，沉降降至 <0.1mm</td></tr>
+      <tr><td><b>P5</b></td><td>自由体 reset 瞬移原点</td><td>MuJoCo 是广义坐标求解器，<code>body_q</code> 只是输出，<code>state.joint_q</code> 才是真状态源</td><td>按 FREE 关节 7-DOF 偏移精确定位写入 <code>joint_q</code>，再调 <code>eval_fk</code> 重建位姿</td></tr>
+      <tr><td><b>P6</b></td><td>仿真卡顿：单帧高达 698ms</td><td>每帧 10 个子步发射数十个 Kernel，Python Launch Overhead 严重</td><td>用 <code>wp.ScopedCapture()</code> 录制单张 CUDA Graph，每帧单发射，提速至 <b>11ms (63× 提速)</b></td></tr>
+      <tr><td><b>P7</b></td><td>凹碗凸包简化滚落</td><td>凸包转换焊掉 5mm 碗底环；宽口碗超出夹爪 6.9cm 内间距上限</td><td>碰撞改用稳定圆柱原语，碗径缩至 5.5cm 并微锥形自紧，外观保留高模网格</td></tr>
+      <tr><td><b>P8</b></td><td>视觉网格变幽灵碰撞体</td><td><code>approximate_meshes</code> 缺省将纯视觉网格也变成凸包，把夹爪撑开在 8.8cm</td><td>严格传入 <code>shape_indices</code> 白名单，仅对 URDF 真实碰撞网格凸包化</td></tr>
+      <tr><td><b>P9</b></td><td>远端位姿伺服病态卡死</td><td>手臂大悬臂位姿重力力矩极大，慢速插值陷入伺服死区</td><td>限制出生区在舒适区，释放贴近托盘底，远端采用跳转整定策略</td></tr>
+      <tr><td><b>P10</b></td><td>释放瞬间“西瓜籽”弹射</td><td>闭合夹爪存储法向微弹性势能，张爪瞬间非对称释放把轻物体射出</td><td>两段式泄能释放（先泄压 0.9s 再开爪）+ 托盘底面承托 + 速度安全钳位</td></tr>
+      <tr><td><b>P11</b></td><td>出生点矩形防撞陷阱</td><td>用“到托盘中心距离 &ge; 0.15m”检测，但托盘是矩形，对角线处与托盘壁穿模</td><td>改为“轴对齐矩形 + 物体外接圆半径”严谨几何重叠判定</td></tr>
+      <tr><td><b>P12</b></td><td>成功判据噪声误判</td><td>刚体静止接触存在 0.02~0.04m/s 物理本底微振，判据阈值过低沦为抽签</td><td>过阻尼压低噪声 + 纯线速度静止判据 + 20 帧去抖窗口，成功率由 6/10 稳定达 <b>10/10</b></td></tr>
+    </table>
+  </div>
+  <div class="speaker-note">
+    🎙️ <b>讲解亮点</b>：“这份 12 项排障总账本真实记录了每一个从现场复现、源码剖析到定量修复的全过程。它不仅证明了解决具体问题的能力，更体现了系统性的工业级调试方法论。”
+  </div>
+</section>
+
+<!-- Slide 9: 工业级交付与基准扩展 -->
+<section class="slide">
+  <h2>Slide 9【工业级交付与基准扩展】：LeRobot v2.0 数据集与 RoboLab 扩展任务</h2>
+  <div class="grid3">
+    <div class="card">
+      <h3>① LeRobot v2.0 标准数据集</h3>
+      <ul>
+        <li><b>数据集结构</b>：
+          <ul>
+            <li><code>meta/info.json</code>: 观测空间、动作空间、帧率 (60Hz)</li>
+            <li><code>meta/episodes.jsonl</code>: 10 回合任务成功标注</li>
+            <li><code>data/chunk-000.parquet</code>: 时间对齐的高精度 9-DoF 关节、物体与 TCP 轨迹张量</li>
+            <li><code>videos/</code>: H.264 编码观察流</li>
+          </ul>
+        </li>
+        <li><b>即插即用</b>：可直接无缝喂给 HuggingFace LeRobot 官方 <b>ACT / Diffusion Policy</b> 训练脚本。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>② 横向基准验证：Apple & Yogurt</h3>
+      <p class="dim">双子任务顺序入碗 &middot; <span class="ok">success_rate = 1.0</span></p>
+      <ul>
+        <li>在同一套 DLS-IK 与状态机架构下，成功扩展至苹果 + 酸奶杯依次抓取置入深口木碗。</li>
+        <li>验证了状态机任务编排在不同几何尺度物体上的高度通用性。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>③ 横向基准验证：BBQ & Pumpkin</h3>
+      <p class="dim">高瓶防倾倒 & 不规则异形 &middot; <span class="ok">success_rate = 1.0</span></p>
+      <ul>
+        <li><b>BBQSauceInBin</b>：高重心大瓶防倒运送，运送拱高自适应提升至 38cm；</li>
+        <li><b>SmallPumpkinInBin</b>：多瓣不规则曲率南瓜稳定抓取，验证了指垫高摩擦力矩与夹持自锁。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="speaker-note">
+    🎙️ <b>讲解亮点</b>：“除了完成本题的托盘碗杯任务外，我还拉通了 LeRobot v2.0 标准数据集导出，并将这套方法论横向迁移到了苹果、烤肉酱、南瓜三个任务上，证明了方案的通用泛化能力。”
+  </div>
+</section>
+
+<!-- Slide 10: 现场实时交互演示 -->
+<section class="slide">
+  <h2>Slide 10【现场实时交互演示】：60FPS 3D 物理视窗与未来演进探讨</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>1. 现场一键启动 60FPS OpenGL 3D 实时交互窗口</h3>
+      <p>所有交付物与演示工具已完整归档在桌面：</p>
+      <ul>
+        <li>🕹️ <b><code>运行60FPS_3D演示.bat</code></b>：
+          <ul>
+            <li>双击立即弹出原生 60FPS OpenGL 3D 交互窗口；</li>
+            <li>支持 <b>空格键</b> 暂停/继续，<b><code>[</code> 和 <code>]</code></b> 单帧精细步进步退；</li>
+            <li>鼠标 360&deg; 任意旋转、平移、滚轮微距缩放，可放大到毫米级观察指垫与碗/杯接触面！</li>
+          </ul>
+        </li>
+        <li>📊 <b><code>run_task.py</code></b>：自动化 10 回合验证，终端实时输出 10/10 成功率。</li>
+        <li>🧪 <b><code>test_success.py</code></b>：8 项成功判据单元测试快速验证。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>2. 面试交流深度探讨：具身智能与物理求解器未来演进</h3>
+      <ul>
+        <li><b>从 Scripted Agent 进阶为全闭环神经网络策略</b>：
+          <ul>
+            <li>基于已导出的 LeRobot 专家轨迹，训练 <b>3D Diffusion Policy (DP3)</b>；</li>
+            <li>利用 <code>task.py</code> 稠密奖励在 Newton 1024 并行环境上执行 <b>PPO 残差强化学习 (Residual RL)</b> 微调。</li>
+          </ul>
+        </li>
+        <li><b>物理保真度进阶：连续碰撞检测 (CCD) 与 SDF 接触场</b>：
+          <ul>
+            <li>薄壁器皿可升级为 Newton 原生 <b>SDF (Signed Distance Field) 碰撞场</b>，获取连续光滑的法向接触力梯度，彻底根除多盒拼接缝隙。</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="speaker-note">
+        🎙️ <b>结语与互动邀请</b>：“面试官，以上就是我的汇报！我现在可以立刻双击打开 60FPS 交互视窗，用单帧步进放大给您展示接触面的每一个物理细节，也可以随时交流代码与求解器的任何底层问题，请您提问！”
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bar" id="bar"></div>
+<div class="footer">
+  <div>光轮智能 (Lightwheel AI) 仿真 Infra / Solver 面试展示 &middot; Isaac Lab 3.0 &times; Newton 1.7.0</div>
+  <div class="footer-controls">
+    <button class="btn" onclick="toggleNotes()">🎙️ 切换提词器 (N)</button>
+    <button class="btn" onclick="show(cur-1)">◀ 上一页</button>
+    <span><b id="pg" style="color:#58a6ff;">1</b> / <span id="total">10</span></span>
+    <button class="btn" onclick="show(cur+1)">下一页 ▶</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  document.getElementById('total').textContent = slides.length;
+  let cur = 0;
+  function show(n) {
+    slides[cur].querySelectorAll('video').forEach(v => v.pause());
+    slides[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(slides.length - 1, n));
+    slides[cur].classList.add('active');
+    document.getElementById('bar').style.width = (100 * (cur + 1) / slides.length) + '%';
+    document.getElementById('pg').textContent = cur + 1;
+    slides[cur].querySelectorAll('video[autoplay]').forEach(v => { v.currentTime = 0; v.play().catch(()=>{}); });
+  }
+  function toggleNotes() {
+    document.body.classList.toggle('hide-notes');
+  }
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(cur + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
+    if (e.key === 'n' || e.key === 'N') toggleNotes();
+  });
+  show(0);
+</script>
+</body>
+</html>

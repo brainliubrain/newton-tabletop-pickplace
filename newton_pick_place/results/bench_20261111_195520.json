@@ -1,0 +1,119 @@
+{
+  "episodes": 10,
+  "seed_base": 0,
+  "results": [
+    {
+      "config": {
+        "solver_iterations": 15,
+        "ls_iterations": 20
+      },
+      "episodes": 10,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "successes": 10,
+      "success_rate": 1.0,
+      "success_rate_ci95": [
+        0.722,
+        1.0
+      ],
+      "ms_per_frame_mean": 11.49,
+      "ms_per_frame_std": 0.44,
+      "frames_mean": 1289.0,
+      "agent_ms_per_frame": 1.52,
+      "envstep_ms_per_frame": 9.87,
+      "wall_time_s": 256.9,
+      "per_episode": [
+        {
+          "seed": 0,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 10.68,
+          "agent_ms": 1.19,
+          "envstep_ms": 9.41
+        },
+        {
+          "seed": 1,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.0,
+          "agent_ms": 1.17,
+          "envstep_ms": 9.75
+        },
+        {
+          "seed": 2,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 10.85,
+          "agent_ms": 1.18,
+          "envstep_ms": 9.6
+        },
+        {
+          "seed": 3,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.52,
+          "agent_ms": 1.66,
+          "envstep_ms": 9.75
+        },
+        {
+          "seed": 4,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.82,
+          "agent_ms": 1.65,
+          "envstep_ms": 10.06
+        },
+        {
+          "seed": 5,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.88,
+          "agent_ms": 1.7,
+          "envstep_ms": 10.07
+        },
+        {
+          "seed": 6,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.74,
+          "agent_ms": 1.62,
+          "envstep_ms": 10.01
+        },
+        {
+          "seed": 7,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.87,
+          "agent_ms": 1.59,
+          "envstep_ms": 10.16
+        },
+        {
+          "seed": 8,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.85,
+          "agent_ms": 1.68,
+          "envstep_ms": 10.06
+        },
+        {
+          "seed": 9,
+          "outcome": "success",
+          "frames": 1289,
+          "ms_per_frame": 11.69,
+          "agent_ms": 1.72,
+          "envstep_ms": 9.87
+        }
+      ]
+    }
+  ]
+}

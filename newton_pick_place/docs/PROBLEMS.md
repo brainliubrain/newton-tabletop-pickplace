@@ -102,3 +102,8 @@
   - `filter_static_base=1`:静态-静态接触 5→1(nefc 36→20),ms/帧略降,零成本。
   - `rigid_gap 0.1→0.02`:接触候选 111→33(3.4x),ms/帧再降 ~1ms,精度指标不变(候选数降但有效接触不变)。
 - **结论(待 held-out 复核)**:精度优先选 `multiccd=1 + filter_static_base=1 + rigid_gap=0.02`(~18 ms/帧);若 ms/帧 优先则 multiccd=0 同组合(~11.7 ms/帧)。P18 的"solver 保真度优先于 infra 性能"原则支持前者。
+
+## P21. njmax/nconmax 收紧扫描:无收益,保持余量
+- **实验**:新默认(multiccd+fsb+gap0.02)下 njmax{768,1536} x nconmax{384,768},seeds 0-9(`results/bench_20261111_224338.json`)。
+- **结果**:4 配置全 10/10,物理指标逐位相同(穿透 0.789mm,nefc peak 88,接触峰值 38/20);ms/帧 9.6-10.4 无显著差异。
+- **结论**:缓冲区是预分配显存,缩小不提速;而 real2sim CoACD 分解包(16+ 凸件)接触数可达当前 ~4-6 倍,P16 的静默丢接触风险不值得为零收益冒。**保持 njmax=1536 / nconmax=768**,余量 nefc 17.5x / naconmax 20x。

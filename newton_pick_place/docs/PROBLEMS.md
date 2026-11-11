@@ -94,23 +94,29 @@
 3. **变量扫描**:接触参数 (ke,kd) 网格、抓取高度 z-scan——用数据画包络,不凭感觉调参;
 4. **读源码**:newton 的 solref 转换公式、资产下载的 pinned SHA、官方示例的隐性细节,全部从安装包源码确认;
 5. **验收先行**:gate.json 三条命令 + 产物清单先落盘,每块完成即验,Stop hook 自动把关。
+## P19. 接触参数理论更正:solref 被 refsafe 钳位,ke 基本不起作用
+- **原 P4/P18 的理论是错的**:文档曾按 ke/kd 直接推导接触时间常数(0.04s 量级),并把 substeps=6 崩盘归因为"突破 ke 稳定极限"。
+- **源码事实**:newton 调 `convert_solref(ke, kd, 1.0, 1.0)`,timeconst = 2/(kd·width);本场景算出 ~0.04ms,**远小于 2·dt_substep(4.17ms@substeps=8),被 MuJoCo refsafe 钳到 2·dt**——有效接触刚度由步长决定,ke/kd 实际只通过 dampratio = kd/(2·sqrt(ke·d_r)) 起作用。
+- **实测验证**(physics_probe, `results/probe_rest_energy_convergence_20261111_224521.json`):固定 dt 下 ke/kd 组合只改变 zeta(0.67-2.5),静置穿透 0.001-0.018mm 变化来自阻尼比而非刚度;穿透随 dt 收敛 ~dt^1.88(与 refsafe p=2 吻合)。
+- **推论**:之前的"ke/kd 扫描"实际只扫了阻尼比;真正影响接触行为的是步长(substeps)、接触流形(multiccd)、几何刚度(形状类型)。P18 的崩盘根因见 P22。
+
 ## P20. 接触流形质量:multiccd / filter_static_base / rigid_gap 三旋钮的实测权衡
 - **背景**:asset_audit.py 实测发现碗/杯静止时只有 **1 个接触点**支撑(应为 >=3),绕 z 轴以 ~0.6 rad/s 微振——单点流形无法平衡物体,P12 判据本底噪声的物理根源。
 - **实验**:seeds 0-9 配对网格,multiccd{0,1} x filter_static_base{0,1} x rigid_gap{0.02,0.1},全部 10/10(见 `results/bench_20261111_220419.json`)。
 - **结果**:
-  - `multiccd=1`(多点 CCD 流形):最大穿透 2.83→**0.79 mm**(3.6x),放置收尾角速度 0.56→**0.003 rad/s**(200x),搬运滑移 8.3→3.9 mm,求解器平均迭代 2.82→1.37;代价 ms/帧 12.6→16.1(gap=0.02)。
+  - `multiccd=1`(多点 CCD 流形):最大穿透 2.83→**0.79 mm**(3.6x),放置收尾角速度 0.56→**0.003 rad/s**(200x),搬运滑移 8.3→3.9 mm,求解器平均迭代 2.82→1.37;代价:调参集内 ms/帧 12.6→16.1 系 --probe 计时污染,**干净口径 held-out 实测 9.70 vs 9.57**(bench_20261111_222748.json),multiccd 无显著速度代价。
   - `filter_static_base=1`:静态-静态接触 5→1(nefc 36→20),ms/帧略降,零成本。
   - `rigid_gap 0.1→0.02`:接触候选 111→33(3.4x),ms/帧再降 ~1ms,精度指标不变(候选数降但有效接触不变)。
-- **结论(待 held-out 复核)**:精度优先选 `multiccd=1 + filter_static_base=1 + rigid_gap=0.02`(~18 ms/帧);若 ms/帧 优先则 multiccd=0 同组合(~11.7 ms/帧)。P18 的"solver 保真度优先于 infra 性能"原则支持前者。
+- **结论(已 held-out 复核,seeds 10-19 全 10/10,`results/bench_20261111_222748.json`)**:精度优先选 `multiccd=1 + filter_static_base=1 + rigid_gap=0.02`,干净计时 **9.70 ms/帧**(vs multiccd=0 的 9.57,无显著差异);若 ms/帧 优先则 multiccd=0 同组合。P18 的"solver 保真度优先于 infra 性能"原则支持前者。
 
 ## P21. njmax/nconmax 收紧扫描:无收益,保持余量
 - **实验**:新默认(multiccd+fsb+gap0.02)下 njmax{768,1536} x nconmax{384,768},seeds 0-9(`results/bench_20261111_224338.json`)。
 - **结果**:4 配置全 10/10,物理指标逐位相同(穿透 0.789mm,nefc peak 88,接触峰值 38/20);ms/帧 9.6-10.4 无显著差异。
-- **结论**:缓冲区是预分配显存,缩小不提速;而 real2sim CoACD 分解包(16+ 凸件)接触数可达当前 ~4-6 倍,P16 的静默丢接触风险不值得为零收益冒。**保持 njmax=1536 / nconmax=768**,余量 nefc 17.5x / naconmax 20x。
+- **结论**:缓冲区是预分配显存,缩小不提速;而 real2sim CoACD 分解包(16+ 凸件)接触数估计可达当前 ~4-6 倍(未实测,按 16+ 凸件分解包推算),P16 的静默丢接触风险不值得为零收益冒。**保持 njmax=1536 / nconmax=768**,余量 nefc 17.5x / naconmax 20x。
 
 ## P22. P18 悬崖的真正根因:单点接触流形,不是 ke 稳定极限(more)
 - **P18 原结论是错的**:当时归因为"dt=2.78ms 突破 ke=2.5e8 的接触时间常数极限"。P19 已证明 solref 被 refsafe 钳到 2·dt,**有效刚度始终由步长决定,ke/kd 只控阻尼比**——不存在 ke 稳定极限。
-- **新证据**:physics_probe 实测——静置穿透 ~dt^1.88(与 refsafe p=2 吻合);ke/kd 在固定 dt 下只改变 dampratio(zeta 0.67-2.5),穿透 0.001-0.018mm 几乎不变;求解器收敛阶 ~1.06、能量漂移 ~1.00(一阶精度)。
+- **新证据**:physics_probe 实测——静置穿透 ~dt^1.88(与 refsafe p=2 吻合);ke/kd 在固定 dt 下只改变 dampratio(zeta 0.67-2.5):ke 无关,ζ 使穿透在 0.001-0.018mm 间变化 18 倍;求解器收敛阶 ~1.06、能量漂移 ~1.00(一阶精度)。
 - **正确根因**:substeps=6(360Hz)时单点 CCD 接触流形无法约束抓取/放置瞬态的冲击与摩擦耦合,位置级 PD 伺服注入能量,物体被甩飞——是**接触流形质量问题**,不是刚度稳定性问题。
 - **验证**:新默认(multiccd=1 多点流形 + filter_static_base + rigid_gap=0.02)下 substeps=6 在 held-out seeds 10-19 复测 **10/10**(旧配置下同 seeds 仅 3/10),ms/帧 7.12 vs substeps=8 的 9.36。P18 的"悬崖"由 P20 的流形修复消除。
 - **方法论**:错误的物理直觉(ke 极限)被 held-out 数据证伪;正确解释来自先读 solref 源码(P19)再做流形对照实验(P20/P22)。**substeps 默认值待 P22 探针数据定夺(6 vs 8 的精度权衡)。**

@@ -2,8 +2,8 @@
   "device": "cuda:0",
   "overrides": {},
   "counts": {
-    "PASS": 12,
-    "WARN": 11,
+    "PASS": 13,
+    "WARN": 10,
     "FAIL": 1
   },
   "checks": [
@@ -233,16 +233,16 @@
     },
     {
       "check": "bowl.mass: single mass source (collision shape x bowl_density)",
-      "verdict": "WARN",
-      "measured": "0.2376 kg",
+      "verdict": "PASS",
+      "measured": "0.1782 kg",
       "expected": "0.1782 kg",
-      "note": "+59.4 g comes from other shapes on the body (a visual-only mesh with non-zero density is counted as mass)"
+      "note": "-0.0 g comes from other shapes on the body (a visual-only mesh with non-zero density is counted as mass)"
     },
     {
       "check": "bowl.inertia_zz vs solid cylinder of the same mass",
       "verdict": "PASS",
-      "measured": "1.003e-04 kg m^2",
-      "expected": "solid 8.985e-05; thin shell 1.797e-04",
+      "measured": "6.738e-05 kg m^2",
+      "expected": "solid 6.738e-05; thin shell 1.348e-04",
       "note": "a real bowl is a shell: its yaw inertia lies between these"
     },
     {
@@ -255,7 +255,7 @@
     {
       "check": "bowl.mass / friction",
       "verdict": "PASS",
-      "measured": "0.2376 kg, mu=[0.8, 1.0]",
+      "measured": "0.1782 kg, mu=[0.8, 1.0]",
       "expected": "0.02-1.0 kg (graspable by a 5 N/finger gripper)",
       "note": ""
     },
@@ -332,28 +332,28 @@
     {
       "check": "bowl.rest_contact_manifold: >= 3 support points on a flat surface",
       "verdict": "WARN",
-      "measured": "1 contact point(s), max penetration 0.205 mm",
+      "measured": "1 contact point(s), max penetration 0.207 mm",
       "expected": ">= 3",
       "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
     },
     {
       "check": "bowl.rest_velocity_noise: far below the judge's at-rest threshold",
       "verdict": "WARN",
-      "measured": "lin 9.838 mm/s, ang 0.6154 rad/s, creep 0.449 mm in 2 s",
+      "measured": "lin 10.169 mm/s, ang 0.6201 rad/s, creep 0.322 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     },
     {
       "check": "cup.rest_contact_manifold: >= 3 support points on a flat surface",
       "verdict": "WARN",
-      "measured": "1 contact point(s), max penetration 0.122 mm",
+      "measured": "1 contact point(s), max penetration 0.117 mm",
       "expected": ">= 3",
       "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
     },
     {
       "check": "cup.rest_velocity_noise: far below the judge's at-rest threshold",
       "verdict": "WARN",
-      "measured": "lin 10.894 mm/s, ang 0.3988 rad/s, creep 0.034 mm in 2 s",
+      "measured": "lin 14.061 mm/s, ang 0.5205 rad/s, creep 0.025 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     }

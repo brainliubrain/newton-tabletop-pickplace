@@ -223,7 +223,7 @@ def build_newton_shapes(builder, manifest: dict, body: int, cfg_contact):
     builder.add_shape_mesh(
         body=body,
         mesh=visual,
-        cfg=cfg_contact(has_shape_collision=False),  # render-only
+        cfg=cfg_contact(has_shape_collision=False, density=0.0),  # render-only; density=0 so it adds no phantom mass on top of the collision parts
     )
     for part_file in manifest["collision"]["files"]:
         part = _trimesh().load(os.path.join(pack_dir, part_file), force="mesh")

@@ -456,7 +456,7 @@ class PickPlaceEnv:
             idx = builder.add_shape_mesh(
                 body=self.bowl_body,
                 mesh=bowl_mesh,
-                cfg=cc(has_shape_collision=False),  # visual only
+                cfg=cc(has_shape_collision=False, density=0.0),  # visual only; density=0 so it adds no phantom mass on top of the collision cylinder
             )
             self.shape_roles.setdefault("bowl_visual", []).append(int(idx))
 

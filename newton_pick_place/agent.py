@@ -73,11 +73,14 @@ class FrankaIK:
 
     RESEED_ERR = 0.03
 
-    def __init__(self, init_joint_q: np.ndarray):
+    def __init__(self, init_joint_q: np.ndarray, base_z: float = 0.0):
         self.home_q = np.asarray(init_joint_q, dtype=np.float32).reshape(-1)
         builder = newton.ModelBuilder()
-        # IK only needs kinematics: use the visual-stripped URDF (3x faster build)
-        builder.add_urdf(stripped_urdf_path(), floating=False, joint_damping_mode="passive")
+        # IK only needs kinematics: use the visual-stripped URDF (3x faster build).
+        # base_z must match the env's add_urdf xform or every solved joint
+        # target lands base_z too low/high in the real scene.
+        xform = wp.transform(wp.vec3(0.0, 0.0, base_z), wp.quat_identity()) if base_z else None
+        builder.add_urdf(stripped_urdf_path(), xform=xform, floating=False, joint_damping_mode="passive")
         self.model = builder.finalize()
         self.pos_obj = ik.IKObjectivePosition(
             link_index=TCP_BODY,
@@ -124,7 +127,7 @@ class PickPlaceAgent:
     def __init__(self, env, cfg: SceneConfig | None = None):
         self.env = env
         self.cfg = cfg or env.cfg
-        self.ik = FrankaIK(np.asarray(env.home_q, dtype=np.float32))
+        self.ik = FrankaIK(np.asarray(env.home_q, dtype=np.float32), base_z=float(getattr(env.cfg, "stand_height", 0.0)))
 
     # ------------------------------------------------------------------ #
     def _plan(self, object_poses: dict[str, np.ndarray]) -> list[dict]:

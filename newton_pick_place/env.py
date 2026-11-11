@@ -178,6 +178,13 @@ class SceneConfig:
     table_center: tuple = (0.65, 0.0, 0.38)
     table_half: tuple = (0.35, 0.50, 0.02)
 
+    # Low cylindrical plinth under the robot base. Its TOP surface is where
+    # link0's collision bottom rests: the URDF is loaded with z = stand_height
+    # so the base sits ON the plinth instead of penetrating it (audit FAIL:
+    # 37.5 mm overlap when the plinth poked through the base).
+    stand_radius: float = 0.11
+    stand_height: float = 0.0375
+
     # Rectangular tray assembled from 5 boxes (base + 4 walls).
     tray_center_xy: tuple = (0.62, 0.02)
     tray_base_half: tuple = (0.145, 0.105, 0.004)
@@ -313,8 +320,9 @@ def table_geoms(cfg: SceneConfig):
     for sx in (-1, 1):
         for sy in (-1, 1):
             yield "cylinder", (cx + sx * (hx - 0.06), cy + sy * (hy - 0.06), leg_z), (0.025, leg_z)
-    # low cylindrical stand under the robot base (pure scene furniture)
-    yield "cylinder", (0.0, 0.0, 0.0125), (0.11, 0.025)
+    # low cylindrical stand under the robot base (pure scene furniture);
+    # spans z in [0, stand_height] so its top is exactly where link0 rests
+    yield "cylinder", (0.0, 0.0, cfg.stand_height / 2.0), (cfg.stand_radius, cfg.stand_height / 2.0)
 
 
 def load_cup_mesh(cfg: SceneConfig) -> newton.Mesh:
@@ -369,7 +377,13 @@ class PickPlaceEnv:
         builder.default_shape_cfg = cc()
 
         # --- robot ------------------------------------------------------
-        builder.add_urdf(FRANKA_URDF, floating=False, enable_self_collisions=False, joint_damping_mode="passive")
+        builder.add_urdf(
+            FRANKA_URDF,
+            xform=wp.transform(wp.vec3(0.0, 0.0, cfg.stand_height), wp.quat_identity()),
+            floating=False,
+            enable_self_collisions=False,
+            joint_damping_mode="passive",
+        )
         builder.joint_target_ke[:7], builder.joint_target_kd[:7] = ARM_KE, ARM_KD
         builder.joint_target_ke[7:9], builder.joint_target_kd[7:9] = FINGER_KE, FINGER_KD
         builder.joint_effort_limit[:7], builder.joint_armature[:7] = ARM_EFFORT, ARM_ARMATURE

@@ -1,0 +1,361 @@
+{
+  "device": "cuda:0",
+  "overrides": {},
+  "counts": {
+    "PASS": 12,
+    "WARN": 11,
+    "FAIL": 1
+  },
+  "checks": [
+    {
+      "check": "robot.link_mass: compiled == URDF",
+      "verdict": "PASS",
+      "measured": [
+        2.927,
+        2.936,
+        2.245,
+        2.616,
+        2.327,
+        1.817,
+        0.627
+      ],
+      "expected": [
+        2.927,
+        2.936,
+        2.245,
+        2.616,
+        2.327,
+        1.817,
+        0.627
+      ],
+      "note": "max rel err 3.57e-08"
+    },
+    {
+      "check": "inertia: positive-definite + triangle inequality (all bodies)",
+      "verdict": "PASS",
+      "measured": "all valid",
+      "expected": "no violations",
+      "note": ""
+    },
+    {
+      "check": "robot.joint_range: compiled == URDF",
+      "verdict": "PASS",
+      "measured": [
+        [
+          -2.744,
+          2.744
+        ],
+        [
+          -1.784,
+          1.784
+        ],
+        [
+          -2.901,
+          2.901
+        ],
+        [
+          -3.042,
+          -0.152
+        ],
+        [
+          -2.806,
+          2.806
+        ],
+        [
+          0.544,
+          4.517
+        ],
+        [
+          -3.016,
+          3.016
+        ]
+      ],
+      "expected": [
+        [
+          -2.744,
+          2.744
+        ],
+        [
+          -1.784,
+          1.784
+        ],
+        [
+          -2.901,
+          2.901
+        ],
+        [
+          -3.042,
+          -0.152
+        ],
+        [
+          -2.807,
+          2.807
+        ],
+        [
+          0.544,
+          4.517
+        ],
+        [
+          -3.016,
+          3.016
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "check": "robot.effort_limit: sim <= hardware torque limit",
+      "verdict": "WARN",
+      "measured": [
+        90.0,
+        180.0,
+        90.0,
+        180.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "expected": [
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "note": "sim/hardware ratio per joint [1.0, 2.1, 1.0, 2.1, 7.5, 7.5, 7.5]: torque the real FR3 cannot produce is available in sim (sim2real gap); see probe 'arm_torque_peak_nm' for what the task actually uses"
+    },
+    {
+      "check": "robot.velocity_limit: hardware reference",
+      "verdict": "PASS",
+      "measured": "not enforced by the solver (agent PTP profile + sim2real envelope enforce it)",
+      "expected": [
+        2.62,
+        2.62,
+        2.62,
+        2.62,
+        5.26,
+        4.18,
+        5.26
+      ],
+      "note": ""
+    },
+    {
+      "check": "robot.armature vs Menagerie FR3",
+      "verdict": "WARN",
+      "measured": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "expected": [
+        0.195,
+        0.195,
+        0.195,
+        0.195,
+        0.074,
+        0.074,
+        0.074
+      ],
+      "note": "configured ARM_ARMATURE=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]"
+    },
+    {
+      "check": "robot.frictionloss vs Menagerie FR3",
+      "verdict": "WARN",
+      "measured": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "expected": [
+        1.137,
+        1.137,
+        1.137,
+        1.137,
+        0.763,
+        0.44,
+        0.248
+      ],
+      "note": "joint dry friction is not modeled in the sim"
+    },
+    {
+      "check": "robot.pd_gains vs Menagerie FR3 (kp, kv)",
+      "verdict": "PASS",
+      "measured": {
+        "kp": [
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0
+        ],
+        "kv": [
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0
+        ]
+      },
+      "expected": {
+        "kp": [
+          4500.0,
+          4500.0,
+          3500.0,
+          3500.0,
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "kv": [
+          450.0,
+          450.0,
+          350.0,
+          350.0,
+          200.0,
+          200.0,
+          200.0
+        ]
+      },
+      "note": "design choice; affects tracking error and contact impulse"
+    },
+    {
+      "check": "bowl.mass: single mass source (collision shape x bowl_density)",
+      "verdict": "WARN",
+      "measured": "0.2376 kg",
+      "expected": "0.1782 kg",
+      "note": "+59.4 g comes from other shapes on the body (a visual-only mesh with non-zero density is counted as mass)"
+    },
+    {
+      "check": "bowl.inertia_zz vs solid cylinder of the same mass",
+      "verdict": "PASS",
+      "measured": "1.003e-04 kg m^2",
+      "expected": "solid 8.985e-05; thin shell 1.797e-04",
+      "note": "a real bowl is a shell: its yaw inertia lies between these"
+    },
+    {
+      "check": "bowl.collision_radius vs visual radius",
+      "verdict": "PASS",
+      "measured": "collision 27.5 mm",
+      "expected": "visual 28.5 mm",
+      "note": "collision is a solid cylinder: the bowl cavity is not physical (nothing can be placed inside it)"
+    },
+    {
+      "check": "bowl.mass / friction",
+      "verdict": "PASS",
+      "measured": "0.2376 kg, mu=[0.8, 1.0]",
+      "expected": "0.02-1.0 kg (graspable by a 5 N/finger gripper)",
+      "note": ""
+    },
+    {
+      "check": "cup.mass / friction",
+      "verdict": "PASS",
+      "measured": "0.0707 kg, mu=[0.8, 1.0]",
+      "expected": "0.02-1.0 kg (graspable by a 5 N/finger gripper)",
+      "note": ""
+    },
+    {
+      "check": "scene.gravity (z-up, SI)",
+      "verdict": "PASS",
+      "measured": [
+        -0.0,
+        -0.0,
+        -9.8100004196167
+      ],
+      "expected": [
+        0,
+        0,
+        -9.81
+      ],
+      "note": ""
+    },
+    {
+      "check": "solver.timestep integrated == SceneConfig.dt_substep",
+      "verdict": "PASS",
+      "measured": "2.08333 ms",
+      "expected": "2.08333 ms",
+      "note": ""
+    },
+    {
+      "check": "contact.solref: requested time constant is honored",
+      "verdict": "WARN",
+      "measured": "requested timeconst 0.040 ms -> effective 4.167 ms (dampratio 1.58)",
+      "expected": ">= 2*dt = 4.167 ms",
+      "note": "refsafe clamps it: contact stiffness is set by the timestep; ke/kd only act through dampratio = kd / (2 sqrt(ke))"
+    },
+    {
+      "check": "scene.initial_penetration: no resting contact deeper than 1 mm",
+      "verdict": "FAIL",
+      "measured": [
+        [
+          "world/shape_59_59",
+          "fr3_fr3_link0/shape_7_7",
+          37.53
+        ]
+      ],
+      "expected": "none",
+      "note": "overlapping static geometry is solved as a contact every substep"
+    },
+    {
+      "check": "scene.static_static_contacts: no constraints between immovable bodies",
+      "verdict": "WARN",
+      "measured": "5 contact(s) of 7 active; 36 constraint rows total",
+      "expected": "0",
+      "note": "the fixed base link is exported as a mocap body, so base<->stand/ground pairs are not auto-filtered"
+    },
+    {
+      "check": "contact.candidates vs active (detection gap sizing)",
+      "verdict": "WARN",
+      "measured": "44 candidates / 7 active = 6.3x (rigid_gap=0.1 m)",
+      "expected": "<= 3x",
+      "note": "every candidate costs narrowphase work and a contact-buffer slot"
+    },
+    {
+      "check": "contact.buffers: headroom at rest",
+      "verdict": "PASS",
+      "measured": "nefc 36/1536 (43x), contacts 44/768 (17x)",
+      "expected": "peak usage during the task is reported by `bench.py --probe`",
+      "note": ""
+    },
+    {
+      "check": "bowl.rest_contact_manifold: >= 3 support points on a flat surface",
+      "verdict": "WARN",
+      "measured": "1 contact point(s), max penetration 0.205 mm",
+      "expected": ">= 3",
+      "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
+    },
+    {
+      "check": "bowl.rest_velocity_noise: far below the judge's at-rest threshold",
+      "verdict": "WARN",
+      "measured": "lin 9.838 mm/s, ang 0.6154 rad/s, creep 0.449 mm in 2 s",
+      "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
+      "note": ""
+    },
+    {
+      "check": "cup.rest_contact_manifold: >= 3 support points on a flat surface",
+      "verdict": "WARN",
+      "measured": "1 contact point(s), max penetration 0.122 mm",
+      "expected": ">= 3",
+      "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
+    },
+    {
+      "check": "cup.rest_velocity_noise: far below the judge's at-rest threshold",
+      "verdict": "WARN",
+      "measured": "lin 10.894 mm/s, ang 0.3988 rad/s, creep 0.034 mm in 2 s",
+      "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
+      "note": ""
+    }
+  ]
+}

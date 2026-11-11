@@ -115,7 +115,14 @@ def audit_robot(a: Audit, env: PickPlaceEnv):
     a.add("robot.velocity_limit: hardware reference", "PASS", "not enforced by the solver (agent PTP profile + sim2real envelope enforce it)", hw_vel)
 
     # --- actuator/joint dynamics vs Menagerie reference ---------------------
-    ref = mujoco.MjModel.from_xml_path(MENAGERIE_FR3)
+    # fr3.xml declares meshdir="assets" (upstream layout); our vendored copy
+    # keeps the .obj files next to the XML, so patch meshdir="." via a temp copy.
+    with open(MENAGERIE_FR3, encoding="utf-8") as fh:
+        xml = fh.read().replace('meshdir="assets"', 'meshdir="."')
+    ref_xml = os.path.join(os.path.dirname(MENAGERIE_FR3), "_audit_fr3.xml")
+    with open(ref_xml, "w", encoding="utf-8") as fh:
+        fh.write(xml)
+    ref = mujoco.MjModel.from_xml_path(ref_xml)
     ref_arm = [float(ref.dof_armature[ref.joint(j).dofadr[0]]) for j in arm_joints]
     ref_fl = [float(ref.dof_frictionloss[ref.joint(j).dofadr[0]]) for j in arm_joints]
     ref_kp = [float(ref.actuator_gainprm[i, 0]) for i in range(7)]

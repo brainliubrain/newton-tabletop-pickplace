@@ -42,6 +42,13 @@ FINGER_KE, FINGER_KD = [100.0] * 2, [20.0] * 2
 ARM_EFFORT, ARM_ARMATURE = [90.0, 180.0, 90.0, 180.0, 90.0, 90.0, 90.0], [0.1] * 7
 FINGER_EFFORT, FINGER_ARMATURE = [5.0] * 2, [0.5] * 2
 
+# Reference-robot values (MuJoCo-Menagerie fr3.xml / Franka datasheet), used
+# when the fidelity presets below are enabled — they are the asset_audit WARN
+# expectations for robot.armature / robot.frictionloss / robot.effort_limit.
+MENAGGERIE_ARMATURE = [0.195, 0.195, 0.195, 0.195, 0.074, 0.074, 0.074]
+MENAGGERIE_FRICTIONLOSS = [1.137, 1.137, 1.137, 1.137, 0.763, 0.44, 0.248]
+HARDWARE_EFFORT = [87.0, 87.0, 87.0, 87.0, 12.0, 12.0, 12.0]
+
 # Fallback FR3 posture (from newton example_robot_panda_hydro); used only as the
 # IK seed. The actual HOME_Q is solved once at startup so the hand hovers clear
 # of the table (see solve_home_q()).
@@ -238,6 +245,13 @@ class SceneConfig:
     # 0.02 keeps all active contacts (bench P20: candidates 111->33, same accuracy)
     filter_static_base: bool = True  # drop link0 <-> stand/ground pairs (fixed base resting on static scene)
 
+    # Robot fidelity presets (asset_audit WARN items, P24): "sim" keeps the
+    # newton-example values; "menagerie"/"hardware" match the reference model
+    # and the real FR3 torque envelope for sim2real honesty.
+    arm_inertia_model: str = "sim"
+    arm_frictionloss_model: str = "sim"
+    arm_effort_model: str = "sim"
+
     @property
     def dt_frame(self) -> float:
         return 1.0 / self.control_hz
@@ -394,6 +408,12 @@ class PickPlaceEnv:
         builder.joint_target_ke[7:9], builder.joint_target_kd[7:9] = FINGER_KE, FINGER_KD
         builder.joint_effort_limit[:7], builder.joint_armature[:7] = ARM_EFFORT, ARM_ARMATURE
         builder.joint_effort_limit[7:9], builder.joint_armature[7:9] = FINGER_EFFORT, FINGER_ARMATURE
+        if cfg.arm_inertia_model == "menagerie":
+            builder.joint_armature[:7] = MENAGGERIE_ARMATURE
+        if cfg.arm_frictionloss_model == "menagerie":
+            builder.joint_friction[:7] = MENAGGERIE_FRICTIONLOSS
+        if cfg.arm_effort_model == "hardware":
+            builder.joint_effort_limit[:7] = HARDWARE_EFFORT
         builder.joint_q[:9] = list(self.home_q)
         builder.joint_target_q[:9] = list(self.home_q)
         # high-friction fingertip pads for a stable grasp

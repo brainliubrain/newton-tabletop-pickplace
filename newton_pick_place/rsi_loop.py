@@ -145,6 +145,60 @@ def diagnose(cfg: SceneConfig, m: dict, tried: set[str]) -> list[Proposal]:
                 "narrowphase processes fewer far-apart pairs; dynamics unchanged because those pairs never produced a constraint",
             )
         )
+    # 3b. contact damping ratio: P19 showed ke/kd only set zeta; current
+    # zeta~1.58 is over-critical — try near-critical damping
+    if cfg.contact_kd == 5.0e4:
+        add(
+            Proposal(
+                "contact_kd=3.2e4",
+                {"contact_kd": 3.2e4},
+                f"damping ratio zeta~1.58 (over-critical) at ke={cfg.contact_ke}, kd={cfg.contact_kd}",
+                "near-critical damping (zeta~1.0) may cut contact ringing -> less penetration/slip",
+            )
+        )
+    # 3c. robot fidelity presets — the asset_audit WARN items. These are
+    # sim2real-fidelity changes, not speed changes: accept on no-regression.
+    if cfg.arm_inertia_model != "menagerie":
+        add(
+            Proposal(
+                "arm_inertia_model=menagerie",
+                {"arm_inertia_model": "menagerie"},
+                "audit WARN robot.armature: sim 0.1 vs Menagerie [0.195x4, 0.074x3]",
+                "rotor inertia matching the reference FR3; adopt if dynamics don't regress",
+                resource_only=True,
+            )
+        )
+    if cfg.arm_frictionloss_model != "menagerie":
+        add(
+            Proposal(
+                "arm_frictionloss_model=menagerie",
+                {"arm_frictionloss_model": "menagerie"},
+                "audit WARN robot.frictionloss: joint dry friction not modeled (Menagerie 0.25-1.14)",
+                "real FR3 joints have dry friction; adopt if tracking/grasp don't regress",
+                resource_only=True,
+            )
+        )
+    if cfg.arm_effort_model != "hardware":
+        add(
+            Proposal(
+                "arm_effort_model=hardware",
+                {"arm_effort_model": "hardware"},
+                "audit WARN robot.effort_limit: sim allows up to 7.5x the hardware torque (wrist joints)",
+                "clamp to the real FR3 torque envelope for sim2real honesty; adopt if the task still passes",
+                resource_only=True,
+            )
+        )
+    # 3d. narrower contact detection gap: fewer narrowphase candidates
+    if m["contact_candidates_peak"] > 30 and cfg.rigid_gap > 0.011:
+        g = cfg.rigid_gap / 2
+        add(
+            Proposal(
+                f"rigid_gap={g}",
+                {"rigid_gap": g},
+                f"{m['contact_candidates_peak']} contact candidates at rigid_gap={cfg.rigid_gap}",
+                "halving the detection gap shrinks the narrowphase set; active contacts unchanged",
+            )
+        )
     # 4. solver work budget
     if m["solver_cap_hit_frac"] == 0.0 and m["solver_niter_max"] * 2 < cfg.solver_iterations:
         it = max(2 * m["solver_niter_max"], 4)
@@ -243,6 +297,7 @@ def main() -> int:
     ap.add_argument("--final-base", type=int, default=20)
     ap.add_argument("--final-episodes", type=int, default=20, help="0 skips the final test")
     ap.add_argument("--start", default="{}", help="JSON SceneConfig overrides to start from (default: SceneConfig defaults)")
+    ap.add_argument("--tried", default="", help="comma-separated proposal names already explored (pre-marked as tried)")
     args = ap.parse_args()
 
     wp.init()
@@ -253,7 +308,7 @@ def main() -> int:
     evaluate = Evaluator(args.episodes, TaskConfig())
     baseline = json.loads(args.start)
     champion = dict(baseline)
-    tried: set[str] = set()
+    tried: set[str] = {t for t in args.tried.split(",") if t}
     rounds: list[dict] = []
     meta = {
         "device": str(wp.get_device()),

@@ -51,3 +51,9 @@
 - P18 悬崖根因更正(P22): 单点接触流形而非 ke 极限; multiccd 后 substeps=6 也 10/10, 但精度权衡仍选 8
 - njmax/nconmax 保持 1536/768(P21: 收紧无收益, 保留分解资产余量)
 - asset_audit 修复: menagerie stl 补齐 + meshdir patch + link0/base 穿透修复(机器人抬升 37.5mm + IK 同步) + 碗质量 0.238->0.178kg
+
+## 2026-10-13 RSI 闭环首跑(P23)
+- `rsi_loop.py` 完整运行:tune 0-9 / held-out 10-19 / final 20-39,4 轮收敛
+- 采纳:`substeps 8→7`(env.py 默认已改);拒绝:`njmax 512 / nconmax 256`(real2sim 余量盲区,人工否决)
+- final test seeds 20-39: 20/20 vs 20/20, envstep 7.74→7.26ms, 穿透 0.80→0.92mm
+- 证据: results/rsi/{journal.jsonl,REPORT.md,champion.json}

@@ -52,7 +52,7 @@ GPU note: designed for a single ~6GB CUDA GPU; kernels are Warp-cached.
 |------|-------|---------|
 | solver_iterations / ls_iterations | 8/15/25 × 12/20/30 | 15/20 kept; 8 hits iteration cap |
 | contact_ke / contact_kd | 1e8–5e8 / 3e4–7e4 | 2.5e8/5e4 kept; 5e8+3e4 had a timeout |
-| substeps | 6/8/10/12 | **8 adopted** (480Hz, -17% wall); 6 collapses on held-out seeds (P18) |
+| substeps | 6/7/8/10/12 | **7 adopted via rsi_loop** (P23: 20/20 on untouched seeds 20-39, envstep -6%); 6 collapses on held-out seeds (P18) |
 
 Open directions worth investigating:
 

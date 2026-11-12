@@ -2,8 +2,8 @@
   "device": "cuda:0",
   "overrides": {},
   "counts": {
-    "PASS": 14,
-    "WARN": 10,
+    "PASS": 20,
+    "WARN": 4,
     "FAIL": 0
   },
   "checks": [
@@ -304,50 +304,50 @@
     },
     {
       "check": "scene.static_static_contacts: no constraints between immovable bodies",
-      "verdict": "WARN",
-      "measured": "1 contact(s) of 3 active; 20 constraint rows total",
+      "verdict": "PASS",
+      "measured": "0 contact(s) of 8 active; 40 constraint rows total",
       "expected": "0",
-      "note": "the fixed base link is exported as a mocap body, so base<->stand/ground pairs are not auto-filtered"
+      "note": ""
     },
     {
       "check": "contact.candidates vs active (detection gap sizing)",
-      "verdict": "WARN",
-      "measured": "20 candidates / 3 active = 6.7x (rigid_gap=0.1 m)",
+      "verdict": "PASS",
+      "measured": "8 candidates / 8 active = 1.0x (rigid_gap=0.02 m)",
       "expected": "<= 3x",
-      "note": "every candidate costs narrowphase work and a contact-buffer slot"
+      "note": ""
     },
     {
       "check": "contact.buffers: headroom at rest",
       "verdict": "PASS",
-      "measured": "nefc 20/1536 (77x), contacts 20/768 (38x)",
+      "measured": "nefc 40/1536 (38x), contacts 8/768 (96x)",
       "expected": "peak usage during the task is reported by `bench.py --probe`",
       "note": ""
     },
     {
       "check": "bowl.rest_contact_manifold: >= 3 support points on a flat surface",
-      "verdict": "WARN",
-      "measured": "1 contact point(s), max penetration 0.207 mm",
+      "verdict": "PASS",
+      "measured": "4 contact point(s), max penetration 0.007 mm",
       "expected": ">= 3",
-      "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
+      "note": ""
     },
     {
       "check": "bowl.rest_velocity_noise: far below the judge's at-rest threshold",
-      "verdict": "WARN",
-      "measured": "lin 10.170 mm/s, ang 0.6201 rad/s, creep 0.322 mm in 2 s",
+      "verdict": "PASS",
+      "measured": "lin 0.062 mm/s, ang 0.0026 rad/s, creep 0.001 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     },
     {
       "check": "cup.rest_contact_manifold: >= 3 support points on a flat surface",
-      "verdict": "WARN",
-      "measured": "1 contact point(s), max penetration 0.126 mm",
+      "verdict": "PASS",
+      "measured": "4 contact point(s), max penetration 0.007 mm",
       "expected": ">= 3",
-      "note": "a 1-point manifold cannot balance the object: the point orbits the rim and the body wobbles/creeps"
+      "note": ""
     },
     {
       "check": "cup.rest_velocity_noise: far below the judge's at-rest threshold",
-      "verdict": "WARN",
-      "measured": "lin 10.809 mm/s, ang 0.3857 rad/s, creep 0.024 mm in 2 s",
+      "verdict": "PASS",
+      "measured": "lin 0.025 mm/s, ang 0.0007 rad/s, creep 0.004 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     }

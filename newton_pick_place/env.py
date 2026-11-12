@@ -212,11 +212,13 @@ class SceneConfig:
     spawn_min_separation: float = 0.12
     spawn_min_tray_dist: float = 0.15
 
-    # Simulation cadence: 60 Hz control frames, 8 substeps of 1/480 s.
+    # Simulation cadence: 60 Hz control frames, 7 substeps of ~1/420 s.
     # (substeps=6 -> dt=2.78 ms fails 7/10 on held-out seeds: contact stiffness
-    # ke=2.5e8 needs dt << ~2 ms; see docs/PROBLEMS.md P18 and bench_*.json)
+    # ke=2.5e8 needs dt << ~2 ms; see docs/PROBLEMS.md P18 and bench_*.json.
+    # substeps=7 adopted via rsi_loop P23: 20/20 on untouched seeds 20-39,
+    # envstep -6%, penetration +0.12 mm within gate tolerance)
     control_hz: int = 60
-    substeps: int = 8
+    substeps: int = 7
 
     # Contact material + solver knobs (all overridable per-run for sweeps;
     # defaults are the tuned values documented in docs/PROBLEMS.md).

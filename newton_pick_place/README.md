@@ -118,7 +118,7 @@ check_env.py                   环境自检(warp CUDA / GPU 刚体世界 / URDF 
 | 维度 | 扫描范围 | 结论 |
 |------|---------|------|
 | solver iterations | 8 / 15 / 25 × ls 12 / 20 / 30 | 全部 3/3;iters=8 触发 "iterations limit reached" 警告(求解器未完全收敛),默认 15/20 在精度上有余量且耗时几乎不变 → **保持 15/20** |
-| cadence(substeps) | 6 / 8 / 10 / 12 | seeds 0-9 + held-out 10-19 双 seed 集验证:**8 子步 20/20 全过**,11.4-11.6ms/帧(-17% vs 10 子步);**6 子步在 held-out seeds 上 3/10 崩**(dt=2.78ms 超过 ke=2.5e8 接触稳定极限)→ **采用 8 子步(480Hz)**,6 是明确的稳定性悬崖 |
+| cadence(substeps) | 6 / 8 / 10 / 12 | seeds 0-9 + held-out 10-19 双 seed 集验证:**8 子步 20/20 全过**;**6 子步在 held-out seeds 上 3/10 崩**(单点接触流形在 dt=2.78ms 下接不住冲击,见 P22)→ 后经 `rsi_loop.py` 闭环在 seeds 20-39 全新种子上验证 **7 子步 20/20、envstep -6%** → **采用 7 子步(~420Hz,见 P23)** |
 | contact ke/kd | ke∈{1e8,2.5e8,5e8} × kd∈{3e4,5e4,7e4} | ke=5e8+kd=3e4 出现 1 次超时(过刚欠阻尼边缘);ke≤2.5e8 全稳 → **保持 2.5e8/5e4** |
 
 ## 8. 演示建议(面试现场)

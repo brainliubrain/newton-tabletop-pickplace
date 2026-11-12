@@ -120,3 +120,10 @@
 - **正确根因**:substeps=6(360Hz)时单点 CCD 接触流形无法约束抓取/放置瞬态的冲击与摩擦耦合,位置级 PD 伺服注入能量,物体被甩飞——是**接触流形质量问题**,不是刚度稳定性问题。
 - **验证**:新默认(multiccd=1 多点流形 + filter_static_base + rigid_gap=0.02)下 substeps=6 在 held-out seeds 10-19 复测 **10/10**(旧配置下同 seeds 仅 3/10),ms/帧 7.12 vs substeps=8 的 9.36。P18 的"悬崖"由 P20 的流形修复消除。
 - **方法论**:错误的物理直觉(ke 极限)被 held-out 数据证伪;正确解释来自先读 solref 源码(P19)再做流形对照实验(P20/P22)。**substeps 默认值待 P22 探针数据定夺(6 vs 8 的精度权衡)。**
+
+## P23. RSI 闭环首次完整运行:substeps=7 采纳,buffer 收紧拒绝
+- **实验**:`rsi_loop.py` 默认参数完整跑完——tune seeds 0-9 / held-out 10-19 / final 20-39(从未参与任何决策),4 轮收敛,证据 `results/rsi/{journal.jsonl,REPORT.md,champion.json}`。
+- **过程**:round1 substeps=7 ACCEPT(held-out envstep -10%);round2 substeps=6 **ROLLBACK**——tune seeds 上 carry_slip 3.98→5.34mm 超 gate 容差,gate 按设计工作;round3 njmax=512、round4 nconmax=256 均以 resource_only ACCEPT(无回退)。
+- **final test(seeds 20-39,40 回合)**:baseline vs champion 均 20/20;envstep 7.74→7.26ms(-6%);穿透 0.80→0.92mm(+15%,容差内);抖动/滑移基本持平。
+- **采纳决策(人工)**:**substeps=7 采纳为新默认**(envstep -6%,精度损失在容差内);**njmax/nconmax 保持 1536/768 不采纳**——RSI 的 gate 只测原始资产,测不到 real2sim CoACD 分解后的接触数放大(P16/P21 的静默丢接触风险),属于盲区采纳,人工否决。
+- **教训**:自动闭环的价值在"提案+证据+回滚",不在"全自动改默认"——gate 覆盖不到的维度(real2sim 余量、非 2 幂 cadence)需要人工把关。substeps=7 让 dt_substep≈2.38ms,仍在 refsafe 钳位区内,收敛阶 ~1.9 下误差增幅可控。

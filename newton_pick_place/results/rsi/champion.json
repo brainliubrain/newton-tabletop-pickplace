@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "device": "cuda:0",
+    "tune": "0-4",
+    "holdout": "10-14",
+    "final": "skipped",
+    "champion": {
+      "substeps": 7
+    }
+  },
+  "baseline": {},
+  "champion": {
+    "substeps": 7
+  },
+  "final_test": null
+}

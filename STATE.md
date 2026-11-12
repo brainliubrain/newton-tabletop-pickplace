@@ -57,3 +57,10 @@
 - 采纳:`substeps 8→7`(env.py 默认已改);拒绝:`njmax 512 / nconmax 256`(real2sim 余量盲区,人工否决)
 - final test seeds 20-39: 20/20 vs 20/20, envstep 7.74→7.26ms, 穿透 0.80→0.92mm
 - 证据: results/rsi/{journal.jsonl,REPORT.md,champion.json}
+
+## 2026-10-13 RSI 第二轮:保真度旋钮(P24)
+- rsi_loop 扩展: +contact_kd 阻尼比 / rigid_gap / 三个机器人保真度 preset, --tried 参数
+- 8 轮收敛: ACCEPT contact_kd=3.2e4(穿透-33%)、frictionloss=menagerie、effort=hardware、rigid_gap=0.01;ROLLBACK armature=menagerie(滑移回退)、solver_iterations=12、nconmax=128
+- final seeds 20-39: 20/20 vs 20/20, 穿透 0.92→0.602mm, envstep 7.16→6.76ms
+- 采纳进 env.py 默认: CONTACT_KD=3.2e4, rigid_gap=0.01, frictionloss/effort=menagerie/hardware; armature/armature 保持 sim; buffers 不变
+- asset_audit 修复 effort_limit 测量(jnt_actfrcrange): 22 PASS / 2 WARN / 0 FAIL

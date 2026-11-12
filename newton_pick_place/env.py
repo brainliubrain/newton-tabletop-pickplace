@@ -170,7 +170,9 @@ def solve_home_q() -> list[float]:
 # (slightly under-damped contacts keep micro-bouncing, which trips
 # velocity-based success criteria).
 CONTACT_KE = 2.5e8
-CONTACT_KD = 5.0e4
+# kd=3.2e4 puts the contact dampratio near critical (zeta~1.0 vs 1.58 before);
+# adopted via rsi_loop P24: held-out + final-seed penetration -33/-35%
+CONTACT_KD = 3.2e4
 
 
 def contact_cfg(ke: float = CONTACT_KE, kd: float = CONTACT_KD, **kwargs) -> newton.ModelBuilder.ShapeConfig:
@@ -241,16 +243,19 @@ class SceneConfig:
     # adopted after paired-seed bench (P20): 3.6x less penetration, ~200x less
     # rest wobble, 2x less carry slip, fewer solver iterations — held-out seeds
     # 10-19 show no ms/frame penalty vs multiccd=0 once CCD kernels are warm
-    rigid_gap: float = 0.02  # per-shape contact detection distance [m]; a pair is a candidate within gap_a + gap_b;
-    # 0.02 keeps all active contacts (bench P20: candidates 111->33, same accuracy)
+    rigid_gap: float = 0.01  # per-shape contact detection distance [m]; a pair is a candidate within gap_a + gap_b;
+    # 0.01 keeps all active contacts (rsi_loop P24: candidates 36->29, envstep -6%, no regression)
     filter_static_base: bool = True  # drop link0 <-> stand/ground pairs (fixed base resting on static scene)
 
     # Robot fidelity presets (asset_audit WARN items, P24): "sim" keeps the
     # newton-example values; "menagerie"/"hardware" match the reference model
     # and the real FR3 torque envelope for sim2real honesty.
+    # Defaults adopted via rsi_loop: menagerie frictionloss + hardware effort
+    # passed tune/held-out/final seeds with no regression; menagerie armature
+    # was REJECTED by the gate (carry-slip regression) and stays "sim".
     arm_inertia_model: str = "sim"
-    arm_frictionloss_model: str = "sim"
-    arm_effort_model: str = "sim"
+    arm_frictionloss_model: str = "menagerie"
+    arm_effort_model: str = "hardware"
 
     @property
     def dt_frame(self) -> float:

@@ -2,8 +2,8 @@
   "device": "cuda:0",
   "overrides": {},
   "counts": {
-    "PASS": 20,
-    "WARN": 4,
+    "PASS": 22,
+    "WARN": 2,
     "FAIL": 0
   },
   "checks": [
@@ -104,15 +104,15 @@
     },
     {
       "check": "robot.effort_limit: sim <= hardware torque limit",
-      "verdict": "WARN",
+      "verdict": "PASS",
       "measured": [
-        90.0,
-        180.0,
-        90.0,
-        180.0,
-        90.0,
-        90.0,
-        90.0
+        87.0,
+        87.0,
+        87.0,
+        87.0,
+        12.0,
+        12.0,
+        12.0
       ],
       "expected": [
         87.0,
@@ -123,7 +123,7 @@
         12.0,
         12.0
       ],
-      "note": "sim/hardware ratio per joint [1.0, 2.1, 1.0, 2.1, 7.5, 7.5, 7.5]: torque the real FR3 cannot produce is available in sim (sim2real gap); see probe 'arm_torque_peak_nm' for what the task actually uses"
+      "note": "sim/hardware ratio per joint [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]: torque the real FR3 cannot produce is available in sim (sim2real gap); see probe 'arm_torque_peak_nm' for what the task actually uses"
     },
     {
       "check": "robot.velocity_limit: hardware reference",
@@ -165,15 +165,15 @@
     },
     {
       "check": "robot.frictionloss vs Menagerie FR3",
-      "verdict": "WARN",
+      "verdict": "PASS",
       "measured": [
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2
+        1.137,
+        1.137,
+        1.137,
+        1.137,
+        0.763,
+        0.44,
+        0.248
       ],
       "expected": [
         1.137,
@@ -284,15 +284,15 @@
     {
       "check": "solver.timestep integrated == SceneConfig.dt_substep",
       "verdict": "PASS",
-      "measured": "2.08333 ms",
-      "expected": "2.08333 ms",
+      "measured": "2.38095 ms",
+      "expected": "2.38095 ms",
       "note": ""
     },
     {
       "check": "contact.solref: requested time constant is honored",
       "verdict": "WARN",
-      "measured": "requested timeconst 0.040 ms -> effective 4.167 ms (dampratio 1.58)",
-      "expected": ">= 2*dt = 4.167 ms",
+      "measured": "requested timeconst 0.062 ms -> effective 4.762 ms (dampratio 1.01)",
+      "expected": ">= 2*dt = 4.762 ms",
       "note": "refsafe clamps it: contact stiffness is set by the timestep; ke/kd only act through dampratio = kd / (2 sqrt(ke))"
     },
     {
@@ -312,7 +312,7 @@
     {
       "check": "contact.candidates vs active (detection gap sizing)",
       "verdict": "PASS",
-      "measured": "8 candidates / 8 active = 1.0x (rigid_gap=0.02 m)",
+      "measured": "8 candidates / 8 active = 1.0x (rigid_gap=0.01 m)",
       "expected": "<= 3x",
       "note": ""
     },
@@ -326,28 +326,28 @@
     {
       "check": "bowl.rest_contact_manifold: >= 3 support points on a flat surface",
       "verdict": "PASS",
-      "measured": "4 contact point(s), max penetration 0.007 mm",
+      "measured": "4 contact point(s), max penetration 0.004 mm",
       "expected": ">= 3",
       "note": ""
     },
     {
       "check": "bowl.rest_velocity_noise: far below the judge's at-rest threshold",
       "verdict": "PASS",
-      "measured": "lin 0.062 mm/s, ang 0.0026 rad/s, creep 0.001 mm in 2 s",
+      "measured": "lin 0.071 mm/s, ang 0.0029 rad/s, creep 0.000 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     },
     {
       "check": "cup.rest_contact_manifold: >= 3 support points on a flat surface",
       "verdict": "PASS",
-      "measured": "4 contact point(s), max penetration 0.007 mm",
+      "measured": "4 contact point(s), max penetration 0.004 mm",
       "expected": ">= 3",
       "note": ""
     },
     {
       "check": "cup.rest_velocity_noise: far below the judge's at-rest threshold",
       "verdict": "PASS",
-      "measured": "lin 0.025 mm/s, ang 0.0007 rad/s, creep 0.004 mm in 2 s",
+      "measured": "lin 0.002 mm/s, ang 0.0000 rad/s, creep 0.000 mm in 2 s",
       "expected": "< 4.0 mm/s (10% of the 0.04 m/s gate)",
       "note": ""
     }

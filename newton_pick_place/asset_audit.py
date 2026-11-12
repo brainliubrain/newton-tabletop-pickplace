@@ -103,11 +103,14 @@ def audit_robot(a: Audit, env: PickPlaceEnv):
     a.add("robot.joint_range: compiled == URDF", "PASS" if ok else "FAIL", [_r(r, 3) for r in comp_rng], [_r(r, 3) for r in urdf_rng])
 
     hw_effort = [urdf["joints"][j]["effort"] for j in arm_joints]
-    over = [round(s / h, 1) for s, h in zip(ARM_EFFORT, hw_effort)]
+    # newton maps joint_effort_limit -> mj.jnt_actfrcrange (per-joint actuator
+    # force range), NOT actuator_forcerange — read the compiled value.
+    comp_effort = [float(mj.jnt_actfrcrange[qadr[j]][1]) for j in arm_joints if j in qadr]
+    over = [round(s / h, 1) for s, h in zip(comp_effort, hw_effort)]
     a.add(
         "robot.effort_limit: sim <= hardware torque limit",
-        "PASS" if max(over) <= 1.05 else "WARN",
-        list(ARM_EFFORT),
+        "PASS" if comp_effort and max(over) <= 1.05 else "WARN",
+        _r(comp_effort, 1),
         hw_effort,
         f"sim/hardware ratio per joint {over}: torque the real FR3 cannot produce is available in sim (sim2real gap); see probe 'arm_torque_peak_nm' for what the task actually uses",
     )

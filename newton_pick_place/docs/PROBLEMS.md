@@ -127,3 +127,15 @@
 - **final test(seeds 20-39,40 回合)**:baseline vs champion 均 20/20;envstep 7.74→7.26ms(-6%);穿透 0.80→0.92mm(+15%,容差内);抖动/滑移基本持平。
 - **采纳决策(人工)**:**substeps=7 采纳为新默认**(envstep -6%,精度损失在容差内);**njmax/nconmax 保持 1536/768 不采纳**——RSI 的 gate 只测原始资产,测不到 real2sim CoACD 分解后的接触数放大(P16/P21 的静默丢接触风险),属于盲区采纳,人工否决。
 - **教训**:自动闭环的价值在"提案+证据+回滚",不在"全自动改默认"——gate 覆盖不到的维度(real2sim 余量、非 2 幂 cadence)需要人工把关。substeps=7 让 dt_substep≈2.38ms,仍在 refsafe 钳位区内,收敛阶 ~1.9 下误差增幅可控。
+
+## P24. RSI 第二轮:保真度旋钮进搜索空间,穿透再降 35%
+- **扩展**:SceneConfig 新增三个 sim2real 保真度 preset(`arm_inertia_model`/`arm_frictionloss_model`/`arm_effort_model`,对应 asset_audit WARN 项),`diagnose()` 新增提案:接触阻尼比(zeta 1.58→~1.0 的 contact_kd=3.2e4)、rigid_gap 减半、三项保真度;`--tried` 支持预置已探索提案。
+- **8 轮收敛**(tune 0-9 / held-out 10-19 / final 20-39,证据 `results/rsi/`):
+  - `contact_kd=3.2e4` **ACCEPT**:held-out 穿透 0.907→0.611mm(-33%)——P19"ke/kd 只控阻尼比"的直接应用,近临界阻尼减少接触振铃。
+  - `arm_inertia_model=menagerie` **ROLLBACK(held-out)**:carry_slip 4.28→5.86mm——**对齐参考模型反而变差**,数据否决"保真=更好"的直觉。
+  - `arm_frictionloss_model=menagerie` / `arm_effort_model=hardware` **ACCEPT**:关节干摩擦与真实 FR3 一致、力矩上限=硬件包络(腕部 7.5x→1.0x),无回退——sim2real gap 如实收窄。
+  - `rigid_gap=0.01` **ACCEPT**:接触候选 36→29,envstep -6%。
+  - `solver_iterations=12`/`nconmax=128` ROLLBACK;`njmax=512` ACCEPT 但人工拒绝(同 P23:real2sim 余量盲区)。
+- **final test(seeds 20-39)**:baseline vs champion 均 20/20;**穿透 0.92→0.602mm(-35%)**、envstep 7.16→6.76ms(-5.6%)、抖动/滑移持平。
+- **采纳**:contact_kd=3.2e4、rigid_gap=0.01、frictionloss=menagerie、effort=hardware 进默认;armature 保持 sim(被 gate 否决);njmax/nconmax 保持 1536/768。asset_audit 修正:effort_limit 原来量的是模块常量 ARM_EFFORT 而非编译模型(newton 把 joint_effort_limit 映射到 `jnt_actfrcrange`,不是 actuator_forcerange)——修复后 **22 PASS / 2 WARN / 0 FAIL**,剩余 WARN 为 armature(有意保留)与 solref 说明项。
+- **教训**:把"物理保真度"做成可实验的旋钮后,闭环自己发现了"对齐 Menagerie armature 反而更差"——保真与任务表现是两个目标,必须由数据仲裁。

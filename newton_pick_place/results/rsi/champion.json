@@ -17,8 +17,7 @@
     "contact_kd": 32000.0,
     "arm_frictionloss_model": "menagerie",
     "arm_effort_model": "hardware",
-    "rigid_gap": 0.01,
-    "njmax": 512
+    "rigid_gap": 0.01
   },
   "final_test": {
     "baseline": {
@@ -65,5 +64,21 @@
       "contacts_active_peak": 20,
       "static_static_contacts_peak": 0
     }
+  },
+  "proposed_champion": {
+    "contact_kd": 32000.0,
+    "arm_frictionloss_model": "menagerie",
+    "arm_effort_model": "hardware",
+    "rigid_gap": 0.01,
+    "njmax": 512
+  },
+  "adopted": {
+    "contact_kd": 32000.0,
+    "arm_frictionloss_model": "menagerie",
+    "arm_effort_model": "hardware",
+    "rigid_gap": 0.01
+  },
+  "vetoes": {
+    "njmax=512": "real2sim decomposed-contact headroom blind spot (P16/P21): gate cannot see CoACD-part contact-count growth"
   }
 }

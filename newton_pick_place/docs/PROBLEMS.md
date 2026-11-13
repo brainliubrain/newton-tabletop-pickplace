@@ -139,3 +139,9 @@
 - **final test(seeds 20-39)**:baseline vs champion 均 20/20;**穿透 0.92→0.602mm(-35%)**、envstep 7.16→6.76ms(-5.6%)、抖动/滑移持平。
 - **采纳**:contact_kd=3.2e4、rigid_gap=0.01、frictionloss=menagerie、effort=hardware 进默认;armature 保持 sim(被 gate 否决);njmax/nconmax 保持 1536/768。asset_audit 修正:effort_limit 原来量的是模块常量 ARM_EFFORT 而非编译模型(newton 把 joint_effort_limit 映射到 `jnt_actfrcrange`,不是 actuator_forcerange)——修复后 **22 PASS / 2 WARN / 0 FAIL**,剩余 WARN 为 armature(有意保留)与 solref 说明项。
 - **教训**:把"物理保真度"做成可实验的旋钮后,闭环自己发现了"对齐 Menagerie armature 反而更差"——保真与任务表现是两个目标,必须由数据仲裁。
+
+## P25. RSI veto 一等公民化(REVIEW-e944ea7 #1 修复)
+- **问题**:两轮 RSI 都把被人工否决的 buffer 提案记成 ACCEPT/champion,与 env.py 实际值矛盾——否决只存在于"写文档的瞬间",不进数据流,必然再犯。
+- **修法**:`rsi_loop.py --veto "NAME: REASON"`(可重复):gate ACCEPT 后人工否决 → journal verdict 变 `VETOED (manual: reason)`、champion 不吸收该 override;`champion.json` 分 `proposed_champion`(闭环原始输出)与 `adopted`(对齐 env.py);REPORT 增 "Manual vetoes" 节。人在环路的否决本身成为闭环数据。
+- **回填**:run1(`results/rsi/run1/`,取自 commit 30e213a)round3/4 的 njmax=512/nconmax=256、run2 round7 的 njmax=512 均已改记 VETOED;两轮 adopted 与 env.py 完全一致(run1 `{substeps:7}`、run2 `{kd:3.2e4, rigid_gap:0.01, frictionloss:menagerie, effort:hardware}`)。
+- **教训**:审计轨迹的权威性比"结论正确"更重要——结论可以对,机器记录说谎一样会被抓。

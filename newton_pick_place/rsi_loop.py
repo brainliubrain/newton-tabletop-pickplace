@@ -269,7 +269,7 @@ class Evaluator:
         return self.cache[key]
 
 
-def write_report(path: str, meta: dict, rounds: list[dict], final: dict | None):
+def write_report(path: str, meta: dict, rounds: list[dict], final: dict | None, vetoes: dict[str, str] | None = None):
     lines = ["# RSI loop report", "", f"device: `{meta['device']}` | tune seeds {meta['tune']} | held-out seeds {meta['holdout']} | final seeds {meta['final']}", ""]
     lines += ["| round | proposal | trigger | tune: success / gate | held-out: success / gate | verdict |", "|---|---|---|---|---|---|"]
     for r in rounds:
@@ -278,6 +278,11 @@ def write_report(path: str, meta: dict, rounds: list[dict], final: dict | None):
         hold_s = "not run" if h is None else f"{h['candidate']['successes']}/{h['candidate']['episodes']} (champ {h['champion']['successes']}); " + ("; ".join(h["improvements"] + [f"REGRESS {x}" for x in h["regressions"]]) or "no change")
         lines.append(f"| {r['round']} | `{r['proposal']['name']}` | {r['proposal']['trigger']} | {tune_s} | {hold_s} | **{r['verdict']}** |")
     lines += ["", f"champion overrides vs SceneConfig defaults at loop start: `{json.dumps(meta['champion'], sort_keys=True)}`", ""]
+    if vetoes:
+        lines += ["## Manual vetoes (human-in-the-loop, recorded at accept time)", ""]
+        for name, reason in vetoes.items():
+            lines.append(f"- `{name}`: {reason}")
+        lines.append("")
     if final:
         b, c = final["baseline"], final["champion"]
         lines += [f"## Final test on untouched seeds {meta['final']}", "", "| metric | baseline | champion |", "|---|---|---|"]
@@ -298,7 +303,22 @@ def main() -> int:
     ap.add_argument("--final-episodes", type=int, default=20, help="0 skips the final test")
     ap.add_argument("--start", default="{}", help="JSON SceneConfig overrides to start from (default: SceneConfig defaults)")
     ap.add_argument("--tried", default="", help="comma-separated proposal names already explored (pre-marked as tried)")
+    ap.add_argument(
+        "--veto",
+        action="append",
+        default=[],
+        metavar="NAME: REASON",
+        help="manual veto of a proposal the gate ACCEPTed (repeatable). "
+        "The veto is written into journal/REPORT/champion.json as a first-class "
+        "record: verdict becomes 'VETOED (manual: reason)' and the override is "
+        "excluded from the adopted champion. NAME is the proposal name, e.g. 'njmax=512'.",
+    )
     args = ap.parse_args()
+
+    vetoes: dict[str, str] = {}
+    for v in args.veto:
+        name, _, reason = v.partition(":")
+        vetoes[name.strip()] = reason.strip() or "manual veto"
 
     wp.init()
     wp.config.quiet = True
@@ -308,6 +328,7 @@ def main() -> int:
     evaluate = Evaluator(args.episodes, TaskConfig())
     baseline = json.loads(args.start)
     champion = dict(baseline)
+    loop_champion = dict(baseline)  # champion ignoring vetoes (what the loop converged to)
     tried: set[str] = {t for t in args.tried.split(",") if t}
     rounds: list[dict] = []
     meta = {
@@ -343,8 +364,15 @@ def main() -> int:
             ok_h, regress_h, improve_h = gate(champ_hold, cand_hold, resource_only=True)
             entry["holdout"] = {"champion": champ_hold, "candidate": cand_hold, "regressions": regress_h, "improvements": improve_h, "passed": ok_h}
             ok = ok_h
-        entry["verdict"] = "ACCEPT" if ok else ("ROLLBACK (held-out)" if "holdout" in entry else "ROLLBACK (tune)")
+        vetoed = bool(ok) and prop.name in vetoes
         if ok:
+            loop_champion.update(prop.overrides)
+        if vetoed:
+            entry["verdict"] = f"VETOED (manual: {vetoes[prop.name]})"
+            entry["veto_reason"] = vetoes[prop.name]
+        else:
+            entry["verdict"] = "ACCEPT" if ok else ("ROLLBACK (held-out)" if "holdout" in entry else "ROLLBACK (tune)")
+        if ok and not vetoed:
             champion = candidate
         entry["champion_after"] = dict(champion)
         rounds.append(entry)
@@ -363,8 +391,20 @@ def main() -> int:
         for k in ("baseline", "champion"):
             final[k]["success_ci95"] = list(wilson_ci95(final[k]["successes"], final[k]["episodes"]))
     with open(os.path.join(RSI_DIR, "champion.json"), "w", encoding="utf-8") as f:
-        json.dump({"meta": meta, "baseline": baseline, "champion": champion, "final_test": final}, f, indent=2)
-    write_report(os.path.join(RSI_DIR, "REPORT.md"), meta, rounds, final)
+        json.dump(
+            {
+                "meta": meta,
+                "baseline": baseline,
+                "proposed_champion": loop_champion,  # loop output before manual vetoes
+                "champion": champion,  # adopted overrides (== champion after veto filtering)
+                "adopted": champion,  # alias: what should land in env.py defaults
+                "vetoes": vetoes,
+                "final_test": final,
+            },
+            f,
+            indent=2,
+        )
+    write_report(os.path.join(RSI_DIR, "REPORT.md"), meta, rounds, final, vetoes)
     accepted = [r["proposal"]["name"] for r in rounds if r["verdict"] == "ACCEPT"]
     print(f"[rsi] {len(rounds)} round(s), accepted: {accepted or 'none'}")
     print(f"[rsi] champion overrides: {json.dumps(champion, sort_keys=True)}")

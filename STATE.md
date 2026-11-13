@@ -64,3 +64,8 @@
 - final seeds 20-39: 20/20 vs 20/20, 穿透 0.92→0.602mm, envstep 7.16→6.76ms
 - 采纳进 env.py 默认: CONTACT_KD=3.2e4, rigid_gap=0.01, frictionloss/effort=menagerie/hardware; armature/armature 保持 sim; buffers 不变
 - asset_audit 修复 effort_limit 测量(jnt_actfrcrange): 22 PASS / 2 WARN / 0 FAIL
+
+## 2026-10-13 REVIEW-e944ea7 修复
+- rsi_loop 原生 --veto 支持;journal/REPORT/champion.json 三处对齐(proposed_champion vs adopted)
+- 两轮历史 veto 回填:run1 njmax=512+nconmax=256, run2 njmax=512 → VETOED
+- held-out bench 补足 10 eps(REVIEW #2): bench_20261113_070155.json 10/10, pen 0.605mm, envstep 6.66ms

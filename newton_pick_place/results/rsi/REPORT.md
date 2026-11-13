@@ -10,10 +10,15 @@ device: `cuda:0` | tune seeds 0-9 | held-out seeds 10-19 | final seeds 20-39
 | 4 | `arm_effort_model=hardware` | audit WARN robot.effort_limit: sim allows up to 7.5x the hardware torque (wrist joints) | 10/10 (champ 10); no change | 10/10 (champ 10); no change | **ACCEPT** |
 | 5 | `rigid_gap=0.01` | 38 contact candidates at rigid_gap=0.02 | 10/10 (champ 10); envstep_ms_per_frame 7.17 -> 6.85 (-4%) | 10/10 (champ 10); envstep_ms_per_frame 7.23 -> 6.79 (-6%) | **ACCEPT** |
 | 6 | `solver_iterations=12` | Newton solver used at most 6 of 15 iterations (mean 1.29) | 10/10 (champ 10); no change | not run | **ROLLBACK (tune)** |
-| 7 | `njmax=512` | constraint rows peak 88 of njmax=1536 | 10/10 (champ 10); no change | 10/10 (champ 10); no change | **ACCEPT** |
+| 7 | `njmax=512` | constraint rows peak 88 of njmax=1536 | 10/10 (champ 10); no change | 10/10 (champ 10); no change | **VETOED (manual: real2sim decomposed-contact headroom blind spot (P16/P21): gate cannot see CoACD-part contact-count growth)** |
 | 8 | `nconmax=128` | contact candidates peak 29 of nconmax=768 | 10/10 (champ 10); REGRESS envstep_ms_per_frame 6.88 -> 7.15 | not run | **ROLLBACK (tune)** |
 
-champion overrides vs SceneConfig defaults at loop start: `{"arm_effort_model": "hardware", "arm_frictionloss_model": "menagerie", "contact_kd": 32000.0, "njmax": 512, "rigid_gap": 0.01}`
+adopted overrides vs SceneConfig defaults at loop start: `{"arm_effort_model": "hardware", "arm_frictionloss_model": "menagerie", "contact_kd": 32000.0, "rigid_gap": 0.01}`
+
+
+## Manual vetoes (human-in-the-loop, recorded at accept time)
+
+- `njmax=512`: real2sim decomposed-contact headroom blind spot (P16/P21): gate cannot see CoACD-part contact-count growth
 
 ## Final test on untouched seeds 20-39
 
